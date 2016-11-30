@@ -1,0 +1,62 @@
+<!-- Content background image Panel -->
+<div class="background-upload-image program-edit-home">
+    <div class="background-panel-panel row">
+        <p>Image size must be H1000px by W1000px.</p>
+
+        <p>File size: 5MB or less</p>
+
+        <form name="logoPanelForm" novalidate="novalidate" role="form">
+            <div class="col-xs-12">
+                <div class="logo-browse">
+                    <div class="col-lg-3 brand-browse-btn">
+                        <input id="anguUploadBackGround"
+                               onchange="angular.element(this).scope().backgroundFileChange(this)" data-ng-show="false"
+                               type="file" nv-file-select="" uploader="backgroundCtrl.uploader"/>
+                        <a ng-click="backgroundCtrl.OpenFileSelector()" id="btnBrowseBackground"><i
+                                class="fa fa-search"></i></a>
+                    </div>
+
+                    <div data-ng-repeat="item in backgroundCtrl.uploader.queue" class="col-lg-9 brand-browse-image">
+                        {{ item.file.name | characters:10 }}
+                    </div>
+                    <div class="col-xs-12" data-ng-repeat="item in backgroundCtrl.uploader.queue">
+                        <div style="margin-bottom: 0;" class="progress">
+                            <div role="progressbar" data-ng-style="{ &quot;width&quot;: item.progress + &quot;%&quot; }"
+                                 class="branding-bar progress-bar"></div>
+                            <i class="fa fa-check"
+                               style="color:#51a351;float: right;margin-left:3px;position: absolute;"
+                               data-ng-show="backgroundCtrl.uploadSuccessFull"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="brand-error-messages animated fadeIn"></div>
+                <div class="check-message"></div>
+            </div>
+            <div class="background-panel-bar row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset"
+                                    data-ng-disabled="!backgroundCtrl.uploader.queue.length"
+                                    ng-click="backgroundCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" data-ng-disabled="true"
+                                    data-ng-if="!backgroundCtrl.uploader.queue.length" class="btn btn-save">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                            <button type="button" data-ng-if="backgroundCtrl.uploader.queue.length"
+                                    data-ng-repeat="item in backgroundCtrl.uploader.queue" class="btn btn-save"
+                                    data-ng-click="item.upload()"
+                                    data-ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

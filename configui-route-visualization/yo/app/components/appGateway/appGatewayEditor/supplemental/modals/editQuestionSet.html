@@ -1,0 +1,38 @@
+<div class="modal-header">
+
+    <h4 class="modal-title">Edit Question Set</h4>
+</div>
+<div class="modal-body">
+    <form name="addQuestionSetModal" novalidate role="form" data-ng-submit="submitForm()">
+        <div class="col-xs-12">
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': addQuestionSetModal.title.$invalid && addQuestionSetModal.title.$touched}">
+                <div class="col-xs-12">
+                    <label class="control-label" for="title">Header</label>
+                    <textarea class="form-control" id="title" name="title" data-ng-model="questionsSet.title"
+                              data-ng-required="true" data-ng-trim="false" data-ng-maxlength="300"
+                              placeholder="title input here"></textarea>
+
+                    <div data-ng-if="addQuestionSetModal.title.$touched"
+                         data-ng-messages="addQuestionSetModal.title.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                        <!--<span class="help-block" data-ng-message="maxlength">>Maximum characters allowed is 300</span>-->
+                    </div>
+                    <div role="alert">
+                      <span class="qset-has-error" data-ng-show="addQuestionSetModal.title.$error.maxlength">
+                       Maximum characters allowed is 300</span>
+                    </div>
+                    <!--<span class="has-error help-block" data-ng-if="questionsSet.title.length >= 300">Maximum characters allowed is 300</span>-->
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <label class="control-label" for="instructions">Description</label>
+                <textarea name="instructions" maxlength="2000" data-ng-maxlength="2000" data-ng-trim="false" id="instructions" data-ng-model="questionsSet.instructions" class="form-control" placeholder="input description here"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-cancel" data-ng-click="cancel()"><i class="fa fa-times"></i> Cancel</button>
+    <button data-click-once type="button" class="btn btn-save" data-ng-click="saveQuestionSet();" data-ng-disabled="addQuestionSetModal.$invalid"><i class="fa fa-pencil"></i> Edit</button>
+</div>

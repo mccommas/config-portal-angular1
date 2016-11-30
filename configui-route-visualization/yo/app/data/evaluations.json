@@ -1,0 +1,30 @@
+{
+  "id": 2946,
+  "createdDate": "2014-05-13",
+  "sectionName": "Evaluations",
+  "updatedDate": "2014-07-29",
+  "instructions": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.</p>",
+  "isChildPresent": true,
+  "evaluations": [
+    {
+      "id": 602,
+      "evaluationsRequired": true,
+      "minRequired": 3,
+      "maxAllowed": 2,
+      "applicationFormsubsectionId": 0,
+      "supplementalSectionId": 10,
+      "createdDate": 1400004964040,
+      "updatedDate": 1406662724050
+    },
+    {
+      "id": 1,
+      "evaluationsRequired": true,
+      "minRequired": 1,
+      "maxAllowed": 3,
+      "applicationFormsubsectionId": 10,
+      "supplementalSectionId": 0,
+      "createdDate": 1397534400000,
+      "updatedDate": 1397534400000
+    }
+  ]
+}

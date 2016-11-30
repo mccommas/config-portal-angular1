@@ -1,0 +1,300 @@
+// Questions Styles
+.questions-accordion .panel.panel-default {
+
+}
+.questions-accordion .panel-default > .panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.questions-accordion h4 {
+  font-family: 'museo_sans100', sans-serif;
+  margin: 0;
+  color: #7a7a7a;
+  outline: none !important;
+}
+.questions-accordion h4 a {
+  text-decoration: none;
+  outline: none !important;
+}
+.questions-accordion i.glyphicon {
+  color: @sideBarNav;
+}
+
+.questions-accordion span.eye {
+  background: url("../img/sprite.png") -157px -44px no-repeat;
+  width: 18px;
+  height: 12px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.questions-accordion span.edit {
+  background: url("../img/sprite.png") -157px -132px no-repeat;
+  width: 18px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  text-indent: -99999px;
+}
+.questions-accordion span.edit:hover {
+  background: url("../img/sprite.png") -177px -132px no-repeat;
+  width: 18px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.questions-accordion span.remove {
+  background: url("../img/sprite.png") -157px -102px no-repeat;
+  width: 18px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  text-indent: -99999px;
+}
+
+.questions-accordion p span.edit {
+  background: url("../img/sprite.png") -157px -132px no-repeat;
+  width: 18px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  text-indent: -99999px;
+}
+.questions-accordion p span.edit:hover {
+  background: url("../img/sprite.png") -177px -132px no-repeat;
+  width: 18px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.questions-accordion span.required {
+  color: #77c043;
+  font-family: 'museo_sans100', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 4px 20px 0 0;
+}
+.questions-accordion .panel-collapse > .panel-body{
+  background: #f2f2f2 !important;
+}
+.questions-accordion .panel {
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 0 solid transparent;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.questions-accordion .panel-body p {
+  font-family: 'museo_sans100', sans-serif;
+  border-bottom: 1px solid white;
+  padding: 8px 0;
+}
+.questions-accordion .fa.fa-check{
+  color: @sideBarNav;
+  background: #ffffff;
+  margin-right: 10px;
+}
+
+#program-questions .program-edit-btns.well {
+  min-height: 32px !important;
+}
+
+.questions-accordion ol.ordered-list li i{
+  position: relative;
+  left: -45px;
+}
+.questions-accordion ol.ordered-list li {
+  margin: 20px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.questions-accordion ol.ordered-list li p.qtext{
+  position: relative;
+  left: -20px;
+  top: -26px;
+  text-indent: 20px;
+}
+.questions-accordion ol.ordered-list li span.qedit{
+  //  position: relative;
+  //  left: -20px;
+}
+#program-questions .program-edit-btns .disabled{
+  color: #808080 !important;
+  opacity: 0.5;
+}
+
+#program-questions .row.qtext-row {
+  position: relative;
+  top: -25px;
+}
+#program-questions .row.qtext-row .asterisk{
+  color: #75c039;
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+}
+.multi-choice-input input{
+  margin: 5px 0;
+}
+
+.ng-table th.sortable.sort-asc, .ng-table th.sortable.sort-desc {
+  background-color: transparent !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+// Modals
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  // border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 3px 10px;
+  color: #ffffff;
+  background-color: #b2b2b2;
+  //border-bottom: 1px solid #e5e5e5;
+}
+.modal-footer {
+  padding: 1px 5px;
+  clear: both;
+  text-align: right;
+  border-top: none;
+  background-color: #f5f5f5;
+  height: auto;
+}
+
+.modal-footer .btn {
+  padding: 2px 12px;
+  outline: none;
+  border-radius: none;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+
+.delete-modal-body {
+  background: url("../img/delete-modal.png") no-repeat 0 0;
+  width: 600px;
+  height: 340px;
+}
+.delete-modal-body p{
+  color: #ffffff;
+  font-size: 25px;
+  font-family: 'museo_slab500', sans-serif;
+  position: relative;
+  width: 380px;
+  text-align: right;
+  top: 158px;
+  left: 180px;
+}
+.delete-modal-btns {
+  position: absolute;
+  bottom: 2px;
+  right: 30px;
+  text-align: center;
+}
+
+.delete-modal-btns a{
+  font-family: museo_sans500, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: inline-block;
+}
+.delete-modal-btns a:hover{
+  background: #abdfff;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: "museo_sans500", sans-serif;
+}
+a.question-delete {
+  color: #dc4408;
+}
+.requiredText p{
+  line-height: 38px;
+}
+.greyOpti {
+  color: grey !important;
+}
+.help-block-characters {
+  display: block;
+  margin: 6px;
+  color: #a94442;
+  font-weight: bold;
+}
+
+.validation-valid {
+  color: #0074D9;
+}
+
+.validation-invalid {
+  color: #FF4136;
+}
+.hide-icons {
+  display: none;
+}
+span.qset-has-error{
+  color: #dc4408 !important;
+  padding: 3px 0;
+}
+
+//added for alert
+.cas-save-questions-modal{
+
+}
+.modal-header-saved .modal-header-content {
+  display: table;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+  padding: 0!important;
+}
+.modal-header-saved.modal-title{
+
+}
+
+.modal-header-saved .modal-title {
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 36px;
+  line-height: 3.6rem;
+  color: #fff;
+
+}
+.modal-header-saved.modal-body-content {
+  font-size: 16px;
+  line-height: 16px;
+  color: black;
+  font-size: 18px;
+  line-height: 18px;
+  color: #000;
+  font-weight: normal;
+  text-align: left;
+  padding: 25px;
+  background: #ffffff;
+  padding: 15px 40px;
+  border-bottom: 2px solid #efefef;
+
+}
+

@@ -1,0 +1,133 @@
+<section id="application-setting" class="branding" data-ng-controller="BrandingCtrl as brandCtrl">
+    <div class="row">
+        <div class="col-xs-12 program-title-bar">
+            <h1>program <span>{{ brandCtrl.headerdata.program.programName}}</span></h1>
+        </div>
+    </div>
+    <div class="col-xs-12 white-box">
+        <form class="form-horizontal" name="brandingForm" novalidate="novalidate" role="form">
+            <div class="brand-image-upload">
+                <button class="brand-edit-btn" data-ng-click="isCollapsed = !isCollapsed">
+                    <i class="fa" data-ng-class="{ 'fa-pencil': isCollapsed, 'fa-times': !isCollapsed }"></i> {{toggleText}}
+                </button>
+                <div>
+                    <div data-ng-repeat="item in brandCtrl.uploader.queue" data-ng-show="brandCtrl.uploader.isHTML5" data-ng-thumb="{ file: item._file ,height:270, width:768 }"></div>
+                    <img id="headerImage" class="img-responsive" data-ng-if="!brandCtrl.uploader.queue.length" data-ng-src="{{brandCtrl.headerImage}}" title="{{brandCtrl.headerImage}}" alt="{{brandCtrl.headerImage}}" />
+                    <div class="brand-program-txt" data-ng-if="brandCtrl.primaryheadlinetext == 'ON'">
+                        <!-- brandCtrl.primaryheadlinetext == 'ON' ? true : false-->
+                        <h1 id="brandingheading" style="color:{{brandCtrl.headlineColor}}">{{brandCtrl.headerdata.organization.organizationName | characters:80}}</h1>
+                    </div>
+                    <div class="brand-title-bar">
+                        <h1 class="pull-left">{{brandCtrl.headerdata.program.programName | characters:30}}</h1>
+
+                        <h1 class="pull-right">Deadline: {{brandCtrl.headerdata.program.deadlineDisplay | date : format}}</h1>
+                    </div>
+                </div>
+            </div>
+            <!--pull down menu for edit header-->
+            <div class="brand-pull-down" uib-collapse="isCollapsed">
+                <div class="col-xs-12 brand-edit-header-bar">
+                    <h1>edit header</h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 brand-top-row">
+                        <div class="col-xs-6">
+                            <h3>Image size must be 270px by 900px</h3>
+                            <h3>File size 250kb or less</h3>
+                            <!--<h3>Current Image: <span class="current-image"></span> </h3>-->
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="col-xs-6">
+                                <p style="margin-top: 3px;">Do you want to show the headline text?</p>
+                            </div>
+                            <div class="col-xs-6 radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="ON" data-ng-model="brandCtrl.primaryheadlinetext" data-ng-checked="true">
+                                <label for="inlineRadio1">
+                                    <span></span>Yes
+                                </label>
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="OFF" data-ng-model="brandCtrl.primaryheadlinetext">
+                                <label for="inlineRadio2">
+                                    <span></span>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 brand-bottom-row">
+                        <div class="col-xs-6">
+                            <section>
+                                <div class="brand-browse">
+                                    <div class="col-lg-3 brand-browse-btn">
+                                        <input id="anguUpload" data-ng-show="false" type="file" nv-file-select="" uploader="brandCtrl.uploader" />
+                                        <a id="btnBrowse"><i class="fa fa-search"></i> browse</a>
+                                    </div>
+
+                                    <div data-ng-repeat="item in brandCtrl.uploader.queue" class="col-lg-9 brand-browse-image">{{ item.file.name | characters:25 }}</div>
+                                </div>
+                            </section>
+                            <div data-ng-repeat="item in brandCtrl.uploader.queue">
+                                <div style="margin-bottom: 0;" class="progress">
+                                    <div role="progressbar" data-ng-style="{ &quot;width&quot;: item.progress + &quot;%&quot; }" class="branding-bar progress-bar"></div>
+                                </div>
+                            </div>
+                            <div class="brand-error-messages animated fadeIn"></div>
+                            <div class="check-message"></div>
+                        </div>
+                        <div class="col-xs-6 brand-text-color">
+                            <div class="col-lg-6">
+                                <div class="form-group pull-left">
+                                    <label for="color" class="col-xs-7 control-label">Text Color</label>
+                                    <div class="col-xs-5">
+                                        <input class="form-control" name="color" id="color" style="background:{{brandCtrl.headlineColor}}" value="{{brandCtrl.headlineColor}}" data-ng-model="brandCtrl.headlineColor" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div color-slider class="slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 brand-edit-footer-bar">
+                    <div class="col-xs-6">
+                        <p>To view branding guidelines <a data-ng-click="brandCtrl.openPdf('lg')">go here</a>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+
+
+                        <div class="btn-group program-edit-btns pull-right">
+                            <button type="button" class="btn btn-cancel" data-ng-click="brandCtrl.cancel()">
+                                <i class="fa fa-times"></i> cancel
+                            </button>
+                            <button type="button" class="btn btn-reset" data-ng-click="brandCtrl.resetBranding()" data-ng-disabled="brandingForm.$pristine">
+                                <i class="fa fa-times"></i> Reset
+                            </button>
+                            <button click-once data-ng-if="!brandCtrl.uploader.queue.length" data-ng-click="brandCtrl.postBrandingDataServer()" type="button" class="btn btn-save">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                            <button click-once type="button" data-ng-repeat="item in brandCtrl.uploader.queue" class="btn btn-save" data-ng-click="item.upload()" data-ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- end pull down-->
+        <div class="brand-home-text">
+            <button class="brand-edit-txt-btn" data-ng-click="brandCtrl.openHomeTxtModal('lg')"><i class="fa fa-pencil"></i> edit instructions
+            </button>
+            <p data-ng-bind-html="brandCtrl.branding.instructions.configValue" set-target>
+                {{brandCtrl.branding.instructions.configValue}}
+            </p>
+
+        </div>
+    </div>
+
+</section>

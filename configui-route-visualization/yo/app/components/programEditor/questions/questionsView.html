@@ -1,0 +1,111 @@
+<section id="program-questions" class="program-edit-home">
+    <div class="col-xs-12">
+        <div ng-switch on="questionsCtrl.currentState"> 
+            <h3 ng-switch-when="organizationEditor">Organization Questions</h3>
+            <h3 ng-switch-default>Program Questions</h3>
+        </div>
+        <hr/>
+        <div ng-switch on="questionsCtrl.currentState">
+            <p ng-switch-when="organizationEditor">These questions can be used to collect additional information from applicants for all of the programs in the organization.</p>
+            <p ng-switch-default>The Program Questions section allows you to collect answers to custom questions from your applicants. Questions must not request private data from applicants (ie. Social Security Numbers).</p>
+        </div>
+        <form name="questionsHome" novalidate role="form">
+            <div class="">
+                <h4>Applicant Instructions</h4>
+                <div class="form-group">
+                    <div text-angular="text-angular" ta-paste="mainCtrl.pruneStyle($html)" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions" ng-model="questionsCtrl.questionData.instructions" ta-disabled='disabled'></div>
+                </div>
+                <!--Start the accordion question sets-->
+                <div class="questions-accordion" ng-model="questionset">
+                    <span ng-show="!questionsCtrl.questionData.questionSet.length">You currently have no question sets. <br/><b>Click
+                        +QUESTION SET to begin.</b></span>
+
+                    <uib-accordion close-others="false">
+                        <uib-accordion-group ng-repeat="questionSet in questionsCtrl.questionData.questionSet track by $index" is-open="questionSet.isOpen">
+                            <uib-accordion-heading>
+                                {{questionSet.title}}
+                                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': questionSet.isOpen, 'glyphicon-chevron-right': !questionSet.isOpen}"></i>
+                                <span class="qdelete"><a ng-click="questionsCtrl.confirmDeleteQuestionSet($index)">
+                                    <span class="remove pull-right"></span>
+                                </a>
+                                </span><a ng-click="questionsCtrl.editQuestionSet($index) "><span class="edit pull-right"></span></a>
+                                <span class="required pull-right"><!--{{questionSet.isEnabled?"Required":"Optional"}}--></span>
+                            </uib-accordion-heading>
+
+                            <span class="" ng-show="!questionSet.questions.length">You currently have no questions. <br/><b>Click
+                                +QUESTION to begin.</b></span>
+
+                            <ol class="ordered-list">
+                                <li ng-repeat="question in questionSet.questions track by $index">
+                                    <i class="fa fa-check"></i>
+                                    <div class="row qtext-row">
+                                        <div class="col-xs-10" data-ng-if="question.questionTypeId != '11'"> 
+                                            <span class="asterisk">{{question.isRequired == true ? "&#42;" : ""}}</span> {{question.questionText}}
+                                        </div>
+                                        <div class="col-xs-10" data-ng-if="question.questionTypeId == '11'">
+                                        	<span ng-bind-html="question.questionText"></span>
+                                        </div>                                         
+                                        <div class="col-xs-2">
+                                            <span class="qdelete">
+                                        <a ng-click="questionsCtrl.confirmDeleteQuestion($parent.$index, $index)">
+                                            <span class="remove pull-right">REMOVE</span>
+                                            </a>
+                                            </span>
+                                            <span class="qedit"><a ng-click="questionsCtrl.editQuestion($parent.$index, $index)">
+                                        <span class="edit pull-right">EDIT</span>
+                                            </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <!-- Add New Question button bar-->
+
+                            <div id="messages" class="alert alert-success fa fa-check" data-ng-show="messages" data-ng-bind="messages"></div>
+
+                            <div class="program-edit-btns well">
+                                <div class="btn-group pull-left"> <!-- ng-show="questionSet.showQuestion"-->
+                                    <button type="button" class="btn btn-remove" ng-click="questionsCtrl.addQuestion($index);"><i class="fa fa-plus"></i> add question
+                                    </button>
+                                    <!--<button type="button" class="btn btn-remove" ng-click="copyQuestions($index)"><i-->
+                                    <!--class="fa fa-files-o"></i> copy-->
+                                    <!--</button>-->
+                                </div>
+                                <!--<button id="toggleQuestion" ng-click="questionSet.showQuestion = true" ng-disabled="questionSet.showQuestion" type="button" class="btn btn-remove pull-left">-->
+                                    <!--<i class="fa fa-plus"></i> question-->
+                                <!--</button>-->
+                            </div>
+                        </uib-accordion-group>
+                    </uib-accordion>
+                </div>
+
+                <!-- Footer Links-->
+                <div class="row">
+                    <div id="successMessage"></div>
+                    <div class="extended-col col-xs-12">
+                        <div class="program-edit-btns well">
+                            <div class="btn-group pull-left"> <!-- ng-show="questionsCtrl.showQuestionSet"-->
+                                <button type="button" class="btn btn-remove" ng-click="questionsCtrl.addQuestionSet();"><i class="fa fa-plus"></i> add question set
+                                </button>
+                            </div>
+
+                            <!--<button ng-click="questionsCtrl.showQuestionSet = true" ng-disabled="questionsCtrl.showQuestionSet" type="button" class="btn btn-remove pull-left">-->
+                                <!--<i class="fa fa-plus"></i> question set-->
+                            <!--</button>-->
+                            <div class="btn-group program-edit-btns">
+                                <button type="button" class="btn btn-cancel" data-ng-disabled="questionsHome.$pristine" data-ng-click="questionsCtrl.reset(questionsHome)">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button click-once="" type="button" class="btn btn-save" ng-click="questionsCtrl.save();"
+                                         data-ng-disabled="questionsHome.$invalid">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,110 @@
+<section class="program-edit-home evaluations">
+    <div class="col-xs-12">
+        <h3>Program Evaluations</h3>
+        <hr/>
+        <p>If you wish, you can collect program specific Evaluations from applicants. The Application Evaluation section details the Evaluation the CAS requires (if any). If your program would like to collect Evaluations, select the number below. If you choose to enable the minimum required option, the application will not be marked complete until the required minimum number of evaluations has been received. Please use the Applicant Instructions section to share program specific directions with students. This might include information about the required types of evaluations (personal versus professional, for example).</p>
+
+        <form name="programEditEvaluation" class="form-horizontal" novalidate role="form">
+            <div class="">
+                <h4>Applicant Instructions</h4>
+
+                <div class="form-group">
+                    <div text-angular="text-angular" ta-paste="mainCtrl.pruneStyle($html)" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="evaluationInstructions" ng-model="evaluationCtrl.programEditEvaluation.instructions" ta-disabled='disabled'></div>
+                </div>
+                <div ng-hide="evaluationCtrl.applicationEvaluation == undefined">
+                    <h4>Application Evaluations</h4>
+                    <section class="dn-field">
+                        <div ng-show="evaluationCtrl.applicationEvaluation.applicationFormsubsectionId > 0">
+                            <div class="col-xs-5">
+                                <p>Minimum Required <span>{{evaluationCtrl.applicationEvaluation.minRequired}}</span>
+                                </p>
+
+                                <p>Maximum Accepted <span>{{evaluationCtrl.applicationEvaluation.maxAllowed}}</span>
+                                </p>
+                            </div>
+                            <div class="col-xs-7">
+                                <p>Minimum required <b>do not need to be complete</b> for application to be submitted for review
+                                </p>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+                <h4>Program Evaluations</h4>
+                <section class="dn-field-form section-padding">
+                    <div class="col-xs-5 min-required">
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label" for="minRequired">Minimum Required</label>
+                            <div class="col-sm-3">
+                                <select name="minRequired" id="minRequired" data-ng-model="evaluationCtrl.programEvaluation.minRequired">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label" for="maxRequired">Maximum Accepted</label>
+                            <div class="col-sm-3">
+                                <select name="maxRequired" id="maxRequired" data-ng-model="evaluationCtrl.programEvaluation.maxAllowed">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-5">
+                        <p>Minimum required must be completed for application to be submitted for review</p>
+                    </div>
+                    <div class="radios-right col-xs-2 form-group" ng-class="{ 'has-error': programEditEvaluation.optionsRadios.$invalid && !programEditEvaluation.optionsRadios.$pristine }">
+                        <div class="radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" required="required" data-ng-model="evaluationCtrl.programEvaluation.evaluationsRequired" ng-value="true">
+                            <label for="optionsRadios1"><span></span>Yes</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" required="required" data-ng-model="evaluationCtrl.programEvaluation.evaluationsRequired" ng-value="false">
+                            <label for="optionsRadios2"> <span></span>No</label>
+                        </div>
+                        <div ng-if="programEditEvaluation.optionsRadios.$dirty" data-data-ng-messages="programEditEvaluation.optionsRadios.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="row">
+                    <div id="successMessage"></div>
+                    <div class="extended-col col-xs-12">
+                        <div class="well">
+                            <div class="btn-group program-edit-btns">
+                                <button type="button" class="btn btn-reset" data-ng-disabled="programEditEvaluation.$pristine" data-ng-click="evaluationCtrl.reset(programEditEvaluation)">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button click-once="" type="button" class="btn btn-save" data-ng-click="evaluationCtrl.save();"
+                                         data-ng-disabled="programEditEvaluation.$invalid">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

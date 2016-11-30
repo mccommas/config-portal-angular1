@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "paymentName": "MS-Electrical Fee",
+    "feeAmount": 0,
+    "feeCycle": "2015-2016",
+    "paymentEnabled": true,
+    "feeWaiver": true
+}

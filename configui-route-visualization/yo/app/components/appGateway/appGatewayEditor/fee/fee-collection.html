@@ -1,0 +1,212 @@
+<section class="program-edit-home app-documents fee-control">
+	<div class="col-xs-12">
+		<h3>Fee Collection</h3>
+		<hr/>
+		<p>The Fee Collection feature allows you to collect fees from your applicants. Fees can be all at once or in up
+			to 10 installments.
+		</p>
+		<hr/>
+		<form name="feeCollectForm" id="feeCollectForm" class="form-horizontal upload-docs" novalidate role="form">
+			<div class="form-group form-horizontal"
+			     data-ng-class="{ 'has-error': feeCollectForm.displayName.$invalid && feeCollectForm.displayName.$touched}">
+				<div class="col-md-12 activity-heading">
+					<label for="displayName" class="col-lg-3 control-label">Activity Display Name</label>
+
+					<div class="col-lg-9">
+						<input autofocus="autofocus" data-ng-trim="false" type="text" required="required"
+						       class="form-control" maxlength="50" name="displayName" id="displayName"
+						       data-ng-model="feeCollectCtrl.feeCollectData.displayName"
+						       placeholder="Add your Activity Display Name here">
+						<span class="pull-right">{{(feeCollectCtrl.feeCollectData.displayName ?  feeCollectCtrl.feeCollectData.displayName.length : 0)}} / 50</span>
+
+						<div data-ng-if="feeCollectForm.displayName.$touched"
+						     data-ng-messages="feeCollectForm.displayName.$error">
+							<span class="help-block" data-ng-message="required">required field</span>
+						</div>
+						<span class="has-error help-block"
+						      data-ng-if="feeCollectCtrl.feeCollectData.displayName.length >= 50">Maximum characters allowed is 50</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group"
+			     data-ng-class="{ 'has-error': feeCollectForm.instructions.$invalid && feeCollectForm.instructions.$touched}">
+				<label class="control-label" for="instructions">Applicant Instructions</label>
+				<!--<textarea required="required" placeholder="Applicant Instructions" name="instructions" id="instructions" class="form-control" rows="3" data-ng-model="feeCollectCtrl.feeCollectData.instructions">-->
+				<!--</textarea>-->
+
+				<text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required"
+				              ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]"
+				              name="instructions" id="instructions"
+				              ng-model="feeCollectCtrl.feeCollectData.instructions"
+				              ta-focussed-class="focussed">
+				</text-angular>
+
+
+				<div class="col-xs-6">
+					<div data-ng-if="feeCollectForm.instructions.$touched"
+					     data-ng-messages="feeCollectForm.instructions.$error">
+						<span class="help-block" data-ng-message="required">required field</span>
+					</div>
+				</div>
+				<!--<div class="col-xs-6">-->
+				<!--<span class="pull-right">{{(feeCollectCtrl.feeCollectData.instructions ?  feeCollectCtrl.feeCollectData.instructions.length : 0)}} / 300</span>-->
+				<!--</div>-->
+			</div>
+			<div class="fee-payment-form">
+				<ul class="list-unstyled">
+					<li data-ng-repeat="fee in feeCollectCtrl.feeCollectData.fees" class="feecollection-item">
+						<div data-ng-if="!fee.paymentName"> {{'Payment ' + ($index +1)}}</div>
+						<div data-ng-if="fee.paymentName"><b>The Fee for {{fee.paymentName}} is ${{fee.feeAmount |
+							number:2}}</b> To change, input a new charge below.
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-body fee-panel">
+								<div class="form-group form-horizotal"
+								     data-ng-class="{ 'has-error': feeCollectForm['paymentName' + $index].$invalid && feeCollectForm['paymentName' + $index].$touched}">
+									<label for="paymentName" class="col-sm-3 control-label">Payment Name</label>
+
+									<div class="col-sm-8">
+										<input type="text" required="required" data-ng-model="fee.paymentName"
+										       maxlength="50" class="form-control" name="paymentName{{$index}}" id="paymentName{{$index}}"
+										       placeholder="Payment Name">
+
+										<div data-ng-if="feeCollectForm['paymentName' + $index].$touched"
+										     data-ng-messages="feeCollectForm['paymentName' + $index].$error">
+											<span class="help-block" data-ng-message="required">required field</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-inline col-sm-12">
+									<div class="col-sm-2"></div>
+									<div class="col-sm-10">
+										<div class="form-group fee-amount"
+										     data-ng-class="{ 'has-error': feeCollectForm['fee' + $index].$invalid && feeCollectForm['fee' + $index].$touched}">
+											<label for="fee" class="control-label fee-label">Fee</label>
+											<span class="currencySpanFees">$</span>
+											<valid-number name="fee{{$index}}" required="required" id="fee"
+											              data-ng-model="fee.feeAmount" placeholder="Fee Amount"
+											              cssclass="form-control currencyInput"/>
+
+											<div data-ng-if="feeCollectForm['fee' + $index].$touched"
+											     data-ng-messages="feeCollectForm['fee' + $index].$error">
+												<span class="help-block"
+												      data-ng-message="required">required field</span>
+												<span class="help-block"
+												      data-ng-message="min">Minimum Value is 1.00</span>
+											</div>
+										</div>
+										<div class="form-group fee-deadline form-"
+										     data-ng-class="{ 'has-error': feeCollectForm['deadlineDate' + $index].$invalid && feeCollectForm['deadlineDate' + $index].$touched}">
+											<div class="row radio-set">
+												<div class="radio">
+													<input type="radio"
+													       data-ng-checked="feeCollectCtrl.feeOptions.deadline"
+													       name="optionsRadios{{$index}}"
+													       id="{{$index}}Radios{{$index+1}}"
+													       value="{{feeCollectCtrl.feeOptions.deadline}}"
+													       data-ng-model="fee.optionRadio">
+													<label for="{{$index}}Radios{{$index+1}}"
+													       data-ng-model="feeCollectCtrl.feeOptions.deadline">
+														<span></span>Deadline
+													</label>
+												</div>
+
+												<div class="radio">
+													<input type="radio" name="optionsRadios{{$index}}"
+													       id="{{$index}}Radios{{$index+2}}"
+													       value="{{feeCollectCtrl.feeOptions.rolling}}"
+													       data-ng-model="fee.optionRadio">
+													<label for="{{$index}}Radios{{$index+2}}">
+														<span></span>Rolling
+													</label>
+												</div>
+											</div>
+											<div ng-if="fee.optionRadio != feeCollectCtrl.feeOptions.rolling"
+											     class="input-group">
+												<input name="deadlineDate{{$index}}" id="deadlineDate" type="text"
+												       class="form-control" show-button-bar="true"
+												       uib-datepicker-popup="{{format}}" ng-model="fee.deadlineDate"
+												       is-open="fee.opened" min-date="minDate"
+												       datepicker-options="dateOptions"
+												       date-disabled="disabled(date, mode)" required
+												       close-text="Close"/>
+                                                <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"
+                                                        ng-click="open($event, $index)"><i
+		                                                class="glyphicon glyphicon-calendar"></i></button>
+                                              </span>
+											</div>
+											<div data-ng-if="feeCollectForm['deadlineDate' + $index].$touched"
+											     data-ng-messages="feeCollectForm['deadlineDate' + $index].$error">
+												<span class="help-block"
+												      data-ng-message="required">required field</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="delete-fee pull-right" data-ng-click="feeCollectCtrl.removeFees($index)"><i
+										class="fa fa-trash-o"></i> delete</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-xs-12">
+				<div class="alert alert-warning" role="alert"
+				     data-ng-if="feeCollectCtrl.feeCollectData.fees.length >= 10">You have reached maximum allowed
+					payment types
+				</div>
+				<div class="alert alert-warning" role="alert"
+				     data-ng-if="feeCollectCtrl.feeCollectData.fees.length === 0">You must add at least one payment type
+					to continue
+				</div>
+			</div>
+			<div class="row">
+				<div class="extended-col col-xs-12">
+					<div class="well">
+						<div class="program-edit-btns">
+							<button class="btn btn-remove pull-left" data-ng-click="feeCollectCtrl.addMoreFees()"
+							        data-ng-disabled="feeCollectCtrl.feeCollectData.fees.length >= 10">
+								<i class="fa fa-plus"></i> PAYMENT
+							</button>
+						</div>
+						<div class="btn-group program-edit-btns">
+							<button type="button" class="btn btn-reset" data-ng-disabled="feeCollectForm.$pristine"
+							        ng-click="feeCollectCtrl.reset()">
+								<i class="fa fa-undo"></i> reset
+							</button>
+							<button type="button" class="btn btn-save"
+							        data-ng-disabled="feeCollectForm.$invalid || !feeCollectCtrl.feeCollectData.fees.length"
+							        ng-click="feeCollectCtrl.save();">
+								<i class="fa fa-check"></i> save
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 app-bottom-btns fee-bottom">
+					<div class="col-xs-4">
+						<button type="button" class="btn btn-reset btn-previous" ui-sref="appGatewayEditor.fee"><i
+								class="fa fa-angle-double-left"></i> previous
+						</button>
+					</div>
+					<div class="col-xs-4">
+						<ul class="pager">
+							<li></li>
+							<li class="active"></li>
+						</ul>
+					</div>
+					<div class="col-xs-4">
+						<button type="button" class="btn btn-reset btn-continue"
+						        data-ng-disabled="!feeCollectCtrl.feeCollectData.fees.length"
+						        data-ng-if="feeCollectCtrl.showSubmit && !feeCollectForm.$dirty"
+						        ng-click="feeCollectCtrl.openReviewModal(); ">submit for review <i
+								class="fa fa-angle-double-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>

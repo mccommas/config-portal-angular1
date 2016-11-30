@@ -1,0 +1,56 @@
+[
+    {
+        "id": 198,
+        "configName": "instructions",
+        "configValue": "Instructions-title",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": 1400002331120,
+        "updatedDate": 1407728100437
+    },
+    {
+        "id": 199,
+        "configName": "instructionsTitle",
+        "configValue": "<p><b><i>This is some instructions</i></b> for a <b><a href=http://google.com>program using html</a></b> tags</p>",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": 1400002331133,
+        "updatedDate": 1407728100437
+    },
+    {
+        "id": 0,
+        "configName": "headerBackground",
+        "configValue": "image",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": null,
+        "updatedDate": null
+    },
+    {
+        "id": 200,
+        "configName": "backgroundImage",
+        "configValue": "programImage.png",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": 1400002331133,
+        "updatedDate": 1407728100437
+    },
+    {
+        "id": 0,
+        "configName": "headlineText",
+        "configValue": "#CA9AFD",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": 1400002331133,
+        "updatedDate": 1407728100437
+    },
+    {
+        "id": 0,
+        "configName": "primaryHeadlineText",
+        "configValue": "ON",
+        "configURL": null,
+        "programId": 0,
+        "createdDate": 1400002331133,
+        "updatedDate": 1407728100437
+    }
+]

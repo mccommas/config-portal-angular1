@@ -1,0 +1,154 @@
+<div class="row preview-screens documents-modal">
+	<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="1"
+	                   on-scroll="onScroll(scrollTop, scrollHeight)">
+
+		<div class="col-xs-12">
+			<div data-ng-style="{'background-image': 'url(' + previewCtrl.branding.backgroundImage + ')','background-color': '#C8C8CA','height':'242px' }"
+			     data-ng-class="{'brand-image-placeholder':!previewCtrl.branding.backgroundImage}">
+				<div class="brand-program-txt" data-ng-if="previewCtrl.branding.primaryheadlinetext == 'ON'">
+					<h1 id="brandingheading" style="color:{{previewCtrl.branding.headLineText}}">
+						{{previewCtrl.nameInfo.organization.organizationName | characters:80}}</h1>
+				</div>
+				<div class="brand-title-bar">
+					<h1 class="pull-left">{{previewCtrl.programData.programName}}</h1>
+					<h1 class="pull-right">Deadline: {{previewCtrl.programData.deadlineDisplay | date:'MM/dd/yyyy'}}</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="preview-tabs nav-blocks">
+				<div class="nav-tab"><a>Home</a></div>
+				<div class="nav-tab" data-ng-repeat="tab in previewCtrl.navTabs"
+				     data-ng-class="{'active': tab === 'Questions' || tab === 'Organization Questions'}">
+					<a>{{tab}}</a>
+				</div>
+			</div>
+			<div class="preview-content " id="questions-preview">
+				<div class="preview-content " id="questions-preview">
+					<!--begin for alert to users that org level questions are enabled-->
+					<message></message>
+
+					<!-----------end alert---------->
+
+
+					<h1 class="cas-program-materials-subsection-heading">Questions</h1>
+					<div class="cas-program-materials-instructions"
+					     ng-bind-html="previewCtrl.questionData.overview"></div>
+					<hr/>
+					<div class="cas-program-question-group"
+					     data-ng-repeat="group in previewCtrl.questionData.questionGroups">
+						<h2 class="cas-program-question-group-title">{{ group.title }}</h2>
+						<div class="cas-program-question-group-overview" data-ng-bind-html="group.overview"></div>
+						<div class="cas-program-question-field" data-ng-repeat="question in group.questions"
+						     data-ng-switch="question.input.type">
+							<div data-ng-switch-when="text">
+								<div class="cas-text-field">
+									<div class="cas-container cas-label-container">
+										<label class="cas-text-label" data-ng-bind-html="question.question"></label>
+										<span class="cas-optional-field-tag" data-ng-if="!question.input.required">Optional</span>
+									</div>
+									<div class="cas-container cas-text-container"
+									     data-ng-class="{ 'cas-date': type === 'date', 'cas-typeahead': type === 'typeahead' }" data-ng-transclude="">
+										<input class="cas-text-input ng-pristine ng-valid ng-scope ng-valid-maxlength ng-touched"
+										       type="text" data-ng-model="question.value" maxlength="30" name="106349">
+									</div>
+								</div>
+							</div>
+							<div data-ng-switch-when="textarea">
+								<div class="cas-textarea-field" optional="!question.input.required">
+									<div class="cas-container cas-label-container">
+										<label class="cas-textarea-label" data-ng-bind-html="question.question"></label>
+										<span class="cas-optional-field-tag" data-ng-if="!question.input.required">Optional</span>
+									</div>
+									<div class="cas-container cas-textarea-container">
+										<textarea class="cas-textarea-input"></textarea>
+										<div class="cas-char-count-container" data-ng-if="question.input.maxLength">
+											<span class="cas-char-count-note">0 / {{question.input.maxLength}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-ng-switch-when="radio">
+								<p id="{{ 'cas-program-questions-' + programId + '-' + question.id }}"
+								   class="cas-questions-radio-field" data-ng-bind-html="question.question"></p>
+								<fieldset class="cas-radiogroup-fieldset">
+									<div class="cas-fieldset-wrapper">
+										<div class="cas-label-container">
+											<label class="cas-label" data-ng-bind-html="label"></label>
+											<span class="cas-optional-field-tag" data-ng-if="!question.input.required">Optional</span>
+										</div>
+										<div class="cas-fields-container">
+											<div class="cas-fields-container-wrapper">
+												<div class="cas-radio-field"
+												     data-ng-repeat="option in question.answerOptions">
+													<div class="cas-radio-container">
+														<div class="cas-radio-placeholder"
+														     data-ng-click="divClick(value)"></div>
+														<input type="radio" class="cas-radio-input" id="{{ option.id }}"
+														       data-ng-disabled="radioDisable">
+													</div>
+													<div class="cas-label-container" data-ng-click="divClick(value)">
+														<label class="cas-radio-label" for="{{ option.id }}"
+														       data-ng-bind-html="option.text"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div data-ng-switch-when="checkboxgroup">
+								<fieldset class="cas-checkbox-group-fieldset">
+									<div class="cas-fieldset-wrapper">
+										<div class="cas-label-container">
+											<label class="cas-label" data-ng-bind-html="question.question"></label>
+											<span class="cas-optional-field-tag" data-ng-if="!question.input.required">Optional</span>
+										</div>
+										<div class="cas-fields-container">
+											<div class="cas-fields-container-wrapper">
+												<div class="cas-checkbox-field"
+												     data-ng-repeat="option in question.answerOptions">
+													<div class="cas-checkbox-container">
+														<div class="cas-checkbox-placeholder"></div>
+														<input type="checkbox" class="cas-checkbox-input"/>
+													</div>
+													<div class="cas-label-container">
+														<label class="cas-checkbox-label"
+														       data-ng-bind-html="option.text"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div data-ng-switch-when="dropdown">
+								<fieldset class="cas-select-field">
+									<div class="cas-label-container">
+										<label class="cas-label" data-ng-bind-html="question.question"></label>
+										<span class="cas-optional-field-tag" data-ng-if="!question.input.required">Optional</span>
+									</div>
+									<div class="cas-select-container">
+										<div class="cas-select-placeholder">
+											<span class="cas-select-placeholder-text"></span>
+											<!--{{question.answerOptions[0].text}}-->
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div data-ng-switch-when="sectiontextbox">
+	                            <div class="cas-textarea-field">
+	                                <div class="cas-container cas-label-container">
+	                                    <label class="cas-textarea-label" data-ng-bind-html="question.question"></label>
+	                                </div>
+	                            </div>
+                        	</div> 
+						</div>
+						<hr/>
+					</div>
+					<button class="btn save-button"><span>Save My Responses</span></button>
+				</div>
+			</div>
+	</perfect-scrollbar>
+</div>

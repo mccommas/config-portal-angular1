@@ -1,0 +1,37 @@
+<!-- Add New Program-->
+<section id="application-setting" class="program-modal">
+    <!--*****************************-->
+    <form name="footerLinkForm" id="footerLinkForm" novalidate role="form">
+        <div class="form-group" data-ng-class="{ 'has-error': footerLinkForm.linkTitle.$invalid && footerLinkForm.linkTitle.$touched }">
+            <label for="linkTitle" class="label-control">Title</label>
+            <input type="text" autofocus required="required" class="form-control" name="linkTitle" id="linkTitle" data-ng-model="addLinkCtrl.linkData.type" placeholder="Link Title">
+            <div data-ng-if="footerLinkForm.linkTitle.$touched" data-ng-messages="footerLinkForm.linkTitle.$error">
+                <span class="help-block" data-ng-message="required">required field</span>
+            </div>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': footerLinkForm.hyperlink.$invalid && footerLinkForm.hyperlink.$touched }">
+            <label for="hyperlink" class="label-control">Hyperlink</label>
+            <input type="url" required="required" class="form-control" data-ng-model="addLinkCtrl.linkData.link" name="hyperlink" id="hyperlink" placeholder="example hyperlink: http://www.hyperlink.com">
+            <div data-ng-if="footerLinkForm.hyperlink.$touched" data-ng-messages="footerLinkForm.hyperlink.$error">
+                <span class="help-block" data-ng-message="required">required field</span>
+                <span class="help-block" data-ng-message="url">Format must be: http://www.hyperlink.com</span>
+            </div>
+        </div>
+
+        <!--Buttons-->
+        <div class="row">
+            <div class="bottom-bar-edit col-xs-12">
+                <div class="well-edit">
+                    <div class="program-edit-btns btn-group">
+                        <button type="button" class="btn btn-cancel" data-ng-click="addLinkCtrl.cancel()">
+                            <i class="fa fa-times"></i> Cancel
+                        </button>
+                        <button data-click-once type="button" class="btn btn-save" data-ng-disabled="footerLinkForm.$invalid" data-ng-click="addLinkCtrl.addLinks();">
+                            <i class="fa fa-check"></i> {{addLinkCtrl.savebtntext}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

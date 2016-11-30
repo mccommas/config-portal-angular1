@@ -1,0 +1,88 @@
+<section class="program-edit-home">
+    <div class="col-xs-12">
+        <h3>Program Documents</h3>
+        <hr/>
+        <p><b>Each applicant can upload a total of 5 MB per document.</b>
+            The accepted file formats are MSWord (.doc, .docx), Rich Text Format (.rtf), Portable Document Format (.pdf), and ASCII Text file (.txt).</p>
+
+        <form name="programEditDocuments" novalidate role="form">
+            <div class="">
+                <h4>Applicant Instructions</h4>
+                    <text-angular ta-paste="mainCtrl.pruneStyle($html)" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions" ng-model="documentCtrl.programEditDocument.instructions" ta-disabled='disabled'></text-angular>
+                <div class="row">
+                    <div class="extended-col col-xs-12">
+                        <div class="well prereq-header">
+                            <div>Application Documents</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-ng-if="documentCtrl.casid != '813' ">
+                    <div class="extended-col col-xs-12">
+                        <div class="well prereq-header">
+                            <div class="col-xs-6">document type</div>
+                            <div class="col-xs-2">request</div>
+                            <div class="col-xs-2">require</div>
+                            <div class="col-xs-2">maximum #</div>
+                        </div>
+                        <div class="app-doc-row" ng-repeat="document in documentCtrl.programEditDocument.documents" ng-if="document.isDefault === true">
+                            <p ng-show="!documentCtrl.programEditDocument.documents">default message</p>
+                            <div class="col-xs-6">{{document.documentType | characters:25}}</div>
+                            <div class="col-xs-2" ng-if="document.isRequest"><span ng-if="document.isRequest"><i class="fa fa-check checkmark"> </i></span>
+                            </div>
+                            <div class="col-xs-2"><span  ng-if="document.isRequired"><i class="fa fa-check checkmark"> </i></span>
+                            </div>
+                            <div class="col-xs-2">{{document.maxCount}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default" style="margin-top: 20px;">
+                        <div class="panel-body">
+                            Program Documents
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="extended-col col-xs-12 togglers">
+                        <div class="well prereq-header">
+                            <div class="col-xs-6">document type</div>
+                            <div class="col-xs-2">request</div>
+                            <div class="col-xs-2">require</div>
+                            <div class="col-xs-2">maximum #</div>
+                        </div>
+                        <div class="app-doc-row" ng-repeat="document in documentCtrl.programEditDocument.documents" ng-if="document.isDefault === false">
+                            <div class="col-xs-6">{{document.documentType | characters:25}}</div>
+                            <div class="col-xs-2">
+                                <div class="chkRequest Switch Round parent" dtoid="{{document.id}}" dtoindex="{{$index}}" ng-class="document.isRequest === true ? 'On' : 'Off'">
+                                    <div class="Toggle"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="chkRequire Switch Round child" dtoid="{{document.id}}" dtoindex="{{$index}}" ng-class="document.isRequired === false ? 'Off' : 'On'">
+                                    <div class="Toggle"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <select name="maxCount" id="maxCount" data-ng-model="document.maxCount" ng-options="item as item for item in documentCtrl.dataMaxAllowed"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="extended-col col-xs-12">
+                        <div class="well">
+                            <div class="btn-group program-edit-btns">
+                                <button type="button" class="btn btn-reset" data-ng-disabled="programEditDocuments.$pristine" ng-click="documentCtrl.reset()">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button click-once="" type="button" class="btn btn-save" data-ng-click="documentCtrl.save();">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

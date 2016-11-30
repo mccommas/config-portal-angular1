@@ -1,0 +1,55 @@
+<div class="copy-table">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th><a href ng-click="CopyProgCtrl.predicatemodal = 'programName'; reverse=!reverse">program <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a href ng-click="CopyProgCtrl.predicatemodal = 'waDisplayName'; reverse=!reverse">webadmit name <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a href ng-click="CopyProgCtrl.predicatemodal = 'startTerm'; reverse=!reverse"> start term <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a href ng-click="CopyProgCtrl.predicatemodal = 'academicYear'; reverse=!reverse">year <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a href ng-click="CopyProgCtrl.predicatemodal = 'status'; reverse=!reverse">status <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a href ng-click="CopyProgCtrl.predicatemodal = 'updatedDate'; reverse=!reverse">last update <i class="fa fa-sort"></i></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody data-link="row" class="rowlink">
+            <tr ng-repeat="program in CopyProgCtrl.OrgPrograms.programs | orderBy:CopyProgCtrl.predicatemodal:reverse" class="radio-set">
+                <td>
+                    <input class="copy" type="radio" ng-click="CopyProgCtrl.checkedProgram(program)" name="copy" id="copy" />
+                </td>
+                <td>
+                    <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{program.programName}}">{{program.programName | characters:20}}</div>
+                </td>
+                <td>{{program.waDisplayName | characters:20}}</td>
+                <td>{{program.startTerm}}</td>
+                <td>{{program.academicYear}}</td>
+                <td>{{program.status}}</td>
+                <td>{{program.updatedDate | date:'yyyy-MM-dd'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="checkbox checkbox-copy">
+    <label>
+        <input ng-model="CopyProgCtrl.copyAllSetting.isChecked" type="checkbox" data-ng-checked="true">Copy All Program
+	    Settings
+    </label>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="modal-footer" style="border-top: none">
+            <button type="button" class="btn btn-cancel" ng-click="CopyProgCtrl.cancel()"><i class="fa fa-times"></i> Cancel</button>
+            <button type="button" class="btn btn-save" ng-click="CopyProgCtrl.copyProgram();"><i class="fa fa-check"></i> Copy</button>
+        </div>
+    </div>
+</div>

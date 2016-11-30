@@ -1,0 +1,95 @@
+// CSS Styles for welcome pages on dashboard
+section#home {
+  margin-top: 10px;
+  background: #e6e6e7;
+  min-height: 220px;
+  position: relative;
+
+}
+.welcome-landing .col-xs-2, .welcome-landing .col-xs-10 {
+  padding: 0;
+  overflow: visible;
+}
+.welcome-landing .homeTxt{
+  position: relative;
+  left: 30px;
+}
+.welcome-landing img.img-responsive.arrow-intro {
+  margin: 33px 0 0 5px;
+}
+.welcome-landing .col-xs-2 span {
+  background: url("../img/sprite.png") -5px -357px no-repeat;
+  width: 127px;
+  height: 150px;
+  padding: 68px 62px;
+  position: relative;
+  top: 100px;
+  left: 10px;
+  opacity: .8;
+  cursor: pointer;
+}
+.welcome-landing .col-xs-2 span:hover {
+  opacity: 1;
+}
+.welcome-landing h1 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 40px;
+  color: @WelcomeH1;
+  line-height: 20px;
+}
+.welcome-landing h1.bold-text {
+  font-family: museo_sans300, sans-serif;
+  font-size: 40px;
+  color: @WelcomeH2;
+}
+.welcome-landing h2 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 40px;
+  color: @WelcomeH1;
+}
+.welcome-landing h3 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 24px;
+  margin-top: 86px;
+  color: @WelcomeH2;
+}
+.welcome-landing h2 span {
+  font-family: museo_sans100, sans-serif;
+  font-size: 40px;
+  color: @WelcomeH2;
+}
+.welcome-landing p {
+  font-family: museo_sans100, sans-serif;
+  font-size: 20px;
+  color: @WelcomeH2;
+  width: 410px;
+}
+
+// media queries
+@media only screen and (max-width: 1200px){
+  #home.welcome-landing .col-xs-2 span {
+    width: 127px;
+    height: 150px;
+    padding: 68px 52px;
+    position: relative;
+    top: 100px;
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1060px){
+  .welcome-landing h3 {
+    font-family: museo_sans100, sans-serif;
+    font-size: 30px;
+    color: #174751;
+    width: 540px;
+    margin: 80px 0 0 60px;
+  }
+  .welcome-landing .col-xs-2 span {
+    padding: 68px 122px;
+  }
+}
+
+
+
+

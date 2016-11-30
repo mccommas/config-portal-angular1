@@ -1,0 +1,13 @@
+[{
+    "id": 5346,
+    "valueId": "Domestic",
+    "valueString": "Domestic",
+    "valueAbbr": null,
+    "sortIdx": 1
+}, {
+    "id": 5347,
+    "valueId": "International",
+    "valueString": "International",
+    "valueAbbr": null,
+    "sortIdx": 2
+}]

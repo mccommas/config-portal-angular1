@@ -1,0 +1,90 @@
+<div id="scrollable-area" class="table-responsive pro-org">
+    <table class="table table-striped" data-fixed-table-headers="scrollable-area">
+        <thead>
+            <tr>
+                <th><a data-ng-click="predicatemodal = 'programName'; reverse=!reverse">program <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'waDisplayName'; reverse=!reverse">webadmit name <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'startDate'; reverse=!reverse"> start date <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'deadline'; reverse=!reverse">deadline <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'status'; reverse=!reverse">status <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'updatedDate'; reverse=!reverse">last update <i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody id="proTable" data-link="row" class="rowlink">
+            <tr class="animated" data-ng-repeat="program in appHome.inReviewListing.programs | orderBy:predicatemodal:reverse | filter: searchPrograms" data-ng-if="program.status.toLowerCase() == 'review'" data-ng-mouseenter="program.showButtons = true" data-ng-mouseleave="program.showButtons = false" data-ng-class="selected">
+                <td>
+                    <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{program.programName}}">
+                       {{::program.programName | characters:15}}
+                    </div>
+                </td>
+                <td>
+                    <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{program.waDisplayName}}">
+                        {{::program.waDisplayName == null ? "N/A" : program.waDisplayName | characters:15}}
+                    </div>
+                </td>
+                <td>{{::program.startDate | date:'MM/dd/yyyy'}}</td>
+                <!--start deadline-->
+                <td>
+                    <div class="showDate status-caps">{{::program.deadline | date:'MM/dd/yyyy'}}</div>
+                </td>
+                <!--end deadline-->
+                <td data-ng-class="program.showButtons ? 'selectedTd' : '' ">
+                    <div data-ng-class="{
+                        'draft-status': program.status.toLowerCase() === 'draft',
+                        'review-status': program.status.toLowerCase() === 'review',
+                        'active-status': program.status.toLowerCase() === 'active'}" data-ng-hide="program.showButtons" class="showDate status-caps">&nbsp;&nbsp;&nbsp;&nbsp;{{program.status == null ? "N/A" : program.status}}&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div data-ng-show="program.showButtons" class="showButtons-no-animate">
+                        <!--Status LEVELS -> [Level:1 DRAFT] -> [Level:2 Review] -> [Level:3 Active-->
+                        <!--Show this review button if STATUS is 'DRAFT'-->
+                        <!--<a data-ng-if="program.status.toLowerCase() == 'draft'" ng-click="programCtrl.openReviewModal(program)"><i class="fa fa-angle-double-right"></i> review</a>-->
+                        <!--Show this activate button if STATUS is 'REVIEW' and userType is Accociation User-->
+                        <a data-ng-if="program.status.toLowerCase() == 'review' && headerOrgdata.userType.toLowerCase() == programCtrl.associationUser" ng-click="appHome.openActivateModal(program)"><i class="fa fa-angle-double-right"></i>
+			                <span popover-placement="right" popover-trigger="mouseenter" uib-popover="Activate Program"
+			                      popover-animation="false">
+		                        activate</span></a>
+                    </div>
+                </td>
+                <td data-ng-class="program.showButtons ? 'selectedTd' : '' ">
+                    <div data-ng-hide="program.showButtons" class="showDate">{{::program.updatedDate | date:'MM/dd/yyyy'}}</div>
+                    <div data-ng-show="program.showButtons" class="showButtons">
+                        <a data-ng-click="appHome.goToProgram(program)" ><i class="fa fa-pencil"></i> details</a> <!--ui-sref="programDetails({programId:program.id})"-->
+                    </div>
+
+                </td>
+                <td id="program-arrows" ui-sref="programDetails({programId:program.id, target:'app'})" data-ng-class="selected">toggle arrows<span></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- messages-->
+<!--Save bar-->
+<div class="extended-col col-xs-12" data-ng-if="casInfoData.xmlCasId != mainCtrl.Configuration.xmlCASID">
+    <div class="program-edit-btns well">
+        <!--<div class="btn-group pull-left" data-ng-show="showPrograms">-->
+        <!--<button type="button" class="btn btn-remove" data-ng-click="openAddProgramWindow()"><i class="fa fa-plus"></i> add-->
+        <!--</button>-->
+        <!--<button type="button" class="btn btn-remove" data-ng-click="openCopyProgramWindow()"><i class="fa fa-files-o"></i> copy-->
+        <!--</button>-->
+        <!--</div>-->
+        <!-- -->
+        <!--<button data-ng-click="togglePrograms($event)" type="button" class="btn btn-remove pull-left">-->
+        <!--<i class="fa fa-plus"></i> program-->
+        <!--</button>-->
+        <!-- -->
+    </div>
+</div>

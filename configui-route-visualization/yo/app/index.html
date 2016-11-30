@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="no-js" data-ng-app="configApp">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liaison Configuration Portal 6.0</title>
+	<meta name="description" content="Liaison Configuration Portal">
+	<!--STYLES-->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.common.min.css" />
+	<link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.bootstrap.min.css" />
+	<link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.common-bootstrap.min.css" />
+	<!-- bower:css -->
+	<link rel="stylesheet" href="../bower_components/angular-toggle-switch/angular-toggle-switch.css" />
+	<link rel="stylesheet" href="../bower_components/angular-ui-select/dist/select.css" />
+	<link rel="stylesheet" href="../bower_components/angular-xeditable/dist/css/xeditable.css" />
+	<link rel="stylesheet" href="../bower_components/perfect-scrollbar/src/perfect-scrollbar.css" />
+	<link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css" />
+	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="../bower_components/ng-scrollbar/dist/ng-scrollbar.css" />
+	<link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+	<link rel="stylesheet" href="../bower_components/toastr/toastr.css" />
+	<link rel="stylesheet" href="../bower_components/css-toggle-switch/dist/toggle-switch.css" />
+	<link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+	<link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
+	<link rel="stylesheet" href="../bower_components/ladda/dist/ladda.min.css" />
+	<!-- endbower -->
+	<!--STYLES END-->
+	<link rel="stylesheet" href="common/css/main.css" />
+	<link rel="stylesheet" href="common/css/ui/jquery-ui.css" />
+	<link rel="stylesheet" href="common/css/ui/slider-ui.css" />
+	<style>
+		.transitionHistory{
+			z-index:5 !important;
+		}
+		.uirStateVisContainer{
+				z-index:6 !important;
+		}
+	</style>
+
+</head>
+
+<body ng-controller="MainController as mainCtrl">
+<!-- Angular Spinner Start-->
+<span us-spinner="{radius:20, width:8, length: 40, lines: 17, speed: 1, shadow: true, top:'25%', trail: 35}" spinner-key="spinner-1"></span>
+<!-- Application content here -->
+
+<div class="container">
+	<!-- Sidebar begin -->
+	<div class="navigation col-xs-3">
+		<!-- Side Bar end -->
+		<section class="sidebar" data-ng-controller="navigationController as navigationCtrl">
+			<navigation></navigation>
+		</section>
+		<!-- Page Content begin -->
+	</div>
+	<div class="col-xs-9">
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="headerMain" class="row">
+					<div data-ui-view="rightheader"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<section class="main-content">
+				<div class="col-xs-12 main-page">
+					<div data-ui-view="content" class="view-slide-in" data-autoscroll="false"></div>
+				</div>
+			</section>
+		</div>
+
+	</div>
+</div>
+
+<div>
+	<div id="footer" class="navbar-fixed-bottom">&nbsp;</div>
+</div>
+<script src="//unpkg.com/ui-router-visualizer@2"></script>
+<!--PRODSCRIPTS-->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/es5-shim/es5-shim.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-touch/angular-touch.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/spin.js/spin.js"></script>
+<script src="../bower_components/angular-spinner/angular-spinner.js"></script>
+<script src="../bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
+<script src="../bower_components/angular-ui-select/dist/select.js"></script>
+<script src="../bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="../bower_components/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+<script src="../bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
+<script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="../bower_components/json3/lib/json3.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/flow.js/dist/flow.js"></script>
+<script src="../bower_components/ng-scrollbar/dist/ng-scrollbar.js"></script>
+<script src="../bower_components/rangy/rangy-core.js"></script>
+<script src="../bower_components/rangy/rangy-classapplier.js"></script>
+<script src="../bower_components/rangy/rangy-highlighter.js"></script>
+<script src="../bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="../bower_components/rangy/rangy-serializer.js"></script>
+<script src="../bower_components/rangy/rangy-textrange.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="../bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="../bower_components/toastr/toastr.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
+<script src="../bower_components/restangular/dist/restangular.js"></script>
+<script src="../bower_components/mb-scrollbar/mb-scrollbar.js"></script>
+<script src="../bower_components/StickyTableHeaders/js/jquery.stickytableheaders.js"></script>
+<script src="../bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
+<script src="../bower_components/jquery.easing/js/jquery.easing.js"></script>
+<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<script src="../bower_components/bootbox/bootbox.js"></script>
+<script src="../bower_components/ngBootbox/dist/ngBootbox.js"></script>
+<script src="../bower_components/ng-idle/angular-idle.js"></script>
+<script src="../bower_components/angular-better-placeholders/src/angular-better-placeholders.js"></script>
+<script src="../bower_components/ladda/dist/ladda.min.js"></script>
+<script src="../bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+<script src="../bower_components/angular-auto-validate/dist/jcs-auto-validate.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+<!--SCRIPTS-->
+<script src="common/js/angular-kendo.all.min.js"></script>
+<script src="common/js/angular-kendo.js"></script>
+<script src="common/js/app.module.js"></script>
+<script src="common/js/app.router.js"></script>
+<script src="common/js/cachebuster.js"></script>
+<script src="common/js/constant.js"></script>
+<script src="common/js/jquery-resize.js"></script>
+<script src="common/js/jquery.colorPicker.js"></script>
+<script src="common/js/jquery.reject.js"></script>
+<script src="common/js/programNavService.js"></script>
+<script src="common/js/templates.js"></script>
+<script src="components/appGateway/appGatewayEditor/appMainView/appMvController.js"></script>
+<script src="components/appGateway/appGatewayEditor/appMainView/appMvService.js"></script>
+<script src="components/appGateway/appGatewayEditor/documents/docInReviewCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/documents/documentUploadCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/documents/documentsController.js"></script>
+<script src="components/appGateway/appGatewayEditor/documents/modals/submitActivateController.js"></script>
+<script src="components/appGateway/appGatewayEditor/documents/modals/submitReviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/fee/feeCollectionCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/fee/feeController.js"></script>
+<script src="components/appGateway/appGatewayEditor/fee/feesInReviewCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/fee/modals/submitActivateController.js"></script>
+<script src="components/appGateway/appGatewayEditor/fee/modals/submitReviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/interview/interviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/interview/interviewInReviewCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/interview/interviewSchedulerController.js"></script>
+<script src="components/appGateway/appGatewayEditor/interview/modals/submitActivateController.js"></script>
+<script src="components/appGateway/appGatewayEditor/interview/modals/submitReviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/offer/modals/submitActivateController.js"></script>
+<script src="components/appGateway/appGatewayEditor/offer/modals/submitReviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/offer/offerController.js"></script>
+<script src="components/appGateway/appGatewayEditor/offer/offerExtendCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/offer/offerInReviewCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/modals/addQuestionController.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/modals/addQuestionSetController.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/modals/submitActivateController.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/modals/submitReviewController.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/suppHomeCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/suppPayCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/suppQuestCtrl.js"></script>
+<script src="components/appGateway/appGatewayEditor/supplemental/suppReviewCtrl.js"></script>
+<script src="components/appGateway/branding/appBrandingCtrl.js"></script>
+<script src="components/appGateway/branding/directives/dir-choose-background.js"></script>
+<script src="components/appGateway/branding/panels/appBrandingBackgroundCtrl.js"></script>
+<script src="components/appGateway/branding/panels/colorCtrl.js"></script>
+<script src="components/appGateway/branding/panels/footerCtrl.js"></script>
+<script src="components/appGateway/branding/panels/footerLinkModalCtrl.js"></script>
+<script src="components/appGateway/branding/panels/learnMoreModalCtrl.js"></script>
+<script src="components/appGateway/branding/panels/logoCtrl.js"></script>
+<script src="components/branding/brandingController.js"></script>
+<script src="components/branding/modals/brandInstructionsCtrl.js"></script>
+<script src="components/branding/modals/homeTxtCtrl.js"></script>
+<script src="components/dashboard/appHome/appHomeController.js"></script>
+<script src="components/dashboard/appHome/inReviewListings/inReviewListingsController.js"></script>
+<script src="components/dashboard/appHome/orgListings/orgListingsController.js"></script>
+<script src="components/dashboard/applicationDetails/appListing/applicantAddModalCtrl.js"></script>
+<script src="components/dashboard/applicationDetails/appListing/applicationsListController.js"></script>
+<script src="components/dashboard/inReview/inReviewDirective.js"></script>
+<script src="components/dashboard/inReview/inReviewSettingController.js"></script>
+<script src="components/dashboard/inReview/modal/previewController.js"></script>
+<script src="components/dashboard/intros/applicationController.js"></script>
+<script src="components/dashboard/intros/casController.js"></script>
+<script src="components/dashboard/programDetails/datePickersController.js"></script>
+<script src="components/dashboard/programDetails/modals/addProgramController.js"></script>
+<script src="components/dashboard/programDetails/modals/copyProgramController.js"></script>
+<script src="components/dashboard/programDetails/modals/deleteProgramDetailsController.js"></script>
+<script src="components/dashboard/programDetails/modals/submitActivateController.js"></script>
+<script src="components/dashboard/programDetails/modals/submitReviewController.js"></script>
+<script src="components/dashboard/programDetails/programAttributesService.js"></script>
+<script src="components/dashboard/programDetails/programDetailsController.js"></script>
+<script src="components/dashboard/programDetails/programDetailsEditCotroller.js"></script>
+<script src="components/dashboard/programDetails/programsController.js"></script>
+<script src="components/dashboard/programDetails/programsService.js"></script>
+<script src="components/fees/feesController.js"></script>
+<script src="components/headers/headerController.js"></script>
+<script src="components/headers/headerIconsAppController.js"></script>
+<script src="components/headers/headerIconsOrgsController.js"></script>
+<script src="components/idle/idleController.js"></script>
+<script src="components/navigation/navigationController.js"></script>
+<script src="components/navigation/programNavService.js"></script>
+<script src="components/programEditor/collegetranscripts/collegeTranscriptsController.js"></script>
+<script src="components/programEditor/documents/documentsController.js"></script>
+<script src="components/programEditor/evaluations/evaluationsController.js"></script>
+<script src="components/programEditor/highschooltranscripts/hsTranscriptsController.js"></script>
+<script src="components/programEditor/home/homeController.js"></script>
+<script src="components/programEditor/mainView/mvController.js"></script>
+<script src="components/programEditor/prerequisites/prerequisitesController.js"></script>
+<script src="components/programEditor/questions/modals/addQuestionController.js"></script>
+<script src="components/programEditor/questions/modals/addQuestionSetController.js"></script>
+<script src="components/programEditor/questions/modals/copyQuestionController.js"></script>
+<script src="components/programEditor/questions/questionsController.js"></script>
+<script src="common/js/controllers/mainController.js"></script>
+<script src="common/js/directives/angular-kendo-window.js"></script>
+<script src="common/js/directives/dir-addClass.js"></script>
+<script src="common/js/directives/dir-autofocus.js"></script>
+<script src="common/js/directives/dir-backButton.js"></script>
+<script src="common/js/directives/dir-color-picker.js"></script>
+<script src="common/js/directives/dir-color-slider.js"></script>
+<script src="common/js/directives/dir-disable-btn.js"></script>
+<script src="common/js/directives/dir-disable-program.js"></script>
+<script src="common/js/directives/dir-equal-heights.js"></script>
+<script src="common/js/directives/dir-fieldSet.js"></script>
+<script src="common/js/directives/dir-height-watcher.js"></script>
+<script src="common/js/directives/dir-imageupload.js"></script>
+<script src="common/js/directives/dir-menu-pullout.js"></script>
+<script src="common/js/directives/dir-navigation.js"></script>
+<script src="common/js/directives/dir-prunestyle.js"></script>
+<script src="common/js/directives/dir-select-box.js"></script>
+<script src="common/js/directives/dir-selectable.js"></script>
+<script src="common/js/directives/dir-set-target.js"></script>
+<script src="common/js/directives/dir-stickytableheaders.js"></script>
+<script src="common/js/directives/dir-valid-number-suppPay.js"></script>
+<script src="common/js/directives/dir-valid-number.js"></script>
+<script src="common/js/filters/props-filter.js"></script>
+<script src="common/js/filters/truncate.js"></script>
+<script src="common/js/services/data-transfer-service.js"></script>
+<script src="common/js/services/serv_modal.js"></script>
+<script src="common/js/services/srv-formnotsave.js"></script>
+<script src="common/js/services/srv-rest-service.js"></script>
+<!--SCRIPTS END-->
+<!--PRODSCRIPTS END-->
+<!--misc scripts-->
+</body>
+
+</html>

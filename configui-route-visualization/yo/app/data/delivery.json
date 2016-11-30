@@ -1,0 +1,31 @@
+[{
+    "id": 5331,
+    "valueId": "Classroom",
+    "valueString": "Classroom",
+    "valueAbbr": null,
+    "sortIdx": 1
+}, {
+    "id": 5332,
+    "valueId": "Regular",
+    "valueString": "Regular",
+    "valueAbbr": null,
+    "sortIdx": 2
+}, {
+    "id": 5333,
+    "valueId": "Online",
+    "valueString": "Online",
+    "valueAbbr": null,
+    "sortIdx": 3
+}, {
+    "id": 5334,
+    "valueId": "Online-Full-Time",
+    "valueString": "Online-Full-Time",
+    "valueAbbr": null,
+    "sortIdx": 4
+}, {
+    "id": 5335,
+    "valueId": "Online-Part-Time",
+    "valueString": "Online-Part-Time",
+    "valueAbbr": null,
+    "sortIdx": 5
+}]

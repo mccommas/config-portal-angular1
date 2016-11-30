@@ -1,0 +1,61 @@
+[{
+    "id": 5336,
+    "valueId": "N/A",
+    "valueString": "N/A",
+    "valueAbbr": null,
+    "sortIdx": 1
+}, {
+    "id": 5337,
+    "valueId": "Arts",
+    "valueString": "Arts",
+    "valueAbbr": null,
+    "sortIdx": 2
+}, {
+    "id": 5338,
+    "valueId": "Business",
+    "valueString": "Business",
+    "valueAbbr": null,
+    "sortIdx": 3
+}, {
+    "id": 5339,
+    "valueId": "Engineering",
+    "valueString": "Engineering",
+    "valueAbbr": null,
+    "sortIdx": 4
+}, {
+    "id": 5340,
+    "valueId": "Health Policy",
+    "valueString": "Health Policy",
+    "valueAbbr": null,
+    "sortIdx": 5
+}, {
+    "id": 5341,
+    "valueId": "Information Technology ",
+    "valueString": "Information Technology ",
+    "valueAbbr": null,
+    "sortIdx": 6
+}, {
+    "id": 5342,
+    "valueId": "Professional Graduate",
+    "valueString": "Professional Graduate",
+    "valueAbbr": null,
+    "sortIdx": 7
+}, {
+    "id": 5343,
+    "valueId": "Applied Health Economics",
+    "valueString": "Applied Health Economics",
+    "valueAbbr": null,
+    "sortIdx": 8
+}, {
+    "id": 5344,
+    "valueId": "Couple & Family Therapy",
+    "valueString": "Couple & Family Therapy",
+    "valueAbbr": null,
+    "sortIdx": 9
+}, {
+    "id": 5345,
+    "valueId": "Doctoral Programs",
+    "valueString": "Doctoral Programs",
+    "valueAbbr": null,
+    "sortIdx": 10
+}]

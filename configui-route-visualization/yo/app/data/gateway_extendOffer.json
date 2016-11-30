@@ -1,0 +1,42 @@
+{
+  "id": 18,
+  "sectionName": "extend_offer",
+  "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam de isto magna dissensio est. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam cur Peripateticum appellem nescio. Quasi ego id curem, quid ille aiat aut neget. Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Quod si ita se habeat, non possit beatam praestare vitam sapientia. Tu enim ista lenius, hic Stoicorum more nos vexat.",
+  "displayName": "This is a display name",
+  "enabled": false,
+  "status": "draft",
+  "questionSet": [
+    {
+      "id": 8,
+      "createdDate": "2015-03-18",
+      "sectionId": 18,
+      "title": "Extend Offer",
+      "updatedDate": "2015-03-18",
+      "questions": [
+        {
+          "id": 8,
+          "createdDate": "2015-03-18",
+          "questionText": "Would you like to accept our offer?",
+          "questionTypeId": 10,
+          "responseTypeId": 4,
+          "displayTypeId": 1,
+          "updatedDate": "2015-03-18",
+          "answers": [
+            {
+              "id": 12,
+              "answerOption": "Accept",
+              "createdDate": "2015-03-18",
+              "updatedDate": "2015-03-18"
+            },
+            {
+              "id": 13,
+              "answerOption": "Decline",
+              "createdDate": "2015-03-18",
+              "updatedDate": "2015-03-18"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

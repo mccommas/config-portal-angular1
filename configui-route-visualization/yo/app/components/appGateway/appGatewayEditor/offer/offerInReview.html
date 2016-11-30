@@ -1,0 +1,76 @@
+<section class="program-edit-home app-documents submit-review">
+    <h3>Extend Offer</h3>
+    <hr/>
+    <p class="in-review-txt" data-ng-if="offerInReviewCtrl.offerInReviewData.status != 'active'">THIS ACTIVITY HAS BEEN MARKED AS READY FOR REVIEW AND CANNOT BE EDITED BY THE PROGRAM
+        ADMINISTRATOR
+    </p>
+    <p class="in-active-txt" data-ng-if="offerInReviewCtrl.offerInReviewData.status == 'active'">This activity has been marked as complete and is no longer available to edit.</p>
+
+    <hr/>
+
+    <h4>Activity Application</h4>
+
+    <div class="col-xs-12">
+        <div class="review-section-padding">
+            <h5 data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.startHeader | characters: 100"><b>{{offerInReviewCtrl.offerInReviewData.sectionContent.startHeader | characters: 100}}</b></h5>
+            <p data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.sectionIntroduction">{{offerInReviewCtrl.offerInReviewData.sectionContent.sectionIntroduction}}</p>
+        </div>
+    </div>
+
+    <h4>Finishing Statement if offer accepted</h4>
+
+    <div class="col-xs-12">
+        <div class="review-section-padding">
+            <h5 data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.completeHeader | characters: 100"><b>{{offerInReviewCtrl.offerInReviewData.sectionContent.completeHeader | characters: 100}}</b></h5>
+            <p data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.sectionComplete">{{offerInReviewCtrl.offerInReviewData.sectionContent.sectionComplete}}</p>
+        </div>
+    </div>
+
+    <h4>Finishing Statement if offer declined</h4>
+
+    <div class="col-xs-12">
+        <div class="review-section-padding">
+            <h5 data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.declineHeader | characters: 100"><b>{{offerInReviewCtrl.offerInReviewData.sectionContent.declineHeader | characters: 100}}</b></h5>
+            <p data-ng-bind-html="offerInReviewCtrl.offerInReviewData.sectionContent.declineInstructions">{{offerInReviewCtrl.offerInReviewData.sectionContent.declineInstructions}}</p>
+        </div>
+    </div>
+
+    <h4>Extend Offer Question</h4>
+
+    <div class="col-xs-12">
+        <div class="review-section-padding">
+            <h5 data-ng-bind-html="offerInReviewCtrl.offerInReviewData.questionSet[0].questions[0].questionText"><b>{{offerInReviewCtrl.offerInReviewData.questionSet[0].questions[0].questionText}}</b></h5>
+        </div>
+    </div>
+
+    <div data-ng-if="offerInReviewCtrl.userType == 'Association User' && offerInReviewCtrl.offerInReviewData.status != 'active'">
+        <div class="extended-col col-xs-12">
+            <div class="well">
+                <div class="btn-group program-edit-btns">
+                    <button type="button" class="btn btn-reset"
+                            data-ng-click="offerInReviewCtrl.resetToDraft()">
+                        <i class="fa fa-undo"></i> reset to draft
+                    </button>
+                    <button type="button" class="btn btn-save"
+                            data-ng-click="offerInReviewCtrl.edit()">
+                        <i class="fa fa-check"></i> edit
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 app-bottom-btns">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-reset btn-continue"
+                            data-ng-click="offerInReviewCtrl.activateModal()"
+                            type="button">activate
+                        <i class="fa fa-angle-double-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section id="home" class="row welcome-landing">
+    <div class="col-xs-2">
+        <img class="img-responsive arrow-intro" src="common/img/arrow-intros.png" alt="welcome to the Program Editor" />
+    </div>
+    <div class="col-xs-10">
+        <div class="homeTxt">
+            <h1>Welcome to the <b>Program Editor</b></h1>
+            <h2>To the left are sections within the program that you can customize</h2>
+            <p>To edit a section of page, click on it's title.</p>
+            <p>To activate and deactivate a page, use the check icons</p>
+        </div>
+    </div>
+</section>
+<br>
+<div class="alert alert-info" ng-if="mvCtrl.headerdata.orgLevelQuestions">
+    <div class="org-info">
+        <i class="fa fa-info-circle"></i>
+        <span>This organization has enabled shared questions for all programs.</span>
+    </div>
+    <p>Editing questions on the program level is disabled. Go to the <a ui-sref="organizationEditor({orgId:mvCtrl.headerdata.organization.id})">organization questions</a> page to view and edit question.</p>
+</div>

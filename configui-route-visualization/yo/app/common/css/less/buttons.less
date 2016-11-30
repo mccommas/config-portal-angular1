@@ -1,0 +1,453 @@
+// Button Group
+.program-edit-btns .btn {
+  padding: 2px 12px;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+.program-edit-btns.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: 0;
+}
+// Cancel Buttons
+.btn-cancel {
+  color: #808080;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus,
+.btn-cancel:active,
+.btn-cancel.active,
+.open .dropdown-toggle.btn-cancel {
+  color: #595959;
+  background-color: #b2b2b2;
+  border-color: #b2b2b2;
+}
+
+.btn-cancel:active,
+.btn-cancel.active,
+.open .dropdown-toggle.btn-cancel {
+  background-image: none;
+}
+
+.btn-cancel.disabled,
+.btn-cancel[disabled],
+fieldset[disabled] .btn-cancel,
+.btn-cancel.disabled:hover,
+.btn-cancel[disabled]:hover,
+fieldset[disabled] .btn-cancel:hover,
+.btn-cancel.disabled:focus,
+.btn-cancel[disabled]:focus,
+fieldset[disabled] .btn-cancel:focus,
+.btn-cancel.disabled:active,
+.btn-cancel[disabled]:active,
+fieldset[disabled] .btn-cancel:active,
+.btn-cancel.disabled.active,
+.btn-cancel[disabled].active,
+fieldset[disabled] .btn-cancel.active {
+  background-color: #b2b2b2;
+  border-color: #b2b2b2;
+}
+
+.btn-cancel .badge {
+  color: #C9C9C9;
+  background-color: #121212;
+}
+
+// Reset Buttons
+.btn-reset {
+  color: #2a7fce;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.btn-reset:hover,
+.btn-reset:focus,
+.btn-reset:active,
+.btn-reset.active,
+.open .dropdown-toggle.btn-reset {
+  color: #000;
+  background-color: #91c8f2;
+  border-color: #91c8f2;
+}
+
+.btn-reset:active,
+.btn-reset.active,
+.open .dropdown-toggle.btn-reset {
+  background-image: none;
+}
+
+.btn-reset.disabled,
+.btn-reset[disabled],
+fieldset[disabled] .btn-reset,
+.btn-reset.disabled:hover,
+.btn-reset[disabled]:hover,
+fieldset[disabled] .btn-reset:hover,
+.btn-reset.disabled:focus,
+.btn-reset[disabled]:focus,
+fieldset[disabled] .btn-reset:focus,
+.btn-reset.disabled:active,
+.btn-reset[disabled]:active,
+fieldset[disabled] .btn-reset:active,
+.btn-reset.disabled.active,
+.btn-reset[disabled].active,
+fieldset[disabled] .btn-reset.active {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-cancel .badge {
+  color: #C9C9C9;
+  background-color: #121212;
+}
+
+// Delete Buttons on program edit modals
+.btn-programs-delete {
+  color: @RedOrange;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.btn-programs-delete:hover,
+.btn-programs-delete:focus,
+.btn-programs-delete:active,
+.btn-programs-delete.active,
+.open .dropdown-toggle.btn-programs-delete {
+  color: #121212;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-programs-delete:active,
+.btn-programs-delete.active,
+.open .dropdown-toggle.btn-programs-delete {
+  background-image: none;
+}
+
+.btn-programs-delete.disabled,
+.btn-programs-delete[disabled],
+fieldset[disabled] .btn-programs-delete,
+.btn-programs-delete.disabled:hover,
+.btn-programs-delete[disabled]:hover,
+fieldset[disabled] .btn-programs-delete:hover,
+.btn-programs-delete.disabled:focus,
+.btn-programs-delete[disabled]:focus,
+fieldset[disabled] .btn-programs-delete:focus,
+.btn-programs-delete.disabled:active,
+.btn-programs-delete[disabled]:active,
+fieldset[disabled] .btn-programs-delete:active,
+.btn-programs-delete.disabled.active,
+.btn-programs-delete[disabled].active,
+fieldset[disabled] .btn-programs-delete.active {
+  background-color: #C9C9C9;
+  border-color: #C9C9C9;
+}
+
+
+// Close and Edit Buttons on program edit modals
+.btn-programs-cancel {
+  color: @ClickBlue;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.btn-programs-cancel:hover,
+.btn-programs-cancel:focus,
+.btn-programs-cancel:active,
+.btn-programs-cancel.active,
+.open .dropdown-toggle.btn-programs-cancel {
+  color: #121212;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-programs-cancel:active,
+.btn-programs-cancel.active,
+.open .dropdown-toggle.btn-programs-cancel {
+  background-image: none;
+}
+
+.btn-programs-cancel.disabled,
+.btn-programs-cancel[disabled],
+fieldset[disabled] .btn-programs-cancel,
+.btn-programs-cancel.disabled:hover,
+.btn-programs-cancel[disabled]:hover,
+fieldset[disabled] .btn-programs-cancel:hover,
+.btn-programs-cancel.disabled:focus,
+.btn-programs-cancel[disabled]:focus,
+fieldset[disabled] .btn-programs-cancel:focus,
+.btn-programs-cancel.disabled:active,
+.btn-programs-cancel[disabled]:active,
+fieldset[disabled] .btn-programs-cancel:active,
+.btn-programs-cancel.disabled.active,
+.btn-programs-cancel[disabled].active,
+fieldset[disabled] .btn-programs-cancel.active {
+  background-color: #C9C9C9;
+  border-color: #C9C9C9;
+}
+
+
+// Save Buttons
+.btn-save {
+  color: #2B80CF;
+  background-color: #D2E7F6;
+  border-color: #D2E7F6;
+  border-radius: 0;
+}
+
+.btn-save:hover,
+.btn-save:focus,
+.btn-save:active,
+.btn-save.active,
+.open .dropdown-toggle.btn-save {
+  color: #fff;
+  background-color: #2a7fce;
+  border-color: #2a7fce;
+}
+
+.btn-save:active,
+.btn-save.active,
+.open .dropdown-toggle.btn-save {
+  background-image: none;
+}
+
+.btn-save.disabled,
+.btn-save[disabled],
+fieldset[disabled] .btn-save,
+.btn-save.disabled:hover,
+.btn-save[disabled]:hover,
+fieldset[disabled] .btn-save:hover,
+.btn-save.disabled:focus,
+.btn-save[disabled]:focus,
+fieldset[disabled] .btn-save:focus,
+.btn-save.disabled:active,
+.btn-save[disabled]:active,
+fieldset[disabled] .btn-save:active,
+.btn-save.disabled.active,
+.btn-save[disabled].active,
+fieldset[disabled] .btn-save.active {
+  background-color: #D2E7F6;
+  border-color: #D2E7F6;
+}
+.btn-save .badge {
+  color: #D2E7F6;
+  background-color: #2B80CF;
+}
+
+//////////////////
+// Remove Buttons
+button.btn.btn-remove {
+  color: @sideBarNav;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+button.btn.btn-remove:hover {
+  color: #121212;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-remove:hover,
+.btn-remove:focus,
+.btn-remove:active,
+.btn-remove.active,
+.open .dropdown-toggle.btn-remove {
+  color: #121212;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+.btn-remove.active,
+.open .dropdown-toggle.btn-remove {
+  background-image: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-remove.disabled,
+.btn-remove[disabled],
+fieldset[disabled] .btn-remove,
+.btn-remove.disabled:hover,
+.btn-remove[disabled]:hover,
+fieldset[disabled] .btn-remove:hover,
+.btn-remove.disabled:focus,
+.btn-remove[disabled]:focus,
+fieldset[disabled] .btn-remove:focus,
+.btn-remove.disabled:active,
+.btn-remove[disabled]:active,
+fieldset[disabled] .btn-remove:active,
+.btn-remove.disabled.active,
+.btn-remove[disabled].active,
+fieldset[disabled] .btn-remove.active {
+  background-color: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+// Rename Buttons
+
+button.btn.btn-rename {
+  color: @sideBarNav;
+  background: none;
+  outline: none;
+}
+button.btn.btn-rename:hover {
+  color: #121212;
+  background: none;
+  outline: none;
+}
+
+.btn-rename:hover,
+.btn-rename:focus,
+.btn-rename:active,
+.btn-rename.active,
+.open .dropdown-toggle.btn-rename {
+  color: #121212;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+.btn-rename.active,
+.open .dropdown-toggle.btn-rename {
+  background-image: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-rename.disabled,
+.btn-rename[disabled],
+fieldset[disabled] .btn-rename,
+.btn-rename.disabled:hover,
+.btn-rename[disabled]:hover,
+fieldset[disabled] .btn-rename:hover,
+.btn-rename.disabled:focus,
+.btn-rename[disabled]:focus,
+fieldset[disabled] .btn-rename:focus,
+.btn-rename.disabled:active,
+.btn-rename[disabled]:active,
+fieldset[disabled] .btn-rename:active,
+.btn-rename.disabled.active,
+.btn-rename[disabled].active,
+fieldset[disabled] .btn-rename.active {
+  background-color: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+// calendar buttons
+#application-setting .btn.btn-sm.btn-danger {
+  color: #333;
+  background-color: lightgrey;
+  border-color: darkgrey;
+}
+#application-setting .btn.btn-sm.btn-danger:hover {
+  color: #2F2F2F;
+  background-color: #c9c9c9;
+  border-color: darkgrey;
+}
+#application-setting .btn.btn-sm.btn-info {
+  color: #333;
+  background-color: lightgrey;
+  border-color: darkgrey;
+}
+#application-setting .btn.btn-sm.btn-info:hover {
+  color: #2F2F2F;
+  background-color: #c9c9c9;
+  border-color: darkgrey;
+}
+#application-setting .btn.btn-sm.btn-success {
+  color: #333;
+  background-color: lightgrey;
+  border-color: darkgrey;
+}
+#application-setting .btn.btn-sm.btn-success:hover {
+  color: #2F2F2F;
+  background-color: #c9c9c9;
+  border-color: darkgrey;
+}
+#program-questions button.btn.btn-remove.pull-left {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2px 0 0 10px;
+  text-transform: uppercase;
+}
+#program-questions button#btn-delete {
+  color: red;
+}
+#program-questions button#btn-delete:hover {
+  color: #121212;
+}
+
+#program-questions button#btn-delete .fa.fa-trash-o:hover {
+  color: #121212;
+}
+// Radio Styles
+input[type="radio"] {
+  display:none;
+}
+input[type="radio"].copy {
+  display:block;
+}
+input[type="radio"] + label {
+
+}
+
+input[type="radio"] + label span {
+  display:inline-block;
+  width:28px;
+  height:21px;
+  margin:-1px 4px 0 0;
+  vertical-align:middle;
+  background:url(../img/sprite.png) -187px -397px no-repeat;
+  cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+  background:url(../img/sprite.png) -187px -469px no-repeat;
+
+}
+
+input[type="radio"] + label span:hover  {
+  background:url(../img/sprite.png) -187px -433px no-repeat;
+}
+
+input[type="radio"] + label span:active  {
+  background:url(../img/sprite.png) -187px -469px no-repeat;
+}
+
+.mv-sidebar input[type="checkbox"] {
+  display:none;
+}
+.mv-sidebar input[type="checkbox"] + label span.isChecked {
+  display:inline-block;
+  width:18px;
+  height:18px;
+  padding-left: 20px !important;
+  margin:-1px 10px 0 0;
+  vertical-align:middle;
+  background:url(../img/sprite.png) -154px -397px no-repeat ;
+  cursor:pointer;
+}
+.mv-sidebar input[type="checkbox"]:checked + label span.isChecked {
+  background:url(../img/sprite.png) -154px -427px no-repeat !important;
+}
+
+.mv-sidebar .checkbox input[type="checkbox"] + label span.isChecked:hover  {
+  background:url(../img/sprite.png) -154px -457px no-repeat !important;
+}

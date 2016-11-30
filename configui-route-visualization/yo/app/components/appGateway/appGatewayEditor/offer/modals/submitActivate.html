@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3 class="modal-title">activate activity</h3>
+</div>
+<div class="modal-body">
+    <p>You have chosen to activate this activity. Are all changes finished? Once this activity is marked as active no further edits can be made.</p>
+    <p>If you are not finished making changes, select <b>continue review</b></p>
+    <img src="common/img/ajax-loader.gif" id="loading-indicator" style="display:none" />
+</div>
+<div class="modal-footer">
+    <div class="btn-group program-edit-btns">
+        <button type="button" class="btn btn-cancel" ng-click="cancel()">
+            <i class="fa fa-pencil"></i> continue review
+        </button>
+        <button click-once type="button" class="btn btn-save" data-ng-click="submitActive();">
+             activate <i class="fa fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>

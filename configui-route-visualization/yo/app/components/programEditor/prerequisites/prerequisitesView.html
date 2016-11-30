@@ -1,0 +1,121 @@
+<section class="program-edit-home prerequisite">
+    <div class="col-xs-8">
+        <uib-alert data-ng-hide="prereqCtrl.isPageVisible" type="warning"><i class="fa fa-warning"></i> You must define college transcripts first in order to enter Prerequisites.</uib-alert>
+    </div>
+    <div data-ng-show="prereqCtrl.isPageVisible" class="prereq-bkg col-xs-12">
+        <small class="required-note pull-right"><span>*</span>required</small>
+        <h3>Program Prerequisites</h3>
+        <hr/>
+        <!--<p>You can specify up to 20 prerequisite courses you want the applicant to provide information about.</p>-->
+
+        <form name="programEditPrerequisites" id="programEditPrerequisites" novalidate="novalidate" role="form">
+
+            <div class="">
+                <h4>Applicant Instructions</h4>
+                <div class="form-group required" data-ng-class="{ 'has-error': programEditPrerequisites.instructions.$invalid && programEditPrerequisites.instructions.$touched}">
+                    <div text-angular="text-angular" ta-paste="mainCtrl.pruneStyle($html)" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions" ng-model="prereqCtrl.prerequisitesList.instructions" ta-disabled='disabled'>
+                    </div>
+                    <div data-ng-if="programEditPrerequisites.instructions.$touched" data-ng-messages="programEditPrerequisites.instructions.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+                <div class="extended-col col-xs-12">
+                    <div class="well prereq-header">
+                        <div class="col-xs-2">title <span class="required-input">&#42;</span>
+                        </div>
+                        <div class="col-xs-6">description</div>
+                        <div class="col-xs-2">min grade <span class="required-input">&#42;</span>
+                        </div>
+                        <div class="col-xs-2">min credits <span class="required-input">&#42;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="prereq-body col-xs-12 prereq-item" data-ng-repeat="prerequisite in prereqCtrl.prerequisitesList.prerequisites">
+                    <ng-form name="programEditPrerequisites">
+                    <div class="col-xs-2">
+                        <div class="form-group" data-ng-class="{ 'has-error': programEditPrerequisites.name.$invalid && programEditPrerequisites.name.$touched}">
+                            <input name="name" id="name" required data-ng-maxlength="50" data-ng-trim="false" data-ng-model="prerequisite.name" placeholder="Title" class="form-control" type="text" />
+                            <div data-ng-if="programEditPrerequisites.name.$invalid" data-ng-messages="programEditPrerequisites.name.$error">
+                                <span class="help-block" data-ng-message="required">required field</span>
+                                <!--<span class="help-block" data-ng-message="maxLength">Max characters allowed is 50!</span>-->
+                                <span class="help-block" ng-if="programEditPrerequisites.name.$error.maxlength">Max characters allowed is 50!</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <textarea name="description" id="description" maxlength="255" data-ng-model="prerequisite.description" placeholder="Maximum allowed characters for Description is 255" class="form-control" cols="0" rows="0">
+                                {{prereqCtrl.prerequisite.description}}
+                            </textarea>
+                            <div class="descript-count">{{prerequisite.description.length}} of 255 Characters</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group" data-ng-class="{ 'has-error': programEditPrerequisites.minGrade.$invalid && programEditPrerequisites.minGrade.$touched}">
+                            <input type="number" name="minGrade" id="minGrade" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" min="1" max="4" step="1" required data-ng-model="prerequisite.minGrade" placeholder="Min Grade" class="form-control" />
+                            <div data-ng-if="programEditPrerequisites.minGrade.$touched" data-ng-messages="programEditPrerequisites.minGrade.$error">
+                                <span class="help-block" data-ng-message="required">Required!!</span>
+                                <span class="help-block" data-ng-message="min">Minimum grade cannot be less than 1!</span>
+                                <span class="help-block" data-ng-message="max">Minimum grade cannot be greater than 4!</span>
+                                <span class="help-block" data-ng-message="number">No letters, only numbers!</span>
+                                <!--data-ng-pattern="/^[+]?([1-5][0-9]*(?:[\.][0-9]*)?|0*\.0*[1-5][0-9]*)(?:[eE][+-][0-9]+)?$/"-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 min-max">
+                        <!--data-ng-pattern="/^[+]?([1-9][0-9]*(?:[\.][0-9]*)?|0*\.0*[1-9][0-9]*)(?:[eE][+-][0-9]+)?$/"-->
+                        <div class="form-group" data-ng-class="{ 'has-error': programEditPrerequisites.minCredits.$invalid && programEditPrerequisites.minCredits.$touched}">
+                            <input name="minCredits" id="minCredits" min="1" required data-ng-model="prerequisite.minCredits" placeholder="Min Credits" class="form-control" type="number" />
+                            <div data-ng-if="programEditPrerequisites.minCredits.$touched" data-ng-messages="programEditPrerequisites.minCredits.$error">
+                                <span class="help-block" data-ng-message="required">Required!!</span>
+                                <span class="help-block" data-ng-message="number">No letters, only numbers!</span>
+                            </div>
+                            <div data-ng-click="prereqCtrl.remove_prerequisites($index)"><i class="fa fa-trash-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    </ng-form>
+                </section>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="alert alert-danger alert-dismissible" role="alert" data-ng-if="!prereqCtrl.prerequisitesList.prerequisites.length">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                            </button>
+                            There must have at least one prerequisite defined before this page can be saved!
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <button class="btn btn-rename" data-ng-click="prereqCtrl.add_prerequisites()" data-ng-hide="prereqCtrl.prerequisitesList.prerequisites.length == 50"><i class="fa fa-plus"></i> prerequisite</button>
+                            </div>
+                            <div class="panel-body">
+                                <div data-ng-show="prereqCtrl.prerequisitesList.prerequisites.length == 50" class="alert alert-danger"><i class="fa fa-warning"></i> You have reached the maximum allowed prerequisites</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="successMessage"></div>
+                    <div class="extended-col col-xs-12">
+                        <div class="well">
+                            <div class="btn-group program-edit-btns">
+                                <button type="button" class="btn btn-reset" data-ng-disabled="programEditPrerequisites.$pristine" data-ng-click="prereqCtrl.reset()">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button click-once="" type="button" class="btn btn-save"
+                                        data-ng-click="prereqCtrl.save()" data-ng-disabled="programEditPrerequisites.$invalid || !prereqCtrl.prerequisitesList.prerequisites.length">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,691 @@
+{
+    "id": 3150,
+    "createdDate": "2014-05-19",
+    "sectionName": "Questions",
+    "updatedDate": "2014-05-19",
+    "isChildPresent": true,
+    "instructions": "<p>As an applicant to this program, you are required to answer the following questions before you submit an application to our program.</p>",
+    "questionSet": [
+        {
+            "id": 6381,
+            "createdDate": "2014-05-19",
+            "title": "Question Block",
+            "updatedDate": "2014-05-19",
+            "questions": [
+                {
+                    "id": 9717,
+                    "createdDate": "2014-05-19",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 6,
+                    "updatedDate": "2014-05-19",
+                    "isRequired": true,
+                    "answers": [
+                        {
+                            "id": 17479,
+                            "createdDate": "2014-05-19",
+                            "maxChars": 3000,
+                            "updatedDate": "2014-05-19"
+                        }
+                    ]
+                },
+                {
+                    "id": 9718,
+                    "createdDate": "2014-05-19",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 6,
+                    "updatedDate": "2014-05-19",
+                    "isRequired": true,
+                    "answers": [
+                        {
+                            "id": 17480,
+                            "createdDate": "2014-05-19",
+                            "maxChars": 3000,
+                            "updatedDate": "2014-05-19"
+                        }
+                    ]
+                },
+                {
+                    "id": 9719,
+                    "createdDate": "2014-05-19",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 9,
+                    "responseTypeId": 4,
+                    "displayTypeId": 1,
+                    "updatedDate": "2014-05-19",
+                    "isRequired": true,
+                    "answers": [
+                        {
+                            "id": 17481,
+                            "answerOption": "Yes",
+                            "createdDate": "2014-05-19",
+                            "updatedDate": "2014-05-19"
+                        },
+                        {
+                            "id": 17482,
+                            "answerOption": "No",
+                            "createdDate": "2014-05-19",
+                            "updatedDate": "2014-05-19"
+                        }
+                    ]
+                },
+                {
+                    "id": 9790,
+                    "createdDate": "2014-05-20",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 9,
+                    "responseTypeId": 8,
+                    "displayTypeId": 3,
+                    "updatedDate": "2014-05-20",
+                    "answers": [
+                        {
+                            "id": 17664,
+                            "answerOption": "Ask an Advisor Individual Advising Session (Telephone/ In-Person Advising Service)",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17665,
+                            "answerOption": "Association of Schools and Colleges of Optometry's Website (ASCO)",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17666,
+                            "answerOption": "Berkeley Optometry's Visit and Outreach Presentation at Your Campus",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17667,
+                            "answerOption": "Berkeley Optometry Website",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17668,
+                            "answerOption": "Contact with a Current Student at Berkeley Optometry",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17669,
+                            "answerOption": "Contact with an Optometrist, Berkeley Optometry Graduate",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17670,
+                            "answerOption": "Contact with an Optometrist, Non-Berkeley Optometry Graduate",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17671,
+                            "answerOption": "Facebook",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17672,
+                            "answerOption": "Feedback Advising Session for Reapplicants",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17673,
+                            "answerOption": "Foresight Pre-Optometry Club's Annual Fall Conference at the School of Optometry",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17674,
+                            "answerOption": "Friday Visit Program (Berkeley Optometry Tour and School Overview)",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17675,
+                            "answerOption": "Graduate School Fair",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17676,
+                            "answerOption": "Health Professions School Fair",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17677,
+                            "answerOption": "Health/ Vision Screening Program",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17678,
+                            "answerOption": "High School Visitation Program (Faces for the Future, NSLC, NYLF)",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17679,
+                            "answerOption": "Pre-Optometry Club at a College or University",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17680,
+                            "answerOption": "Opto-Camp",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17681,
+                            "answerOption": "StudentDoctor.net",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17682,
+                            "answerOption": "Webinar",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17683,
+                            "answerOption": "Other - Please List",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 9791,
+                    "createdDate": "2014-05-20",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 9,
+                    "responseTypeId": 4,
+                    "displayTypeId": 1,
+                    "updatedDate": "2014-05-20",
+                    "answers": [
+                        {
+                            "id": 17684,
+                            "answerOption": "Yes",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        },
+                        {
+                            "id": 17685,
+                            "answerOption": "No",
+                            "createdDate": "2014-05-20",
+                            "updatedDate": "2014-05-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 13290,
+                    "createdDate": "2014-06-26",
+                    "questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+                    "questionTypeId": 10,
+                    "updatedDate": "2014-06-26",
+                    "answers": [
+                        {
+                            "id": 26800,
+                            "answerOption": "Yes",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26801,
+                            "answerOption": "No",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        }
+                    ]
+                },
+                {
+                    "id": 13291,
+                    "createdDate": "2014-06-26",
+                    "questionText": "In accordance with the ideals and principles of the optometric profession.",
+                    "questionTypeId": 9,
+                    "responseTypeId": 4,
+                    "displayTypeId": 2,
+                    "updatedDate": "2014-06-26",
+                    "isRequired": true,
+                    "answers": [
+                        {
+                            "id": 26802,
+                            "answerOption": "2014",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26803,
+                            "answerOption": "2013",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26804,
+                            "answerOption": "2012",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26805,
+                            "answerOption": "2011",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26806,
+                            "answerOption": "2010",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26807,
+                            "answerOption": "2011",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26808,
+                            "answerOption": "2010",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26809,
+                            "answerOption": "2009",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26810,
+                            "answerOption": "2008",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26811,
+                            "answerOption": "2007",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26812,
+                            "answerOption": "2006",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26813,
+                            "answerOption": "2005",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26814,
+                            "answerOption": "2004",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26815,
+                            "answerOption": "2003",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26816,
+                            "answerOption": "2002",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26817,
+                            "answerOption": "2001",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26818,
+                            "answerOption": "2000",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26819,
+                            "answerOption": "1999",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26820,
+                            "answerOption": "1998",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26821,
+                            "answerOption": "1997",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26822,
+                            "answerOption": "1996",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26823,
+                            "answerOption": "1995",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26824,
+                            "answerOption": "1994",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26825,
+                            "answerOption": "1993",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26826,
+                            "answerOption": "1992",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26827,
+                            "answerOption": "1991",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26828,
+                            "answerOption": "1990",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26829,
+                            "answerOption": "1989",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26830,
+                            "answerOption": "1988",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26831,
+                            "answerOption": "1987",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26832,
+                            "answerOption": "1986",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26833,
+                            "answerOption": "1985",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26834,
+                            "answerOption": "1984",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26835,
+                            "answerOption": "1983",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26836,
+                            "answerOption": "1982",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26837,
+                            "answerOption": "1981",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26838,
+                            "answerOption": "1980",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26839,
+                            "answerOption": "1979",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26840,
+                            "answerOption": "1978",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26841,
+                            "answerOption": "1977",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26842,
+                            "answerOption": "1976",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26843,
+                            "answerOption": "1975",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26844,
+                            "answerOption": "1974",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26845,
+                            "answerOption": "1973",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26846,
+                            "answerOption": "1972",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26847,
+                            "answerOption": "1971",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26848,
+                            "answerOption": "1970",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26849,
+                            "answerOption": "1969",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26850,
+                            "answerOption": "1968",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26851,
+                            "answerOption": "1967",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26852,
+                            "answerOption": "1966",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26853,
+                            "answerOption": "1965",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26854,
+                            "answerOption": "1964",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26855,
+                            "answerOption": "1963",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26856,
+                            "answerOption": "1962",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26857,
+                            "answerOption": "1961",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26858,
+                            "answerOption": "1960",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26859,
+                            "answerOption": "1959",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26860,
+                            "answerOption": "1958",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26861,
+                            "answerOption": "1957",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26862,
+                            "answerOption": "1956",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26863,
+                            "answerOption": "1955",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26864,
+                            "answerOption": "1954",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26865,
+                            "answerOption": "1953",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26866,
+                            "answerOption": "1952",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26867,
+                            "answerOption": "1951",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        },
+                        {
+                            "id": 26868,
+                            "answerOption": "1950",
+                            "createdDate": "2014-06-26",
+                            "updatedDate": "2014-06-26"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6381,
+            "createdDate": "2014-05-19",
+            "title": "Question Block",
+            "updatedDate": "2014-05-19",
+            "questions": []
+        },
+        {
+            "id": 6381,
+            "createdDate": "2014-05-19",
+            "title": "Question Block",
+            "updatedDate": "2014-05-19",
+            "questions": []
+        },
+        {
+            "id": 6381,
+            "createdDate": "2014-05-19",
+            "title": "Question Block",
+            "updatedDate": "2014-05-19",
+            "questions": []
+        },
+        {
+            "id": 6381,
+            "createdDate": "2014-05-19",
+            "title": "Question Block",
+            "updatedDate": "2014-05-19",
+            "questions": []
+        }
+    ]
+}

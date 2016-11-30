@@ -1,0 +1,112 @@
+<section class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Extend Offer</h3>
+        <hr/>
+        <p>The Extend Offer activity allows you to provide applicants an offer of acceptance to your program. Applicants can either Accept or Decline this offer.</p>
+        <hr/>
+        <form editable-form name="offerAcceptForm" novalidate role="form">
+            <div class="form-group form-horizontal" data-ng-class="{ 'has-error': offerAcceptForm.displayName.$invalid && offerAcceptForm.displayName.$touched}">
+                <div class="col-md-12 activity-heading">
+                    <label for="displayName" class="col-lg-3 control-label">Activity Display Name</label>
+                    <div class="col-lg-9">
+                        <input autofocus="autofocus" required="required" data-ng-trim="false" type="text" class="form-control" maxlength="50" name="displayName" id="displayName" data-ng-model="offerExtendedCtrl.offerData.displayName" placeholder="Add your Activity Display Name here">
+                        <span class="pull-right">{{(offerExtendedCtrl.offerData.displayName ?  offerExtendedCtrl.offerData.displayName.length : 0)}} / 50</span>
+                        <div data-ng-if="offerAcceptForm.displayName.$touched" data-ng-messages="offerAcceptForm.displayName.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="offerExtendedCtrl.offerData.displayName.length >= 50">Maximum characters allowed is 50</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" data-ng-class="{ 'has-error': offerAcceptForm.instructions.$invalid && offerAcceptForm.instructions.$touched}">
+                <label class="control-label" for="instructions">Extend Offer Instructions</label>
+
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" id="instructions" name="instructions" ng-model="offerExtendedCtrl.offerData.instructions" ta-disabled='disabled'>
+                </text-angular>
+                <div class="col-xs-6">
+                    <div data-ng-if="offerAcceptForm.instructions.$touched" data-ng-messages="offerAcceptForm.instructions.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {{offerExtendedCtrl.offerData.questionSet[0].title}}
+                        </div>
+                    </div>
+                    <div class="text-area-offer">
+                        <div class="col-xs-11">
+                            <h5>Question</h5>
+                            <div class="form-group" data-ng-class="{ 'has-error': offerAcceptForm.questionText.$invalid && offerAcceptForm.questionText.$touched}">
+                                <a href ng-init="offerExtendedCtrl.initModelXEdit()" e-ng-model="offerExtendedCtrl.offerData.questionSet[0].questions[0].questionText" e-required="true" ng-click="offerAcceptForm.$show()" editable-textarea="offerExtendedCtrl.offerData.questionSet[0].questions[0].questionText" e-rows="3" e-cols="70" e-name="questionText" e-focus-me="offerExtendedCtrl.offerData.isFocused" e-form="offerAcceptForm">
+                                    <pre>{{offerExtendedCtrl.offerData.questionSet[0].questions[0].questionText || 'Please enter your question text' }}</pre>
+                                </a>
+                                <div data-ng-if="offerAcceptForm.questionText.$touched" data-ng-messages="offerAcceptForm.questionText.$error">
+                                    <span class="help-block" data-ng-message="required">Question text is required!</span>
+                                </div>
+                            </div>
+                            <h5>Answer Options</h5>
+                            <div data-ng-repeat="answer in offerExtendedCtrl.offerData.questionSet[0].questions[0].answers" class="answerOptions">{{answer.answerOption}}</div>
+                            <br/>
+                            <!--<div class="answerOptions second">Decline</div>-->
+                        </div>
+                        <div class="col-xs-1 icons-open">
+                            <div class="icon-edit" ng-click="offerAcceptForm.$show()" ng-show="!offerAcceptForm.$visible">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+
+                            <div ng-show="offerAcceptForm.$visible">
+                                <div class="icon-save" ng-disabled="offerAcceptForm.$waiting" ng-click="offerAcceptForm.$save()">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <div class="icon-cancel" ng-disabled="offerAcceptForm.$waiting" ng-click="offerAcceptForm.$cancel()">
+                                    <i class="fa fa-times"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--text-area-->
+                </div>
+                <!--col-xs-12-->
+            </div>
+            <!--row-->
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="offerAcceptForm.$pristine" ng-click="offerExtendedCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="offerAcceptForm.$invalid" ng-click="offerExtendedCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-previous" ui-sref="appGatewayEditor.offer"><i class="fa fa-angle-double-left"></i> previous
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="pager">
+                            <li></li>
+                            <li class="active"></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-continue" data-ng-if="offerExtendedCtrl.showSubmit && !offerAcceptForm.$dirty" ng-click="offerExtendedCtrl.openOfferModal(); ">
+                            submit for review <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

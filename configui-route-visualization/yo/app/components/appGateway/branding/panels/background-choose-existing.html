@@ -1,0 +1,28 @@
+<div class="program-edit-home">
+    <div class="col-xs-12 color-panel">
+        <form name="chooseImage" novalidate="novalidate" role="form">
+            <div class="choose-image-scroller row">
+                <div class="col-xs-12">
+                    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" on-scroll="onScroll(scrollTop, scrollHeight)">
+                        <img active-class data-ng-repeat="item in appBrandingCtrl.chooseImagesList" data-ng-click="backgroundCtrl.backGroundChoosedPreImage(item)" title="{{item.imagePath}}" data-ng-src="{{item.imagePath}}" class="thumbnail" />
+                    </perfect-scrollbar>
+                </div>
+            </div>
+            <div class="background-panel-bar row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="false" data-ng-click="backgroundCtrl.resetChooseImage()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" data-ng-disabled="!appBrandingCtrl.backgroundImageURL" class="btn btn-save" data-ng-click="backgroundCtrl.saveChooseExisting()">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

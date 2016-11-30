@@ -1,0 +1,57 @@
+<section id="application-setting">
+    <div class="col-xs-12 organization-program white-box">
+	    {{appHome.inReviewListing.programs.status.length}}
+        <h1>{{appHome.applicationData.instanceName | characters:50}}</h1>
+        <h2>{{appHome.applicationData.startTerm | characters:50}}</h2>
+        <hr/>
+        <section class="row app-details-read-only">
+            <div class="col-xs-12">
+                <h3>Application ID:<span> {{appHome.applicationData.formId}}</span></h3>
+            </div>
+            <div class="col-xs-6">
+                <h3>Start Term<span> {{appHome.applicationData.startTerm}}</span></h3>
+            </div>
+            <div class="col-xs-6">
+                <h3>Start Year<span> {{appHome.applicationData.academicYear}}</span></h3>
+            </div>
+            <div class="col-xs-6">
+                <h3>Open Date<span> {{appHome.applicationData.createdDate}}</span></h3>
+            </div>
+            <div class="col-xs-6">
+                <h3>Deadline<span> {{appHome.applicationData.updatedDate}}</span></h3>
+            </div>
+        </section>
+    </div>
+    <article id="program-questions" class="program-edit-home col-xs-12">
+        <div class="pro-org">
+            <div>
+                <h3 class="animated zoomIn">Organizations &amp; Programs </h3>
+            </div>
+            <hr/>
+            <div>
+                <p class="animated fadeIn">The Organizations and Programs Ready for Review below are available to view &amp; edit. Select one to begin.</p>
+            </div>
+            <div class="row wizard-row">
+                <div class="col-xs-8">
+                    <div class="wizard">
+                        <a ui-sref="apphome.organizations" ui-sref-active="active">Organizations ({{appHome.orgListing.length}})</a>
+                        <a ui-sref="apphome.inReviewListings" ui-sref-active="active">Ready for Review
+	                        ({{(appHome.inReviewListing.programs | filter:{ status: 'Review'}).length}})</a>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="view-all">
+                        <div class="col-xs-9 text-right">
+                            <p data-ng-hide="showViewAll" class="toggleClass">viewing all</p>
+                            <input type="text" data-ng-show="showViewAll" placeholder="Search" data-ng-model="searchPrograms" id="programSearch" class="toggleClass" autofocus/>
+                        </div>
+                        <div class="col-xs-3">
+                            <i class="fa fa-search" data-ng-click="showViewAll = !showViewAll"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-slide-in" ui-view="appHomeContent"></div>
+        </div>
+    </article>
+</section>

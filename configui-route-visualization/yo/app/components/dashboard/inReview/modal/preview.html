@@ -1,0 +1,35 @@
+<div ng-switch on="previewCtrl.previewItem.sectionName">
+    <div ng-switch-when="Home Page/Branding">
+        <div ng-include="'components/dashboard/inReview/modal/partial/branding.html'"></div>
+    </div>
+    <div ng-switch-when="Documents">
+        <div ng-include="'components/dashboard/inReview/modal/partial/documents.html'"></div>
+    </div>
+    <div ng-switch-when="Prerequisites">
+        <div ng-include="'components/dashboard/inReview/modal/partial/prerequisites.html'"></div>
+    </div>
+    <div ng-switch-when="Evaluations">
+        <div ng-include="'components/dashboard/inReview/modal/partial/evaluations.html'"></div>
+    </div>
+    <div ng-switch-when="Questions">
+        <div ng-include="'components/dashboard/inReview/modal/partial/questions.html'"></div>
+    </div>
+    <div ng-switch-when="Organization Questions">
+        <div ng-include="'components/dashboard/inReview/modal/partial/questions.html'"></div>
+    </div>
+    <div ng-switch-when="High School Transcripts">
+        <div ng-include="'components/dashboard/inReview/modal/partial/highschooltranscript.html'"></div>
+    </div>
+    <div ng-switch-when="College Transcripts & Coursework">
+        <div ng-include="'components/dashboard/inReview/modal/partial/collegetranscript.html'"></div>
+    </div>
+</div>
+<div class="row modal-footer-row">
+    <div class="col-xs-12">
+        <div class="modal-footer" style="border-top: none">
+            <!--<button type="button" class="btn btn-cancel" ng-click="previewCtrl.cancel()"><i class="fa fa-times"></i> Cancel</button>-->
+            <button type="button" class="btn btn-save" ng-click="previewCtrl.cancel();"><i class="fa fa-remove"></i> close
+            </button>
+        </div>
+    </div>
+</div>

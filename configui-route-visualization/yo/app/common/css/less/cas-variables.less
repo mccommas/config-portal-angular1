@@ -1,0 +1,72 @@
+// -------------------------------------------------------------------
+// CAS Variables
+
+// Colors
+
+@primary-blue:    #2B80CF;
+@primary-slate:   #51575C;
+
+@secondary-blue:  #1E95D8;
+@secondary-tan:   #E9E8D9;
+
+@tertiary-green:  #76C13A;
+@tertiary-red:    #db461d;
+@tertiary-yellow: #e6c00d;
+@tertiary-blue:   #c5e3ff;
+
+@white:   #FFFFFF;
+@grey-03: #FAFAFA;
+@grey-05: #F5F5F5;
+@grey-07: #EFEFEF;
+@grey-10: #E5E5E5;
+@grey-12: #DDDDDD;
+@grey-15: #D6D6D6;
+@grey-20: #CCCCCC;
+@grey-25: #C7C8CA;
+@grey-30: #B3B3B3;
+@grey-35: #B1B3B6;
+@grey-40: #999999;
+@grey-50: #808080;
+@grey-60: #666666;
+@grey-70: #4D4D4D;
+@grey-80: #333333;
+@grey-90: #1A1A1A;
+@black:   #232323;
+
+// Structure
+@max-site-width: 1216px;
+@max-content-width: 900px;
+@site-gutter: 32px;
+@site-gutter-tablet-small: 20px;
+
+// Fonts
+@ScalaSansBlack: sans-serif;
+@ScalaSansPro: "ScalaSans";
+@ScalaSansCaps: "ScalaSansCaps";
+@ScalaSans: "ScalaSans", sans-serif;
+@Scala: "Scala", serif;
+@sans-serif: @ScalaSans, "Helvetica Neue", Helvetica, sans-serif;
+
+// Global Font Sizes
+@base-font-family: @ScalaSans;
+@base-font-size: 15;
+@base-line-height: 17;
+
+// Paths
+@images: '../images';
+@fonts: '../fonts';
+
+// Media Queries
+@retina:       ~"only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2)";
+@large-mq:     ~"screen and ( min-width: @{max-site-width} )";
+@phone:        ~"screen and ( max-width: 374px )";
+@phone-land:   ~"screen and ( min-width: 375px ) and ( max-width: 700px )";
+@phone-all:    ~"screen and ( max-width: 374px ), screen and ( max-width: 700px )";
+@tablet:       ~"screen and ( max-width: 960px )";
+@tablet-land:  ~"screen and ( min-width: 961px ) and ( max-width: 1024px )";
+@tablet-all:   ~"screen and ( max-width: 960px ), screen and ( max-width: 1024px )";
+@tablet-small: ~"screen and ( max-width: 650px )";
+
+@phone-land-new:   ~"screen and ( max-width: 475px )";
+@phone-small-land-new:   ~"screen and ( max-width: 320px )";
+@phone-new:   ~"screen and ( min-width: 320px )";

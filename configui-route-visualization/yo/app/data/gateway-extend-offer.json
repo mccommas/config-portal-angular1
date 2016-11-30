@@ -1,0 +1,9 @@
+{
+    "id": 4,
+    "sectionName": "extend_offer",
+    "instructions": "Please provide the instructions for the fee collection",
+    "displayName": null,
+    "enabled": false,
+    "status": "draft",
+    "question": "Thank you for applying at our Awesome College. At this time we would like to Extend an Offer to you. Do you want to attend our Awesome College. "
+}

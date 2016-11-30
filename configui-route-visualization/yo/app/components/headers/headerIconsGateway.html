@@ -1,0 +1,21 @@
+<section class="header-icons">
+    <div class="col-xs-4">
+        <div class="back-to-org"><a data-ng-click="headerCtrl.backToApps()">back to org</a>
+        </div>
+        <h1 class="animate-show" data-ng-if="headerCtrl.showAppBrandingTitle">branding</h1>
+        <h1 class="animate-show" data-ng-if="headerCtrl.showAppEditirTitle">applicant gateway editor</h1>
+    </div>
+    <div class="col-xs-8 top-icons">
+        <ul class="list-inline">
+            <li ui-sref-active="active" class="branding-icon" data-toggle="tooltip" data-placement="bottom" uib-tooltip="Use this tool to Customize the Brand of your applicant gateway" tooltip-placement="bottom">
+                <a>Branding<span></span></a>
+                <a data-ui-sref="appGatewayBranding({gatewayId:headerCtrl.gatewayId,programId:headerCtrl.programId})">Branding<span></span></a>
+                <div data-ng-if="headerCtrl.showAppBrandingTitle" class="header-icon-tip"></div>
+            </li>
+            <li ui-sref-active="active" class="program-edit-icon" data-toggle="tooltip" data-placement="bottom" uib-tooltip="Use this tool to Customize the applicant gateway" tooltip-placement="bottom">
+                <a data-ui-sref="appGatewayEditor.home({gatewayId:headerCtrl.gatewayId,programId:headerCtrl.programId})">App Gateway Editor<span></span></a>
+                <div data-ng-show="headerCtrl.showAppEditirTitle" class="header-icon-tip"></div>
+            </li>
+        </ul>
+    </div>
+</section>

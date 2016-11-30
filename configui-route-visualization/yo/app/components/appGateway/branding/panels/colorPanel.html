@@ -1,0 +1,45 @@
+<!-- Content Color Picker Panel -->
+<div class="color-picker-panel program-edit-home" ng-controller="appBrandingColorCtrl as colorCtrl">
+    <div class="col-xs-12 color-panel">
+        <form name="colorPanelForm" class="form-horizontal" novalidate="novalidate" role="form">
+            <!--Primary Circle Input-->
+            <div class="form-group">
+                <label for="primary" class="col-sm-4 control-label primary">Primary</label>
+                <div class="col-sm-8">
+                    <input id="primary" name="primary" color-picker="appBrandingCtrl.primaryColor" pickertype="primary" pickerdefault="#265172" class="form-control primary-color">
+                </div>
+            </div>
+            <!--Secondary Circle Input-->
+            <div class="form-group">
+                <label for="secondary" class="col-sm-4 control-label secondary">Secondary</label>
+                <div class="col-sm-8">
+                    <input id="secondary" name="secondary" data-ng-model="appBrandingCtrl.secondaryColor" color-picker="appBrandingCtrl.secondaryColor" pickertype="secondary" pickerdefault="#919191" class="form-control secondary-color">
+                </div>
+            </div>
+            <!--Text Circle Input-->
+            <div class="form-group">
+                <label for="text" class="col-sm-4 control-label text">Text</label>
+                <div class="col-sm-8">
+                    <input id="text" name="text" data-ng-model="appBrandingCtrl.textColor" color-picker="appBrandingCtrl.textColor" pickertype="textColor" pickerdefault="#ffffff" class="form-control text-color">
+                </div>
+            </div>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="colorPanelForm.$pristine" data-ng-click="appBrandingCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="!colorPanelForm.$dirty" data-ng-click="appBrandingCtrl.saveGatewayBrandingServer('colorpanel')">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--Accessing parent controller like this {{appBrandingCtrl.showPanel}}-->
+    <!--Accessing current controller like this {{colorCtrl.anyValue}}-->
+</div>
+<!-- end -->

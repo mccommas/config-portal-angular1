@@ -1,0 +1,185 @@
+{
+  "id": 2,
+  "sectionName": "supplemental_application",
+  "instructions": "Please complete your questions",
+  "displayName": "Supplemental Application",
+  "enabled": true,
+  "status": "draft",
+  "sectionContent": {
+    "id": 2,
+    "sectionName": "supplemental_application",
+    "startHeader": "Please Complete your Supplemental Application",
+    "completeHeader": "<p>Thanks For Completing your Supplemental Application</p>",
+    "sectionIntroduction": "Lorem ipsum dolor sit amet",
+    "sectionComplete": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam de isto magna dissensio est. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam cur Peripateticum appellem nescio. Quasi ego id curem, quid ille aiat aut neget. Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Quod si ita se habeat, non possit beatam praestare vitam sapientia. Tu enim ista lenius, hic Stoicorum more nos vexat."
+  },
+  "questionSet": [{
+    "id": 1,
+    "createdDate": "2015-01-09",
+    "sectionId": 2,
+    "title": "Question Block",
+    "updatedDate": "2015-01-09",
+    "questions": [{
+      "id": 1,
+      "createdDate": "2015-01-09",
+      "isRequired": true,
+      "questionText": "Please ensure your submission of the following application requirements: \nï\tBaccalaureate Degree ñsdfsdf Must be completed from an accredited higher education institution prior to matriculation.  A minimum undergraduate overall GPA of 2.50 is required.\nï\tTwo Individual Letters of Recommendation ñ Two letters of recommendation are required from former professors or employers familiar with the applicantís professional or educationsdfsdfal capabilities.\nï\tPersonal Statement/Essay ñ Must state your reasons for pursuit of this course of study, your learning goals, and the qualities you feel will make you a successful candidate for an online program.\nï\tResume ñ Should include information regarding educational history (colleges attended and degrees earned); any clinical and research experiences; professional organizations, community activities, honors, and leadership responsibilities; research experience, publications, or presentations; include a brief description of any ongoing research in which you are involved.\nï\tAwards, Honors, Publications & Scholarships, including honorary societies ñ Should be articulated in achievements section.\nï\tExtracurricular or community service activities, including offices held ñ Should be articulated in the experiences section.\nï\tResearch experiences, including facility, type, duration and supervisor ñ Should be articulated in the experiences section.",
+      "questionTypeId": 9,
+      "responseTypeId": 4,
+      "displayTypeId": 1,
+      "updatedDate": "2015-01-19",
+      "answers": [{
+        "id": 1,
+        "answerOption": "Yes",
+        "createdDate": "2015-01-09",
+        "updatedDate": "2015-01-19"
+      },
+        {
+          "id": 2,
+          "answerOption": "NO",
+          "createdDate": "2015-01-09",
+          "updatedDate": "2015-01-19"
+        }]
+    },
+      {
+        "id": 2,
+        "createdDate": "2015-01-09",
+        "isRequired": true,
+        "questionText": "Please ensure your submission of the following application requirements: \nï\tBaccalaureate Degree ñ Must be completed from an accredited higher education institution prior to matriculation.  A minimum undergraduate overall GPA of 2.50 is required.\nï\tTwo Individual Letters of Recommendation ñ Two letters of recommendation are required from former professors or employers familiar with the applicantís professional or educational capabilities.\nï\tPersonal Statement/Essay ñ Must state your reasons for pursuit of this course of study, your learning goals, and the qualities you feel will make you a successful candidate for an online program.\nï\tResume ñ Should include information regarding educational history (colleges attended and degrees earned); any clinical and research experiences; professional organizations, community activities, honors, and leadership responsibilities; research experience, publications, or presentations; include a brief description of any ongoing research in which you are involved.\nï\tAwards, Honors, Publications & Scholarships, including honorary societies ñ Should be articulated in achievements section.\nï\tExtracurricular or community service activities, including offices held ñ Should be articulated in the experiences section.\nï\tResearch experiences, including facility, type, duration and supervisor ñ Should be articulated in the experiences section.",
+        "questionTypeId": 9,
+        "responseTypeId": 4,
+        "displayTypeId": 1,
+        "updatedDate": "2015-01-09",
+        "answers": [{
+          "id": 3,
+          "answerOption": "Yes",
+          "createdDate": "2015-01-09",
+          "updatedDate": "2015-01-09"
+        },
+          {
+            "id": 4,
+            "answerOption": "NO",
+            "createdDate": "2015-01-09",
+            "updatedDate": "2015-01-09"
+          }]
+      },
+      {
+        "id": 13,
+        "createdDate": "2015-01-19",
+        "isRequired": true,
+        "questionText": "yyyy",
+        "questionTypeId": 10,
+        "updatedDate": "2015-01-19",
+        "answers": []
+      },
+      {
+        "id": 14,
+        "createdDate": "2015-01-19",
+        "isRequired": true,
+        "questionText": "sfsfsdfsdfsdf",
+        "questionTypeId": 6,
+        "updatedDate": "2015-01-19",
+        "answers": [{
+          "id": 17,
+          "createdDate": "2015-01-19",
+          "maxChars": 50,
+          "updatedDate": "2015-01-19"
+        }]
+      }]
+  },
+    {
+      "id": 3,
+      "createdDate": "2015-01-19",
+      "instructions": "sdfsdf",
+      "sectionId": 2,
+      "title": "sdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": [{
+        "id": 9,
+        "createdDate": "2015-01-19",
+        "isRequired": true,
+        "questionText": "Please ensure your submission of the following application requirements: \nï\tBaccalaureate Degree ñ Must be completed from an accredited higher education institution prior to matriculation.  A minimum undergraduate overall GPA of 2.50 is required.\nï\tTwo Individual Letters of Recommendation ñ Two letters of recommendation are required from former professors or employers familiar with the applicantís professional or educational capabilities.\nï\tPersonal Statement/Essay ñ Must state your reasons for pursuit of this course of study, your learning goals, and the qualities you feel will make you a successful candidate for an online program.\nï\tResume ñ Should include information regarding educational history (colleges attended and degrees earned); any clinical and research experiences; professional organizations, community activities, honors, and leadership responsibilities; research experience, publications, or presentations; include a brief description of any ongoing research in which you are involved.\nï\tAwards, Honors, Publications & Scholarships, including honorary societies ñ Should be articulated in achievements section.\nï\tExtracurricular or community service activities, including offices held ñ Should be articulated in the experiences section.\nï\tResearch experiences, including facility, type, duration and supervisor ñ Should be articulated in the experiences section.",
+        "questionTypeId": 9,
+        "responseTypeId": 4,
+        "displayTypeId": 1,
+        "updatedDate": "2015-01-19",
+        "answers": [{
+          "id": 12,
+          "answerOption": "Yes",
+          "createdDate": "2015-01-19",
+          "updatedDate": "2015-01-19"
+        },
+          {
+            "id": 13,
+            "answerOption": "NO",
+            "createdDate": "2015-01-19",
+            "updatedDate": "2015-01-19"
+          }]
+      }]
+    },
+    {
+      "id": 4,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "sdfsdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 5,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "sdfsdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 6,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "asdasdasd",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 7,
+      "createdDate": "2015-01-19",
+      "instructions": "sdfsdf",
+      "sectionId": 2,
+      "title": "sdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 8,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "adasdasda",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 9,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "sdfsdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    },
+    {
+      "id": 10,
+      "createdDate": "2015-01-19",
+      "sectionId": 2,
+      "title": "sdfsdfsdf",
+      "updatedDate": "2015-01-19",
+      "questions": []
+    }],
+  "fee": {
+    "id": 1,
+    "paymentName": "MS-Electrical Fee",
+    "feeAmount": 100.0000,
+    "feeCycle": "2015-2016",
+    "paymentEnabled": false,
+    "feeWaiver": false
+  }
+}

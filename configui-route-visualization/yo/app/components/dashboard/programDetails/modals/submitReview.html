@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h3 class="modal-title">submit program for review</h3>
+</div>
+<div class="modal-body">
+    <!--<p>By selecting <b>SUBMIT</b> this will inform the CAS Administrator that the program <b>{{reviewCtrl.programData.programName }}</b> is ready for review and/or activation in the application. Is this program ready for review?</p>
+    <p>If you are not finished making changes, select <b>CONTINUE EDITING</b>.
+    </p>-->
+    <p>By clicking <b>SUBMIT</b> you indicate that your program <b>{{reviewCtrl.programData.programName }}</b> is ready for activation by a CAS Administrator. If you are not finished making changes to your pages, please select <b>CONTINUE EDITING</b>.</p>
+    <img src="common/img/ajax-loader.gif" id="loading-indicator" style="display:none" />
+</div>
+<div class="modal-footer">
+    <div class="btn-group program-edit-btns">
+        <button type="button" class="btn btn-cancel" data-ng-if="reviewCtrl.apiEnabled !==true" data-ng-click="reviewCtrl.cancel()" ui-sref="programedit({programId:reviewCtrl.programData.id})">
+            <i class="fa fa-pencil"></i> continue editing
+        </button>
+        <button type="button" class="btn btn-cancel" data-ng-if="reviewCtrl.apiEnabled ===true" data-ng-click="reviewCtrl.cancel()">
+            <i class="fa fa-times"></i> close
+        </button>
+        <button click-once type="button" class="btn btn-save" data-ng-click="reviewCtrl.submitReview();">
+            submit <i class="fa fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>
+<!-- this is a modal-->
+
+

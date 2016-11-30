@@ -1,0 +1,71 @@
+<section class="program-edit-home">
+    <div class="col-xs-12">
+        <h3>College Transcripts and Coursework</h3>
+        <hr/>
+        <form name="collegeTranscripts" novalidate role="form">
+            <data-ng-form name="collegeTranscripts">
+                <div class="col-xs-12">
+                    <h4>Application Transcripts &amp; Coursework</h4>
+                    <section class="dn-field-form section-padding">
+                        <div class="col-xs-10">
+                            <p>Transcripts Accepted <span>Defined by Program</span>
+                            </p>
+                        </div>
+                    </section>
+                    <h4>Program Transcripts</h4>
+                    <p>Choose the type of transcripts you would like to collect for your program.</p>
+                    <section class="dn-field-form section-padding">
+                        <div class="col-xs-10">
+                            <div class="col-xs-6 form-group" data-ng-class="{ 'has-error': collegeTranscripts.collegeTranscripts1.$invalid && !collegeTranscripts.collegeTranscripts1.$pristine}">
+                                <label class="control-label" for="collegeTranscripts1">Transcripts Accepted</label>
+                                <select class="form-control input-sm" required="required" data-ng-change="clgtransCtrl.onchgTransAccept()" name="collegeTranscripts1" id="collegeTranscripts1" data-ng-model='clgtransCtrl.transcriptCAdata.typeAccepted' data-ng-options='option.value as option.name for option in clgtransCtrl.typeOptions1' >
+                                    <option value="">Please Select</option>
+                                </select>
+                                <div ng-if="collegeTranscripts.collegeTranscripts1.$dirty" data-ng-messages="collegeTranscripts.collegeTranscripts1.$error">
+                                    <span class="help-block" data-ng-message="required">required field</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div data-ng-if="clgtransCtrl.transcriptCAdata.typeAccepted == 'OFFICIAL' || clgtransCtrl.transcriptCAdata.typeAccepted == 'UNOFFICIAL'">
+                        <h4>Program Coursework</h4>
+                        <p>Choose whether you would like applicants to enter coursework for your program.</p>
+
+                        <section class="dn-field-form section-padding">
+                            <div class="col-xs-10">
+                                <div class="col-xs-6 form-group" data-ng-class="{ 'has-error': collegeTranscripts.collegeTranscripts2.$invalid && !collegeTranscripts.collegeTranscripts2.$pristine}">
+                                    <label class="control-label" for="collegeTranscripts2">Coursework Accepted</label>
+                                    <select data-ng-model="clgtransCtrl.transcriptCAdata.courseWorkAccepted" class="form-control input-sm" name="collegeTranscripts2" id="collegeTranscripts2" required="required">
+                                        <option value="" data-ng-selected="true">Please Select</option>
+                                        <option data-ng-if="clgtransCtrl.transcriptCAdata.typeAccepted == 'OFFICIAL'" data-ng-class="hide-options" value="ALL_COURSEWORK">All Coursework</option>
+                                        <option data-ng-if="clgtransCtrl.transcriptCAdata.typeAccepted == 'OFFICIAL' || clgtransCtrl.transcriptCAdata.typeAccepted == 'UNOFFICIAL'" value="NONE">None</option>
+                                        <option data-ng-if="clgtransCtrl.transcriptCAdata.typeAccepted == 'OFFICIAL' || clgtransCtrl.transcriptCAdata.typeAccepted == 'UNOFFICIAL'" value="PREREQUISITES">Prerequisites Only</option>
+                                    </select>
+                                    <div ng-if="collegeTranscripts.collegeTranscripts2.$dirty" data-ng-messages="collegeTranscripts.collegeTranscripts2.$error">
+                                        <span class="help-block" data-ng-message="required">required field</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <div id="successMessage"></div>
+                        <div class="extended-col col-xs-12">
+                            <div class="well">
+                                <div class="btn-group program-edit-btns">
+                                    <button type="button" class="btn btn-cancel" ng-click="clgtransCtrl.cancel()">
+                                        <i class="fa fa-times"></i> cancel
+                                    </button>
+                                    <button click-once="" type="button" class="btn btn-save"
+                                             data-ng-disabled="collegeTranscripts.$invalid" data-ng-click="clgtransCtrl.save();">
+                                        <i class="fa fa-check"></i> save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </data-ng-form>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,347 @@
+// Custom Colors
+@SkySave: #d2e7f6; // clickable accents
+@Sky: #94cdf7; // clickable accents
+@ClickBlue: #2b80cf; // clickable content
+@Green: #76c13a; // complete/saved content
+@RedOrange: #dd4509; // delete content
+@Yellow: #e6c00d; // warning content 54321123
+
+// Custom Text
+@Silver: #e9e8e9; // inline background
+@Grey: #aeb3b8; // Grey
+@Slate: #848a8f; // Slate
+@Charcoal: #63686d; // text
+@Olive: #8d9285; // instruction text
+@Taupe: #c9c6a5; // background accents
+@Beige: #e9e8d9; // menu background
+@WelcomeH1: #287585; // Welcome text on dashboard page
+@WelcomeH2: #174751; // welcome text secondary text color
+
+// Application pages text colors
+@appH1: #005769;
+@appH2: #008fad;
+@appSpan: #2b2b2b;
+@appP: #8e8e8e;
+@appHLevel1: #3AB1CA;
+@appHLevel2: #085869;
+@appHLevel3: #3D4A4C;
+// sidebar program edit links and buttons text
+@sideBarNav: #2A7FCE;
+
+// Panels for various button bars
+//@panel-default-text:          @gray-dark;
+@panel-default-border:        #e7e6e6;
+@panel-default-heading-bg:    #f9f9f9;
+@panel-bar: #f9f9f9;
+
+// some really cool other affects
+
+.appHeading1{
+  color: @appH1;
+  font-family: 'museo_sans500', sans-serif;
+  font-size: 20px;
+  line-height: 5px;
+}
+.appHeading2{
+  color: @appH2;
+  font-family: 'museo_sans100', sans-serif;
+  font-size: 20px;
+  line-height: 0;
+}
+.appHeading3{
+  color: @appP;
+  font-family: 'museo_sans100', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  margin-top: 15px;
+}
+.appHeadingLevel1{
+  color: @appHLevel1;
+  font-family: 'museo_sans300', sans-serif;
+  font-size: 20px;
+  line-height: 5px;
+}
+.appHeadingLevel2{
+  color: @appHLevel2;
+  font-family: 'museo_sans300', sans-serif;
+  font-size: 20px;
+  line-height: 0px;
+}
+.appHeadingLevel3{
+  color: @appHLevel3;
+  font-family: 'museo_sans300', sans-serif;
+  font-size: 18px;
+  line-height: 0px;
+}
+.appPara{
+  color: @appP;
+  font-family: 'museo_sans100', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 0;
+}
+.appParaSuccess{
+  color: @Green;
+  font-family: 'museo_sans100', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 0;
+}
+.appSpan{
+  color: @appSpan;
+  font-family: 'museo_sans300', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.plainWhiteBox {
+  background: #fff;
+  padding: 22px;
+  margin: 20px 0 20px 0;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow:    0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow:         0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bottom-bar-edit {
+  min-height: 20px;
+  padding: 2px;
+  margin-top: 3px;
+  margin-bottom: 20px;
+  background-color: #d8d8d9;
+  border: 1px solid #e3e3e3;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  text-align: right;
+}
+.panel-button-bar {
+  //  .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border);
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+  left bottom,
+  left top,
+  color-stop(0, @start),
+  color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+  @start,
+  @stop);
+  background: -moz-linear-gradient(center bottom,
+  @start 0%,
+  @stop 100%);
+  background: -o-linear-gradient(@stop,
+  @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  background: @color;
+  background: -webkit-gradient(linear,
+  left bottom,
+  left top,
+  color-stop(0, rgb(@start,@start,@start)),
+  color-stop(1, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+  rgb(@start,@start,@start) 0%,
+  rgb(@stop,@stop,@stop) 100%);
+  background: -moz-linear-gradient(center bottom,
+  rgb(@start,@start,@start) 0%,
+  rgb(@stop,@stop,@stop) 100%);
+  background: -o-linear-gradient(rgb(@stop,@stop,@stop),
+  rgb(@start,@start,@start));
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
+}
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+  border-top: solid 1px @top-color;
+  border-left: solid 1px @left-color;
+  border-right: solid 1px @right-color;
+  border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  .background-clip(padding-box);
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+}
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+.rotation(@deg:5deg){
+  .transform(rotate(@deg));
+}
+.scale(@ratio:1.5){
+  .transform(scale(@ratio));
+}
+.transition (@prop: all, @time: 1s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+  -moz-user-select: @argument;
+  -ms-user-select: @argument;
+  user-select: @argument;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+//adding vars from applicant portal for messages we can reuse
+///////////////////////////////////////////////////////////////
+// -------------------------------------------------------------------
+// CAS Variables
+
+// Colors
+
+@primary-blue:    #2B80CF;
+@primary-slate:   #51575C;
+
+@secondary-blue:  #1E95D8;
+@secondary-tan:   #E9E8D9;
+
+@tertiary-green:  #76C13A;
+@tertiary-red:    #db461d;
+@tertiary-yellow: #e6c00d;
+@tertiary-blue:   #c5e3ff;
+
+@white:   #FFFFFF;
+@grey-03: #FAFAFA;
+@grey-05: #F5F5F5;
+@grey-07: #EFEFEF;
+@grey-10: #E5E5E5;
+@grey-12: #DDDDDD;
+@grey-15: #D6D6D6;
+@grey-20: #CCCCCC;
+@grey-25: #C7C8CA;
+@grey-30: #B3B3B3;
+@grey-35: #B1B3B6;
+@grey-40: #999999;
+@grey-50: #808080;
+@grey-60: #666666;
+@grey-70: #4D4D4D;
+@grey-80: #333333;
+@grey-90: #1A1A1A;
+@black:   #232323;
+
+// Structure
+@max-site-width: 1216px;
+@max-content-width: 900px;
+@site-gutter: 32px;
+@site-gutter-tablet-small: 20px;
+
+// Fonts
+@ScalaSansBlack: sans-serif;
+@ScalaSansPro: "ScalaSans";
+@ScalaSansCaps: "ScalaSansCaps";
+@ScalaSans: "ScalaSans", sans-serif;
+@Scala: "Scala", serif;
+@sans-serif: @ScalaSans, "Helvetica Neue", Helvetica, sans-serif;
+
+// Global Font Sizes
+@base-font-family: @ScalaSans;
+@base-font-size: 15;
+@base-line-height: 17;
+
+// Paths
+@images: '../images';
+@fonts: '../fonts';
+
+// Media Queries
+@retina:       ~"only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2)";
+@large-mq:     ~"screen and ( min-width: @{max-site-width} )";
+@phone:        ~"screen and ( max-width: 374px )";
+@phone-land:   ~"screen and ( min-width: 375px ) and ( max-width: 700px )";
+@phone-all:    ~"screen and ( max-width: 374px ), screen and ( max-width: 700px )";
+@tablet:       ~"screen and ( max-width: 960px )";
+@tablet-land:  ~"screen and ( min-width: 961px ) and ( max-width: 1024px )";
+@tablet-all:   ~"screen and ( max-width: 960px ), screen and ( max-width: 1024px )";
+@tablet-small: ~"screen and ( max-width: 650px )";
+
+@phone-land-new:   ~"screen and ( max-width: 475px )";
+@phone-small-land-new:   ~"screen and ( max-width: 320px )";
+@phone-new:   ~"screen and ( min-width: 320px )";

@@ -1,0 +1,32 @@
+{
+    "id": 4,
+    "sectionName": "fee_collection",
+    "instructions": "Please provide the instructions for the fee collection",
+    "displayName": null,
+    "enabled": false,
+    "status": "draft",
+    "fees": [{
+            "id": 1,
+            "paymentName": "Fee1",
+            "feeAmount": 75.00,
+            "deadlineDate": "Rolling",
+            "createdDate": 1424800127560,
+            "updatedDate": 1424800127560
+  },
+        {
+            "id": 2,
+            "paymentName": "Fee2",
+            "feeAmount": 85.00,
+            "deadlineDate": "2015-12-12",
+            "createdDate": 1424800127560,
+            "updatedDate": 1424800127560
+    },
+        {
+            "id": 3,
+            "paymentName": "Fee3",
+            "feeAmount": 50.0000,
+            "deadlineDate": "2015-12-12",
+            "createdDate": 1424800127560,
+            "updatedDate": 1424800127560
+    }]
+}

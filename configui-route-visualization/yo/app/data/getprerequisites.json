@@ -1,0 +1,41 @@
+<<<<<<< HEAD
+{"sectionId": 3241, "name": "Prerequisites", "instructions": null, "prerequisites": [
+    {
+        "id": 11,
+        "name": "Pathophysiology",
+        "description": "",
+        "example": "Pathy 101",
+        "minGrade": "B",
+        "minCredits": 3
+    },
+    {
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "",
+        "example": "Organic Chemistry 101",
+        "minGrade": "B",
+        "minCredits": 3
+    }
+]}
+=======
+{
+    "sectionId": 3241,
+    "name": "Prerequisites",
+    "instructions": null,
+    "prerequisites": [{
+        "id": 11,
+        "name": "Pathophysiology",
+        "description": "",
+        "example": "Pathy 101",
+        "minGrade": "B",
+        "minCredits": 3
+    }, {
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "",
+        "example": "Organic Chemistry 101",
+        "minGrade": "B",
+        "minCredits": 3
+    }]
+}
+>>>>>>> 2be7d4cec486c55871d12bf4020666f6fa9eb177

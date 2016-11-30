@@ -1,0 +1,22 @@
+{
+  "casId": 806,
+  "casName": "Watertown University",
+  "applicationName": "WU 2013-2014 Cycle",
+  "institutionName": "Watertown University",
+  "applicationId": 2,
+  "userType": "Association User",
+  "gatewayCount": 4,
+  "formId":0,
+  "organization": {
+      "id": 3,
+      "organizationName": "Watertown School of Health Professions",
+      "etsCode": null,
+      "gatewayEnabled": true,
+      "tuitionAllowed": true,
+      "createdDate": "2013-04-24",
+      "updatedDate": "2013-04-24"
+  },
+  "program": null,
+  "apiEnabled": false,
+  "orgLevelQuestions": true
+}

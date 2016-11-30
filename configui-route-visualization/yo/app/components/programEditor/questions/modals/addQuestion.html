@@ -1,0 +1,142 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{modalHeader}}</h4>
+</div>
+<div class="modal-body">
+    <form name="addQuestionModal" id="addQuestionModal" novalidate="novalidate" role="form">
+        <data-ng-form name="addQuestionModal">
+        <div data-ng-if="question.questionTypeId != '11'">
+            <div class="col-xs-5 requiredText">
+                <p>Is this question required?</p>
+            </div>
+            <div class="col-xs-7">
+
+                <label class="switch-light switch-ios" style="width: 100px" onclick="">
+                    <input type="checkbox" data-ng-model="question.isRequired">
+                    <span>
+           &nbsp;
+            <span data-ng-value="false"><i class="fa fa-times"></i></span>
+                    <span data-ng-value="true"><i class="fa fa-check"></i></span>
+                    </span>
+                    <a></a>
+                </label>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="row form-group" data-ng-class="{ 'has-error': addQuestionModal.questionText.$invalid && !addQuestionModal.questionText.$pristine}">
+                    <textarea name="questionText" id="questionText" data-ng-model="question.questionText" class="form-control" placeholder="Question Description Goes Here" required="required" autofocus="autofocus">
+                    </textarea>
+                    <div data-ng-if="addQuestionModal.questionText.$dirty" data-ng-messages="addQuestionModal.questionText.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="col-xs-12" data-ng-if="question.questionTypeId == '11'"> 
+         	<div class="row form-group" data-ng-class="{ 'has-error': addQuestionModal.questionText.$invalid && !addQuestionModal.questionText.$pristine}">
+         		<p>Section Text Box will allow you to insert a block of instructional text, rather than a question with an answer type. Type in your text as normal in the question input area, and use the options to customize.</p>       
+         		<div text-angular="text-angular" ta-paste="mainCtrl.pruneStyle($html)" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="questionText" ng-model="question.questionText" ta-disabled='disabled' required="required"></div>
+             	<div data-ng-if="addQuestionModal.questionText.$dirty" data-ng-messages="addQuestionModal.questionText.$error">
+             		<span class="help-block" data-ng-message="required">required field</span>
+             	</div>
+             </div>
+         </div>   
+
+            <div class="col-xs-5">
+                <div class="form-group" data-ng-class="{ 'has-error': addQuestionModal.questionTypeId.$invalid && !addQuestionModal.questionTypeId.$pristine}">
+                    <label class="control-label" for="questionTypeId">Select Question Type</label>
+                    <select class="form-control input-sm" ng-options="item.id as item.value for item in questionTypeSelect" required="required" name="questionTypeId" data-ng-model="question.questionTypeId" data-ng-change="QuestionTypChange();" id="questionTypeId">
+                        <option value="" data-ng-selected="true">Choose Type</option>
+                    </select>
+                    <div data-ng-if="addQuestionModal.questionTypeId.$dirty" data-ng-messages="addQuestionModal.questionTypeId.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+
+                <!-- hide and show depending on user selection for drop down select type Multiple Choice-->
+                <div class="multi-choice-input form-group form-inline" data-ng-repeat="answer in tempMultipleChoiseAns track by $index" data-ng-show="question.questionTypeId == '9' || question.questionTypeId == '10'" data-ng-class="{ 'has-error': addQuestionModal.answerOption.$invalid && !addQuestionModal.answerOption.$pristine}">
+                    <a class="question-delete" data-ng-show="question.questionTypeId == '9'" data-ng-click="removeQuestionInput($index)"><i data-ng-class="tempMultipleChoiseAns.length <=1 ? 'hide-icons'  : '' " class="fa fa-times"></i></a>
+                    <input name="answerOption" class="form-control input-sm" data-ng-model="answer.answerOption" type="text" required="required" />
+
+                    <div data-ng-if="tempMultipleChoiseAns.length <= 1" data-ng-messages="addQuestionModal.answerOption.$error">
+                        <span class="help-block" style="color: #dc4408;"><i class="fa fa-warning"></i> Minimum of 2 fields here!!</span>
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+                <button data-ng-if="question.questionTypeId == '9'" data-ng-click="addNewQuestionInput($event)" type="button" class="btn btn-remove pull-left">
+                    <i class="fa fa-plus"></i> add
+                </button>
+            </div>
+            <!-- hide and show depending on user selection for drop down select type Multiple Choice-->
+            <div class="col-xs-7" data-ng-if="question.questionTypeId == '9' ">
+                <div class="col-xs-6">
+                    <div class="form-group" data-ng-class="{ 'has-error': addQuestionModal.responseTypeId.$invalid && !addQuestionModal.responseTypeId.$pristine}">
+                        <label class="control-label" for="responseTypeId">Answer Format</label>
+                        <select class="form-control input-sm" ng-options="item.id as item.value for item in answerFormatSelect" name="responseTypeId" id="responseTypeId" data-ng-model="question.responseTypeId" required="required">
+                            <option value="" data-ng-selected="true">Choose...</option>
+                        </select>
+                        <div data-ng-if="addQuestionModal.responseTypeId.$dirty" data-ng-messages="addQuestionModal.responseTypeId.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- hide and show depending on user selection for drop down select type Multiple Choice-->
+                <div class="col-xs-6" data-ng-if="question.responseTypeId == '4' ">
+                    <div class="form-group" data-ng-class="{ 'has-error': addQuestionModal.displayTypeId.$invalid && !addQuestionModal.displayTypeId.$pristine}">
+
+                        <label class="control-label" for="displayTypeId">Answer Display</label>
+                        <select class="form-control input-sm" ng-options="item.id as item.value for item in answerDisplay4Select" name="displayTypeId" id="displayTypeId" data-ng-model="question.displayTypeId" required="required">
+                            <option value="" data-ng-selected="true">Choose...</option>
+                        </select>
+                        <div data-ng-if="addQuestionModal.displayTypeId.$dirty" data-ng-messages="addQuestionModal.displayTypeId.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Form Group 2-->
+                <div class="col-xs-6" data-ng-if="question.responseTypeId == '8'">
+                    <div class="form-group" data-ng-class="{ 'has-error': addQuestionModal.displayTypeId.$invalid && !addQuestionModal.displayTypeId.$pristine}">
+
+                        <label class="control-label" for="displayType">Answer Display</label>
+                        <select class="form-control input-sm" ng-options="item.id as item.value for item in answerDisplay8Select" name="displayTypeId" id="displayType" data-ng-model="question.displayTypeId" required="required">
+                            <option value="" data-ng-selected="true">Choose...</option>
+                        </select>
+                        <div data-ng-if="addQuestionModal.displayTypeId.$dirty" data-ng-messages="addQuestionModal.displayTypeId.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end form group-->
+            </div>
+
+            <!-- hide and show depending on user selection for drop down select type Essay-->
+            <div class="col-xs-3">
+                <div class="multi-choice-input form-group" data-ng-if="question.questionTypeId == '6' " data-ng-class="{ 'has-error': addQuestionModal.maxChars.$invalid && addQuestionModal.maxChars.$touched}">
+                    <label for="maxChars">Max Characters</label>
+                    <input name="maxChars" id="maxChars" class="form-control input-sm" data-ng-model="tempEssayLengthAns[0].maxChars" required="required" type="text" data-ng-pattern="numberPattern" />
+                    <div data-ng-if="addQuestionModal.maxChars.$touched" data-ng-messages="addQuestionModal.maxChars.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                        <span class="help-block" data-ng-message="pattern">Max characters is 9999</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- hide and show depending on user selection for drop down select type Essay-->
+            <div class="col-xs-6">
+                <label for="answerOptions"></label>
+                <div class="multi-choice-input form-group" data-ng-if="question.questionTypeId == '10' " data-ng-class="{ 'has-error': addQuestionModal.answerOption.$invalid && !addQuestionModal.answerOption.$pristine}">
+
+                    <input name="answerOptions" id="answerOptions" data-ng-repeat="answer in question.answerOptions" class="form-control input-sm" data-ng-model="answer.answerOption" type="text" />
+                </div>
+            </div>
+        </data-ng-form>
+    </form>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="modal-footer" style="border-top: none">
+            <button type="button" class="btn btn-cancel" data-ng-click="cancel()"><i class="fa fa-times"></i> Cancel</button>
+            <button type="button" click-once class="btn btn-save" data-ng-click="saveQuestion(addQuestionModal);" data-ng-disabled="addQuestionModal.$invalid"><i class="fa fa-pencil"></i> {{savebtntext}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<!--new ui for config preview-->
+<div id="in-review-setting" data-ng-controller="inReviewSettingCtrl as inReviewCtrl" style="margin-top: 15px;">
+    <div class="col-xs-12 white-box">
+        <uib-accordion>
+            <uib-accordion-group is-open="ProgDetailCtrl.status.isFirstOpen">
+                <uib-accordion-heading>
+                    <i ng-class="{'fa fa-chevron-down fa-lg': ProgDetailCtrl.status.isFirstOpen, 'fa fa-chevron-up fa-lg': !ProgDetailCtrl.status.isFirstOpen}"></i> Program Settings
+                </uib-accordion-heading>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Enabled</th>
+                                <th>Last Updated</th>
+                                <th>Preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="preview in inReviewCtrl.programPreview">
+                                <td>{{preview.sectionName}}</td>
+                                <td>
+                                    <div ng-class="{'in-review-enabled-icon' : preview.isChildPresent, 'in-review-disabled-icon' : !preview.isChildPresent}">
+                                    </div>
+                                </td>
+                                <td>{{preview.updatedDate}}</td>
+                                <td data-ng-if="preview.isChildPresent" class="in-review-preview" data-ng-click="inReviewCtrl.openPreview(preview)">
+                                    <div id="in-review-preview-td" class="in-review-preview-icon"></div>
+                                </td>
+                                <td data-ng-if="!preview.isChildPresent"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </uib-accordion-group>
+        </uib-accordion>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well-bar program-detail-bar">
+                <!--Buttons for Admissions user-->
+                <div data-ng-if="ProgDetailCtrl.headerdata.userType.toLowerCase() === 'admissions user'">
+                    <!-- If status is review-->
+                    <div class="well-edit" data-ng-if="ProgDetailCtrl.programDetails.status.toLowerCase() == 'review'">
+                        <button type="button" class="btn btn-save" ui-sref="programslist({'orgId':ProgDetailCtrl.headerdata.organization.id})">
+                            <i class="fa fa-check"></i> ok
+                        </button>
+                    </div>
+                    <!-- If status is draft or active or closed-->
+                    <div class="well-edit" data-ng-if="ProgDetailCtrl.programDetails.status.toLowerCase() == 'draft' || ProgDetailCtrl.programDetails.status.toLowerCase() == 'active' || ProgDetailCtrl.programDetails.status.toLowerCase() == 'closed'" >
+                        <button type="button" class="btn btn-save" ui-sref="programedit({programId:ProgDetailCtrl.ProgramId,previousState: inReviewCtrl.currentState.current.name})" data-ng-disabled="ProgDetailCtrl.headerdata.apiEnabled">
+                            <i class="fa fa-pencil"></i> edit
+                        </button>
+                        <button type="button" class="btn btn-save" data-ng-if="ProgDetailCtrl.programDetails.status.toLowerCase() == 'draft'" data-ng-click="inReviewCtrl.openReviewModal(ProgDetailCtrl.programDetails)">
+                            <i class="fa fa-pencil"></i> Submit for Review
+                        </button>
+                    </div>
+                </div>
+                <!-- Buttons bar for Association User-->
+                <div class="well-edit" data-ng-if="ProgDetailCtrl.headerdata.userType.toLowerCase() === 'association user'">
+                    <div class="program-edit-btns btn-group">
+                        <!-- Hiding Edit button for in Review and user type admissions-->
+                        <button type="button" class="btn btn-save" data-ng-disabled="ProgDetailCtrl.headerdata.apiEnabled" ui-sref="programedit({programId:ProgDetailCtrl.ProgramId,previousState: inReviewCtrl.currentState.current.name})">
+                            <i class="fa fa-pencil"></i> edit
+                        </button>
+                        <button data-ng-if="ProgDetailCtrl.programDetails.status.toLowerCase() === 'active'" type="button" class="btn btn-save" data-ng-click="inReviewCtrl.closeProgram(ProgDetailCtrl.programDetails)">
+                            <i class="fa fa-archive"></i> archive
+                        </button>
+                        <!-- If status is review-->
+                        <span data-ng-if="ProgDetailCtrl.programDetails.status.toLowerCase() === 'review' || ProgDetailCtrl.programDetails.status.toLowerCase() === 'draft' ">
+                            <button type="button" class="btn btn-cancel"
+                                    ng-click="inReviewCtrl.openResetDraftModal(ProgDetailCtrl.programDetails)">
+	                            <i class="fa fa-remove"></i> reset to draft
+                            </button>
+                            <button type="button" class="btn btn-save"
+                                    data-ng-click="inReviewCtrl.openActivateModal(ProgDetailCtrl.programDetails)">
+	                            <i class="fa fa-angle-double-right"></i> activate
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+
+<!-- Add New Program-->
+<section id="application-setting" class="program-modal">
+	<!--*****************************-->
+	<form name="addApplicantForm" id="addApplicantForm" novalidate="novalidate" role="form">
+		<div class="row">
+			<div class="col-xs-12">
+				<p>Select the program for which you are creating the Applicant Gateway</p>
+			</div>
+			<div class="col-xs-4" ng-class="{ 'has-error': addApplicantForm.selectedProgram.$invalid && addApplicantForm.selectedProgram.$touched }">
+				<ui-select data-ng-required="true" ng-model="AddModalCtrl.selectedProgram" theme="select2" ng-disabled="disabled" style="width: 300px;">
+					<ui-select-match class="ui-select-match" placeholder="Select a program or search program name...">
+						{{$select.selected.programName}}
+					</ui-select-match>
+					<ui-select-choices class="ui-select-choices" on-highlight="AddModalCtrl.showPreview(item, this)" repeat="item in AddModalCtrl.ProgramsList | propsFilter: {programName: $select.search}">
+						<div ng-bind-html="item.programName | highlight: $select.search"></div>
+						<small>
+							Start Term : {{item.startTerm}}
+						</small>
+					</ui-select-choices>
+				</ui-select>
+				<div ng-if="addApplicantForm.selectedProgram.$touched" data-ng-messages="addApplicantForm.selectedProgram.$error">
+					<span class="help-block" data-ng-message="required">required field</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<hr/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<p>New applicant gateway name</p>
+			</div>
+			<div class="col-xs-4 form-group" ng-class="{ 'has-error': addApplicantForm.gatewayName.$invalid && addApplicantForm.gatewayName.$touched }">
+				<label class="label-control" for="gatewayName"></label>
+				<input class="form-control input-sm col-xs-4" name="gatewayName" ng-maxlength="50" id="gatewayName" data-ng-model="AddModalCtrl.gatewayName" type="text" data-ng-required="true" />
+
+				<div ng-if="addApplicantForm.gatewayName.$touched" data-ng-messages="addApplicantForm.gatewayName.$error">
+					<span class="help-block" data-ng-message="required">required field</span>
+					<span class="help-block" data-ng-message="maxlength">Maximum characters allowed is 50</span>
+				</div>
+			</div>
+		</div>
+		<!--Buttons-->
+		<div class="row">
+			<div class="bottom-bar-edit col-xs-12">
+				<div class="well-edit">
+					<div class="program-edit-btns btn-group">
+						<button type="button" class="btn btn-cancel" data-ng-click="AddModalCtrl.cancel()">
+							<i class="fa fa-times"></i> Close
+						</button>
+						<button data-click-once type="button" class="btn btn-save" data-ng-disabled="addApplicantForm.$invalid" data-ng-click="AddModalCtrl.saveGateway();">
+							<i class="fa fa-check"></i> add
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>

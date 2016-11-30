@@ -1,0 +1,57 @@
+<div class="row preview-screens documents-modal">
+    <!--<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="1"-->
+    <!--on-scroll="onScroll(scrollTop, scrollHeight)">-->
+    <div class="col-xs-12">
+        <div data-ng-style="{'background-image': 'url(' + previewCtrl.branding.backgroundImage + ')','background-color': '#C8C8CA','height':'242px' }" data-ng-class="{'brand-image-placeholder':!previewCtrl.branding.backgroundImage}">
+            <div class="brand-program-txt" data-ng-if="previewCtrl.branding.primaryheadlinetext == 'ON'">
+                <h1 id="brandingheading" style="color:{{previewCtrl.branding.headLineText}}">{{previewCtrl.nameInfo.organization.organizationName | characters:80}}</h1>
+            </div>
+            <div class="brand-title-bar">
+                <h1 class="pull-left">{{previewCtrl.programData.programName}}</h1>
+                <h1 class="pull-right">Deadline: {{previewCtrl.programData.deadlineDisplay | date:'MM/dd/yyyy'}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="preview-tabs nav-blocks">
+            <div class="nav-tab"><a>Home</a></div>
+            <div class="nav-tab" data-ng-repeat="tab in previewCtrl.navTabs" data-ng-class="{'active': tab === 'Evaluations'}">
+                <a>{{tab}}</a>
+            </div>
+        </div>
+        <div class="preview-content">
+            <h1 class="cas-program-materials-subsection-heading">Evaluations</h1>
+            <div>
+                <p ng-bind-html="previewCtrl.evaluationData.instructions" set-target></p>
+            </div>
+            <div>
+                <p data-ng-if="previewCtrl.nameInfo.casId === 823 || previewCtrl.nameInfo.casId === 818 || previewCtrl.nameInfo.casId ===1826 || previewCtrl.nameInfo.casId ===1830 || previewCtrl.nameInfo.casId ===1850">
+                    Once you have saved an electronic recommendation, an email request will automatically be sent to the recommender on your behalf. Please advise your recommender to look for this email in their inbox, as well as their spam or junk-mail folder, as emails do occasionally get filtered out.
+                </p>
+                <p data-ng-if="previewCtrl.nameInfo.casId !== 823 && previewCtrl.nameInfo.casId !== 818 && previewCtrl.nameInfo.casId !==1826 && previewCtrl.nameInfo.casId !==1830 && previewCtrl.nameInfo.casId !==1850">
+                    Once you have saved an electronic evaluation, an email request will automatically be sent to the evaluator on your behalf. Please advise your evaluator to look for this email in their inbox, as well as their spam or junk-mail folder, as emails do occasionally get filtered out.
+                </p>
+            </div>
+            <div class="documents-panels" data-ng-repeat="evaluation in previewCtrl.programEvaluation.numberOfEvals track by $index">
+                <div class="panel panel-documents">
+                    <div class="panel-body">
+                        <h3 class="evaluation-modal-h3">Evaluation {{$index + 1}}</h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                            </div>
+                        </div>
+                        <div class="progress-bar-check"></div>
+                    </div>
+                    <button class="btn doc-button"><span>Add Evaluation</span></button>
+                </div>
+            </div>
+            <div class="cas-add-additional-evaluation">
+                <div class="cas-additional-evaluation-title-container">
+                    <div class="cas-additional-evaluation-title">Add additional evaluation<span class="cas-optional-field-tag">Optional</span></div>
+                </div>
+                <button class="btn doc-button"><span>Create Evaluation Request</span></button>
+            </div>
+        </div>
+    </div>
+    <!--</perfect-scrollbar>-->
+</div>

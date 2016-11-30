@@ -1,0 +1,397 @@
+<section id="application-setting">
+    <div class="col-xs-12 white-box">
+        <!--<div ng-if="isEditProgramForm">-->
+            <!--<h1>Edit Program Details </h1>-->
+            <!--<hr/>-->
+            <!--<p>Please review the program details carefully since this information will display to applicants on your program home page.</p>-->
+            <!--<hr/>-->
+            <!--&lt;!&ndash; Program Details Edit&ndash;&gt;-->
+            <!--<div class="row program-details-read-only">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<small class="required-note pull-right"><span>*</span>required</small>-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<p>ID <span>{{EditProgCtrl.programDetails.id}}</span>-->
+                    <!--</p>-->
+
+                    <!--<p>Code <span>{{EditProgCtrl.programDetails.programId}}</span>-->
+                    <!--</p>-->
+
+                    <!--<p>Status <span>{{EditProgCtrl.headerdata.program.status}}</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="col-xs-8">-->
+                    <!--<p>Institution <span>{{EditProgCtrl.headerdata.institutionName}}</span>-->
+                    <!--</p>-->
+
+                    <!--<p>Organization <span>{{EditProgCtrl.headerdata.organization.organizationName}}</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="col-xs-12">
+            <small class="required-note pull-right"><i class="fa fa-asterisk"></i> required</small>
+        </div>
+        <!--*****************************-->
+        <div>
+            <form name="programEditForm" id="programEditForm" novalidate="novalidate" role="form">
+                <div class="row" data-ng-if="isEditProgramForm">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="organization">
+                                Organization
+                            </label>
+                            <input type="text" class="form-control input-sm" name="organization" id="organization" value="{{EditProgCtrl.headerdata.organization.organizationName}}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="programId">
+                                Program Id
+                            </label>
+                            <input type="text" class="form-control input-sm" name="programId" id="programId" value="{{EditProgCtrl.programDetails.id}}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="programStatus">
+                                Status
+                            </label>
+                            <input type="text" class="form-control input-sm" name="programStatus" id="programStatus" value="{{EditProgCtrl.programDetails.status}}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="form-group programId-field">
+                            <label for="programCode">
+                                Program Code
+                            </label>
+                            <input type="text" class="form-control input-sm" name="programCode" id="programCode" value="{{EditProgCtrl.programDetails.programId}}" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*****************************-->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.programName.$invalid && programEditForm.programName.$touched }">
+                            <label class="control-label" for="programName">
+                                Program Name
+                            </label>
+                            <input type="text" class="form-control input-sm" id="programName" name="programName" data-ng-model="EditProgCtrl.programDetails.programName" required="required" placeholder="Program Name" ng-maxlength="150" data-ng-trim="true" />
+                            <div data-ng-if="programEditForm.programName.$touched" data-ng-messages="programEditForm.programName.$error">
+                                <span class="help-block" data-ng-message="required">required field</span>
+                                <span class="help-block" data-ng-message="maxlength">Maximum of 150 characters allowed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-xs-3">-->
+                        <!--<div class="form-group required" data-ng-class="{ 'has-error': programEditForm.level.$invalid && programEditForm.level.$touched }">-->
+                            <!--<label for="level" class="control-label">-->
+                                <!--Level-->
+                            <!--</label>-->
+                            <!--<input type="text" class="form-control input-sm" id="level" name="level" data-ng-model="EditProgCtrl.programDetails.programLevel" required="required">-->
+                            <!--<div data-ng-if="programEditForm.level.$touched" data-ng-messages="programEditForm.level.$error">-->
+                                <!--<span class="help-block" data-ng-message="required">required field</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+	                <div class="col-xs-3">
+		                <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.level.$invalid && programEditForm.level.$touched }">
+			                <label for="level" class="control-label">
+				                Level
+			                </label>
+			                <!--<input type="text" class="form-control input-sm" id="level" name="level" data-ng-model="EditProgCtrl.programDetails.programLevel" required="required">-->
+
+			                <select class="form-control input-sm "
+			                        ng-options="programLevel.value as programLevel.displayName for programLevel in EditProgCtrl.levels1839" name="level" id="level" data-ng-model="EditProgCtrl.programDetails.programLevel" data-ng-required="true">
+
+				                <option value="" data-ng-selected="true">
+					                Please Select
+				                </option>
+			                </select>
+
+			                <div data-ng-if="programEditForm.level.$touched" data-ng-messages="programEditForm.level.$error">
+				                <span class="help-block" data-ng-message="required">required field</span>
+			                </div>
+		                </div>
+	                </div>
+                </div>
+                <!--*****************************-->
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.city.$invalid && programEditForm.city.$touched }">
+                            <label class="control-label" for="city">
+                                City
+                            </label>
+                            <input type="text" class="form-control input-sm" name="city" id="city" placeholder="City Name" data-ng-model="EditProgCtrl.programDetails.city" required="required">
+                            <div data-ng-if="programEditForm.city.$touched" data-ng-messages="programEditForm.city.$error">
+                                <span class="help-block" data-ng-message="required">required field</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.state.$invalid && programEditForm.state.$touched }">
+                            <label for="state" class="control-label">
+                                State
+                            </label>
+                            <select class="form-control input-sm " ng-options="item.valueId as item.valueString for item in EditProgCtrl.statesList" name="state" id="state" data-ng-model="EditProgCtrl.programDetails.state" data-ng-required="true">
+                                <option value="" data-ng-selected="true">
+                                    Please Select
+                                </option>
+                            </select>
+                            <div data-ng-if="programEditForm.state.$touched" data-ng-messages="programEditForm.state.$error">
+                                <span class="help-block" data-ng-message="required">required field</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="zipcode" class="control-label">
+                                Zipcode
+                            </label>
+                            <input type="text" class="form-control input-sm" name="zipCode" id="zipCode" placeholder="Zip Code" data-ng-model="EditProgCtrl.programDetails.zipCode">
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <!--*****************************-->
+
+                <div class="row">
+                    <div class="col-xs-6 form-horizontal program-edit">
+                        <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.startTerm.$invalid && programEditForm.startTerm.$touched }">
+                            <label for="startTerm" class="col-xs-5 horizontal-left program-edit control-label">
+                                Start Term
+                            </label>
+
+                            <div class="col-xs-7 program-edit">
+                                <select ng-init="EditProgCtrl.programDetails.startTerm = EditProgCtrl.programDetails.startTerm || options[0].value" class="form-control input-sm " ng-options="startTerm.value as startTerm.displayName for startTerm in EditProgCtrl.startTerms" name="startTerm" id="startTerm" data-ng-model="EditProgCtrl.programDetails.startTerm" data-ng-required="true">
+                                    <option value="" data-ng-selected="true">Please Select</option>
+                                </select>
+                                <div data-ng-if="programEditForm.startTerm.$touched" data-ng-messages="programEditForm.startTerm.$error">
+                                    <span class="help-block" data-ng-message="required">required field</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 form-horizontal program-edit" data-ng-class="{ 'has-error': programEditForm.academicYear.$invalid && programEditForm.academicYear.$touched }">
+                        <div class="form-group required">
+                            <label for="academicYear" class="col-xs-5 horizontal-left control-label">
+                                Start Year
+                            </label>
+
+                            <div class="col-xs-7 program-edit">
+                                <input type="text" ng-pattern="/^[0-9]*$/" class="form-control input-sm" max="2025" name="academicYear" id="academicYear" data-ng-model="EditProgCtrl.programDetails.academicYear" title="Please enter a valid year" required="required" />
+                                <div data-ng-if="programEditForm.academicYear.$touched" data-ng-messages="programEditForm.academicYear.$error">
+                                    <span class="help-block" data-ng-message="required">required field</span>
+                                    <span class="help-block" data-ng-message="pattern">Wrong Year Format</span>
+                                    <p class="help-block has-error" data-ng-if="EditProgCtrl.programDetails.academicYear < startTermYear">Cannot be less than current year</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--*****************************-->
+                <div class="row">
+                    <div class="col-xs-6 form-horizontal program-edit">
+                        <div class="form-group required" data-ng-controller="openDatePickerCtrl" data-ng-class="{'has-error':(programEditForm.startDate.$touched && programEditForm.startDate.$viewValue == '') || (programEditForm.startDate.$viewValue != '' && EditProgCtrl.isInvalidOpenDate) || (programEditForm.startDate.$viewValue != '' && !EditProgCtrl.isInvalidOpenDate && EditProgCtrl.isOpenDateGreaterthenDeadline)}">
+                            <label for="startDate" class="col-xs-5 control-label">
+                                Open Date
+                            </label>
+                            <div class="col-xs-7 program-edit">
+                                <div class="input-group" id="openDatePicker">
+                                    <input name="startDate" id="startDate" type="text" required class="form-control" uib-datepicker-popup="{{format}}" data-ng-model="EditProgCtrl.programDetails.startDate" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="true" max-date="EditProgCtrl.programDetails.deadline" ng-change="EditProgCtrl.validateDate('startDate',programEditForm.startDate.$viewValue)" ng-keyup="EditProgCtrl.validateDate('startDate',programEditForm.startDate.$viewValue)" />
+                                    <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default" data-ng-click="openCalendar($event)">
+                                                  <i class="fa fa-calendar"></i>
+                                              </button>
+                                        </span>
+                                </div>
+                                <div>
+                                    <div class="help-block" data-ng-if="programEditForm.startDate.$touched && programEditForm.startDate.$viewValue == ''">required field</div>
+                                    <div class="help-block" data-ng-if="programEditForm.startDate.$viewValue != '' && EditProgCtrl.isInvalidOpenDate">Valid Date in the format of MM/DD/YYYY Required</div>
+                                    <div class="help-block" data-ng-if="programEditForm.startDate.$viewValue != '' && !EditProgCtrl.isInvalidOpenDate && EditProgCtrl.isOpenDateGreaterthenDeadline">Open date cannot be greater than deadline date</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 form-horizontal program-edit">
+                        <div class="adjust-left form-group required" data-ng-controller="openDatePickerCtrl" data-ng-class="{'has-error':(programEditForm.deadLine.$touched && programEditForm.deadLine.$viewValue == '') || (programEditForm.deadLine.$viewValue != '' && EditProgCtrl.isInvalidDeadlineDate)}">
+                            <label class="col-xs-5 horizontal-left control-label" for="deadLine">
+                                Deadline
+                                <!--{{format}}-->
+                            </label>
+                            <div class="col-xs-7 program-edit">
+                                <div class="input-group deadline">
+                                    <input name="deadLine" id="deadLine" type="text" class="form-control" required="required" uib-datepicker-popup="{{format}}" data-ng-model="EditProgCtrl.programDetails.deadline" is-open="opened" min-date="EditProgCtrl.getMinDateForDeadLine()" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="true" ng-change="EditProgCtrl.validateDate('deadLine',programEditForm.deadLine.$viewValue)" ng-keyup="EditProgCtrl.validateDate('deadLine',programEditForm.deadLine.$viewValue)" />
+                                    <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" data-ng-click="openCalendar($event)">
+                      <i class="fa fa-calendar"> </i>
+                  </button>
+                </span>
+                                </div>
+                                <div>
+                                    <div class="help-block" data-ng-if="programEditForm.deadLine.$touched && programEditForm.deadLine.$viewValue == ''">required field</div>
+                                    <div class="help-block" data-ng-if="programEditForm.deadLine.$viewValue != '' && EditProgCtrl.isInvalidDeadlineDate">Valid Date in the format of MM/DD/YYYY Required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--*****************************-->
+                <div class="row">
+                    <div class="col-xs-12 webadmit">
+                        <div class="col-xs-4 form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label" for="waDisplayName">
+                                    WebAdmit Name
+                                </label>
+                                <input type="text" class="form-control input-sm" id="waDisplayName" name="waDisplayName" data-ng-model="EditProgCtrl.programDetails.waDisplayName" placeholder="WebAdmit Name" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="campus">
+                                    Campus
+                                </label>
+                                <input type="text" class="form-control input-sm" id="campus" name="campus" data-ng-model="EditProgCtrl.programDetails.campus" placeholder="Campus Name" />
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="text-right">
+                                Deadline Display Date *
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="row radio-set">
+                                <div class="radio">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="showDeadline" data-ng-model="EditProgCtrl.programDetails.deadlineDisplay">
+                                    <label for="optionsRadios1">
+                                        <span></span>Show Deadline
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="chooseDate" data-ng-model="EditProgCtrl.programDetails.deadlineDisplay">
+                                    <label for="optionsRadios2">
+                                        <span></span>Choose Date
+                                    </label>
+                                </div>
+
+                                <div class="adjust-left" data-ng-if="EditProgCtrl.programDetails.deadlineDisplay == 'chooseDate'" data-ng-controller="openDatePickerCtrl" data-ng-class="{'has-error':(programEditForm.chooseDate.$touched && programEditForm.chooseDate.$viewValue == '') || (programEditForm.chooseDate.$touched && programEditForm.chooseDate.$viewValue != '' && EditProgCtrl.isInvalidChooseDate)}">
+                                    <p class="input-group \">
+                                        <input name="chooseDate" id="chooseDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" data-ng-model="EditProgCtrl.programDetails.chooseDate" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="true" required="required" min-date="EditProgCtrl.programDetails.startDate" ng-change="EditProgCtrl.validateDate('chooseDate',programEditForm.chooseDate.$viewValue)" ng-keyup="EditProgCtrl.validateDate('chooseDate',programEditForm.chooseDate.$viewValue)" />
+                                        <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" data-ng-click="openCalendar($event)">
+                                  <i class="fa fa-calendar">
+                                  </i>
+                              </button>
+                            </span>
+                                    </p>
+                                    <div>
+                                        <div class="help-block" data-ng-if="programEditForm.chooseDate.$touched && programEditForm.chooseDate.$viewValue == ''">required field</div>
+                                        <div class="help-block" data-ng-if="programEditForm.chooseDate.$touched && programEditForm.chooseDate.$viewValue != '' && EditProgCtrl.isInvalidChooseDate">Valid Date in the format of MM/DD/YYYY Required</div>
+                                    </div>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="Rolling" data-ng-model="EditProgCtrl.programDetails.deadlineDisplay">
+                                    <label for="optionsRadios3">
+                                        <span></span>Rolling
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <!--*****************************-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>
+                            <label>
+                                Additional Information
+                            </label>
+                        </h3>
+                        <hr/>
+
+                        <div class="col-xs-4">
+                            <div class="form-group required" data-ng-class="{ 'has-error': programEditForm.programType.$invalid && programEditForm.programType.$touched }">
+                                <label class="control-label" for="programType">
+                                    Program Type
+                                </label>
+                                <input type="text" required="required" class="form-control input-sm" name="programType" id="programType" value="Program Type" data-ng-model="EditProgCtrl.programDetails.programType" />
+                                <div data-ng-if="programEditForm.programType.$touched" data-ng-messages="programEditForm.programType.$error">
+                                    <span class="help-block" data-ng-message="required">required field</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="delivery">
+                                    Delivery
+                                </label>
+                                <input type="text" class="form-control input-sm" name="delivery" id="delivery" value="Input Delivery" data-ng-model="EditProgCtrl.programDetails.delivery" />
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="department">
+                                    Department
+                                </label>
+                                <input type="text" class="form-control input-sm" name="department" id="department" value="Input Department" data-ng-model="EditProgCtrl.programDetails.department">
+                            </div>
+                        </div>
+
+
+                        <!--*****************************-->
+
+
+                        <div class="col-xs-4">
+                            <!-- end casid 815 condition -->
+                            <div class="form-group">
+                                <label for="track">
+                                    Track
+                                </label>
+                                <input type="text" class="form-control input-sm" name="track" id="track" value="Input Track" data-ng-model="EditProgCtrl.programDetails.track" />
+
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="programConcentration">
+                                    Concentration
+                                </label>
+                                <input type="text" class="form-control input-sm" name="programConcentration" id="programConcentration" value="Program Concentration" data-ng-model="EditProgCtrl.programDetails.concentration" />
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="applicationType">
+                                    Application Type
+                                </label>
+                                <input type="text" class="form-control input-sm" name="applicationType" id="applicationType" value="Input ApplicationType" data-ng-model="EditProgCtrl.programDetails.applicationType">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Buttons-->
+                <div class="row">
+                    <div class="bottom-bar-edit col-xs-12">
+                        <div class="well-edit">
+                            <div class="program-edit-btns btn-group">
+                                <button type="button" class="btn btn-cancel" data-ng-click="EditProgCtrl.cancel()">
+                                    <i class="fa fa-times"></i> Cancel
+                                </button>
+                                <button type="button" class="btn btn-reset" data-ng-disabled="programEditForm.$pristine" ng-click="EditProgCtrl.reset()">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button type="button" class="btn btn-save" data-ng-disabled="programEditForm.$invalid" data-ng-click="EditProgCtrl.programDetailsSubmit();">
+                                    <i class="fa fa-check"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

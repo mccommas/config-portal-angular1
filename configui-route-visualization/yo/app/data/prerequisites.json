@@ -1,0 +1,89 @@
+{
+
+    "sectionId": 3241,
+    "name": "Prerequisites",
+    "instructions": null,
+    "prerequisites": [
+        {
+            "id": 11,
+            "name": "Pathophysiology",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+            "example": "Pathy 101",
+            "minGrade": 3.00,
+            "minCredits": 3
+        },
+        {
+            "id": 12,
+            "name": "Organic Chemistry",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+            "example": "Organic Chemistry 101",
+            "minGrade": 3.70,
+            "minCredits": 3
+        },
+      {
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      },{
+        "id": 12,
+        "name": "Organic Chemistry",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi facere incidunt ipsa istenemo numquam perspiciatis quasi recusandae similique. Architecto deserunt eligendi fuga hic laudantiummaxime molestias porro rerum.",
+        "example": "Organic Chemistry 101",
+        "minGrade": 3.70,
+        "minCredits": 3
+      }
+    ]
+
+}

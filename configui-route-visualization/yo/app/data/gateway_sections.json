@@ -1,0 +1,52 @@
+[{
+        "id": 3225,
+        "createdDate": "2014-05-21",
+        "sectionName": "Welcome",
+        "updatedDate": "2014-05-21",
+        "enabled": true,
+        "status": "draft"
+},
+
+    {
+        "id": 3226,
+        "createdDate": "2014-05-21",
+        "sectionName": "document_upload",
+        "updatedDate": "2014-05-21",
+        "enabled": true,
+        "status": "draft"
+},
+    {
+        "id": 3241,
+        "createdDate": "2014-05-21",
+        "sectionName": "interview_scheduler",
+        "updatedDate": "2014-09-18",
+        "enabled": true,
+        "status": "draft"
+},
+    {
+        "id": 7704,
+        "createdDate": "2014-08-19",
+        "sectionName": "extend_offer",
+        "updatedDate": "2014-08-21",
+        "instructions": "Here are the instructions I want the applicant to see.",
+        "enabled": true,
+        "status": "draft"
+},
+    {
+        "id": 7707,
+        "createdDate": "2014-08-29",
+        "sectionName": "supplemental_application",
+        "updatedDate": "2014-08-29",
+        "instructions": "",
+        "enabled": true,
+        "status": "draft"
+},
+    {
+        "id": 7708,
+        "createdDate": "2014-08-29",
+        "sectionName": "fee_collection",
+        "updatedDate": "2014-08-29",
+        "instructions": "",
+        "enabled": true,
+        "status": "draft"
+}]

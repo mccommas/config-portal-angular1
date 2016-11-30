@@ -1,0 +1,13 @@
+<div class="modal-body timeout-message warn-message">
+    <div class="error-message">
+
+        <p class="warn-darker">Your session has expired due to inactivity</p>
+        <p class="warn-dark">Sessions timout after 30 minutes of inactivity</p>
+        <p class="warn-light">Click Back to WebADMIT to re-open the Configuration Portal, or close to end your session.</p>
+    </div>
+</div>
+
+<div id="timeout-message" class="modal-footer confirm-modal-btns">
+    <a href="https://current.qa.webadmit.org/" target="_blank">Back TO WebAdmit</a>
+    <a ng-click="idleCtrl.cancel()">Close</a>
+</div>

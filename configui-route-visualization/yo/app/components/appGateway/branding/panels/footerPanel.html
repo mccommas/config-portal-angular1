@@ -1,0 +1,47 @@
+<!-- Content Footer Links Panel -->
+<div class="links-panel program-edit-home" ng-controller="appBrandingFooterCtrl as footerCtrl">
+    <div class="col-xs-12 color-panel">
+        <form name="footerPanelForm" novalidate="novalidate" role="form">
+            <div class="row">
+                <div class="col-xs-12 learn-more-panel">
+                    <h1>Program Links</h1>
+                    <ul class="list-unstyled">
+                        <li class="link">
+                            <span data-ng-click="footerCtrl.learnMoreModal(appBrandingCtrl.footerlearnMoreData)">
+                                <i class="fa fa-pencil" ng-class="{'fa-pencil' : appBrandingCtrl.footerlearnMoreData.configValue, 'fa-plus' : !appBrandingCtrl.footerlearnMoreData.configValue}">
+                                </i>
+                            </span>
+                            <span data-ng-if="!appBrandingCtrl.footerlearnMoreData.configValue">Add <b>Learn More</b> Link</span>
+                            <span data-ng-if="appBrandingCtrl.footerlearnMoreData.configValue">Edit <b>Learn More</b> Link</span>
+                        </li>
+                    </ul>
+                    <hr/>
+                    <h1>Footer Links</h1>
+                    <ul class="list-unstyled">
+                        <li class="link" data-ng-repeat="link in appBrandingCtrl.footerLinksData">
+                            <span data-ng-click="footerCtrl.remove_links($index)"><i class="fa fa-trash-o"></i></span>
+                            <span data-ng-click="footerCtrl.editLinkModal(link, $index)"><i class="fa fa-pencil"></i></span>
+                            <span>{{link.type | characters: 10}}</span>
+                        </li>
+                    </ul>
+                    <p data-ng-if="!appBrandingCtrl.footerLinksData.length">You currently have no links. <b>Click + ADD</b> to begin.</p>
+                    <p data-ng-show="appBrandingCtrl.footerLinksData.length >= 4">You have reached the maximum of 4 footer links</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="extended-col col-xs-12 links-panel-bar">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-save" data-ng-disabled="appBrandingCtrl.footerLinksData.length >= 4" ng-click="footerCtrl.addLinkModal();">
+                                <i class="fa fa-plus"></i> add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- end -->

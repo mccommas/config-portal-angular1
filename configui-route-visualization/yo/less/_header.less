@@ -1,0 +1,245 @@
+// Less file for all header styles
+#home-header .header-logo li h4{
+  color: #7e7e7e;
+  text-transform: uppercase;
+  text-align: center;
+}
+#home-header li.logo-circle {
+  border-radius: 100%;
+  background: #414344;
+  width: 34px;
+  height: 34px;
+  position: relative;
+  top: 11px;
+  left: 2px;
+}
+
+#home-header div.col-xs-12 {
+  background: #121212;
+  z-index: 999;
+}
+
+#main-header{
+  max-height: 100px;
+
+}
+#main-header .header-logo{
+  background: #121212;
+  color: #7e7e7e;
+  text-transform: uppercase;
+  border-bottom: 7px solid #121212;
+  min-height: 83px;
+  z-index: 999;
+}
+#main-header .navigation {
+  position: relative;
+  top: 0;
+  height: 83px;
+  padding: 2px 0;
+  border-bottom: 7px solid #E1E0CE;
+  background: #FFF;
+  z-index: 5;
+}
+.col-xs-4#program-header{
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #e1e0ce;
+}
+div#program-header ul.list-unstyled {
+  margin-top: 5px;
+}
+.col-xs-7.top-icons{
+  position: relative;
+  top: 33%;
+  left: 0;
+}
+.col-xs-7.top-icons ul.list-inline > li {
+  padding: 0;
+  margin: 0;
+}
+
+.col-xs-7.top-icons-org-header{
+  position: relative;
+  top: 33%;
+  left: 30px;
+}
+.col-xs-7.top-icons-org-header ul.list-inline > li {
+  padding: 0;
+  margin: 0;
+}
+
+span.navIconFade {
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+}
+// Branding icon
+#main-header .navigation li.nav-branding {
+  background: url("../images/sprite.png") -77px -11px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 20px;
+}
+
+#main-header .navigation li.nav-branding.active {
+  position: relative;
+  background: url("../images/sprite.png") -107px -11px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-branding span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -11px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-branding:hover span {
+  opacity: 1;
+}
+
+// Program Editor Icon
+#main-header .navigation li.nav-editor{
+  background: url("../images/sprite.png") -77px -72px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 20px;
+
+}
+#main-header .navigation li.nav-editor.active{
+  position: relative;
+  background: url("../images/sprite.png") -107px -72px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-editor span{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -72px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-editor:hover span {
+  opacity: 1;
+}
+// Program Fees
+#main-header .navigation li.nav-fees{
+  background: url("../images/sprite.png") -77px -101px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+
+}
+#main-header .navigation li.nav-fees span{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -101px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-fees.active{
+  background: url("../images/sprite.png") -107px -101px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-fees:hover span {
+  opacity: 1;
+}
+
+// Organization Editor Header Icons
+
+// Org Link
+#main-header .navigation li.nav-organization{
+  background: url("../images/sprite.png") -77px -162px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 20px;
+
+}
+#main-header .navigation li.nav-organization.active{
+  position: relative;
+  background: url("../images/sprite.png") -108px -162px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-organization span{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -162px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-organization:hover span {
+  opacity: 1;
+}
+// Tools Link
+#main-header .navigation li.nav-tools{
+  background: url("../images/sprite.png") -108px -132px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 20px;
+  opacity: 0.2;
+  cursor: default;
+
+}
+#main-header .navigation li.nav-tools.active{
+  position: relative;
+  background: url("../images/sprite.png") -108px -132px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-tools span{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -132px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-tools:hover span {
+  opacity: 1;
+}
+
+// Padlock Link
+#main-header .navigation li.nav-lock{
+  background: url("../images/sprite.png") -108px -191px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 20px;
+  opacity: 0.2;
+  cursor: default;
+
+}
+#main-header .navigation li.nav-lock.active{
+  position: relative;
+  background: url("../images/sprite.png") -108px -191px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+#main-header .navigation li.nav-lock span{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -107px -191px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+#main-header .navigation li.nav-lock:hover span {
+  opacity: 1;
+}

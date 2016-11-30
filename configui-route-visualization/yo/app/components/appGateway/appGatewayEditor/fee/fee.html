@@ -1,0 +1,93 @@
+<section class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Fee Collection</h3>
+        <hr/>
+        <p>The Fee Collection feature allows you to collect fees from your applicants. Fees can be all at once or in up to 10 installments.
+        </p>
+
+        <p>Please provide an introduction for the applicant below as well as a finishing statement they will see once the complete the Fee Collection.</p>
+        <hr/>
+        <form name="appGatewayFees" id="appGatewayFees" class="form-horizontal" novalidate="novalidate" role="form">
+            <h4>Activity Introduction</h4>
+
+            <div class="form-group" data-ng-class="{ 'has-error': appGatewayFees.headerIntro.$invalid && appGatewayFees.headerIntro.$touched}">
+                <label for="headerIntro" class="col-sm-1 control-label">Header</label>
+
+                <div class="col-sm-11">
+                    <input type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" name="headerIntro" id="headerIntro" data-ng-model="feeCtrl.feeData.startHeader" placeholder="Add your header text here">
+                    <span class="pull-right">{{(feeCtrl.feeData.startHeader ?  feeCtrl.feeData.startHeader.length : 0)}} / 200</span>
+                    <div data-ng-if="appGatewayFees.headerIntro.$touched" data-ng-messages="appGatewayFees.headerIntro.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="feeCtrl.feeData.startHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+
+            <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions1" ng-model="feeCtrl.feeData.sectionIntroduction" ta-disabled='disabled' ta-focussed-class="focussed">
+            </text-angular>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <br>
+                    <hr/>
+                </div>
+            </div>
+            <h4>Finishing Statement</h4>
+
+            <div class="form-group" data-ng-class="{ 'has-error': appGatewayFees.headerStatement.$invalid && appGatewayFees.headerStatement.$touched}">
+                <label for="headerStatement" class="col-sm-1 control-label">Header</label>
+
+                <div class="col-sm-11">
+                    <input type="text" required="required" maxlength="200" class="form-control" id="headerStatement" name="headerStatement" data-ng-model="feeCtrl.feeData.completeHeader" placeholder="Add your header text here">
+                    <span class="pull-right">{{(feeCtrl.feeData.completeHeader ?  feeCtrl.feeData.completeHeader.length : 0)}} / 200</span>
+
+                    <div data-ng-if="appGatewayFees.headerStatement.$touched" data-ng-messages="appGatewayFees.headerStatement.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                        <span class="help-block" data-ng-message="maxlength">Maximum characters allowed is 200</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="feeCtrl.feeData.completeHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+
+            <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions2" ng-model="feeCtrl.feeData.sectionComplete" ta-disabled='disabled' ta-focussed-class="focussed">
+            </text-angular>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="appGatewayFees.$pristine" ng-click="feeCtrl.reset(appGatewayFees)">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="appGatewayFees.$invalid" ng-click="feeCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <nav>
+                            <ul class="pager">
+                                <li class="active"></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-4">
+                        <!--<button class="btn btn-reset btn-continue" type="button"-->
+                        <!--data-ng-disabled="appGatewayFees.$invalid"-->
+                        <!--ui-sref="appGatewayEditor.documents-upload">continue <i-->
+                        <!--class="fa fa-angle-double-right"></i>-->
+                        <!--</button>-->
+                        <button class="btn btn-reset btn-continue" type="button" data-ng-disabled="appGatewayFees.$invalid" data-ng-click="feeCtrl.continueSave()">
+                            continue <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

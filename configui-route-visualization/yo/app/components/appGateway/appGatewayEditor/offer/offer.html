@@ -1,0 +1,147 @@
+<section class="program-edit-home app-documents">
+    <h3>Extend Offer</h3>
+    <hr/>
+    <p>This activity appears in the Applicant Gateway for those applicants for whom you have enabled this activity
+        in WebAdMIT.
+    </p>
+
+    <p>The applicant will have <b>150 calendar days</b> to complete the activity.</p>
+
+    <p>Enter a short description for the Introduction and Finishing Statements. The Introduction displays in the
+        Applicant Gateway when the activity has been enabled for the applicant.
+        The Finishing Statement displays in the Applicant Gateway when the applicant completes this activity.
+    </p>
+    <hr/>
+    <form name="offerForm" class="form-horizontal" novalidate>
+            <h4>Activity Introduction </h4>
+
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': offerForm.startHeader.$invalid && offerForm.startHeader.$touched}">
+                <label for="startHeader" class="col-sm-1 control-label">Header</label>
+                <div class="col-sm-11">
+                    <input autofocus="autofocus" type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" name="startHeader"
+                           id="startHeader" data-ng-model="offerCtrl.offerData.startHeader"
+                           placeholder="Add your header text here">
+                    <span class="pull-right">{{(offerCtrl.offerData.startHeader ?  offerCtrl.offerData.startHeader.length : 0)}} / 200</span>
+
+                    <div data-ng-if="offerForm.startHeader.$touched"
+                         data-ng-messages="offerForm.startHeader.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="offerCtrl.offerData.startHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+            <div data-ng-class="{ 'has-error': offerForm.sectionIntroduction.$invalid && offerForm.sectionIntroduction.$touched}">
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="sectionIntroduction"
+                              ng-model="offerCtrl.offerData.sectionIntroduction" ta-disabled='disabled'>
+                </text-angular>
+                <div data-ng-if="offerForm.sectionIntroduction.$touched"
+                     data-ng-messages="offerForm.sectionIntroduction.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <br>
+                    <hr/>
+                </div>
+            </div>
+            <h4>Finishing Statement if Offer is <b>Accepted</b></h4>
+
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': offerForm.headerStatement.$invalid && offerForm.headerStatement.$touched}">
+                <label for="headerStatement" class="col-sm-1 control-label">Header</label>
+
+                <div class="col-sm-11">
+                    <input type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" id="headerStatement"
+                           name="headerStatement" data-ng-model="offerCtrl.offerData.completeHeader"
+                           placeholder="Add your header text here">
+                    <span class="pull-right">{{(offerCtrl.offerData.completeHeader ?  offerCtrl.offerData.completeHeader.length : 0)}} / 200</span>
+
+                    <div data-ng-if="offerForm.headerStatement.$touched"
+                         data-ng-messages="offerForm.headerStatement.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="offerCtrl.offerData.completeHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+            <div data-ng-class="{ 'has-error': offerForm.sectionComplete.$invalid && offerForm.sectionComplete.$touched}">
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="sectionComplete"
+                              ng-model="offerCtrl.offerData.sectionComplete" ta-disabled='disabled'>
+                </text-angular>
+                <div data-ng-if="offerForm.sectionComplete.$touched"
+                     data-ng-messages="offerForm.sectionComplete.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <br>
+                <hr/>
+            </div>
+        </div>
+        <h4>Finishing Statement if Offer is <b>Declined</b></h4>
+
+        <div class="form-group"
+             data-ng-class="{ 'has-error': offerForm.headerStatement.$invalid && offerForm.headerStatement.$touched}">
+            <label for="declineHeader" class="col-sm-1 control-label">Header</label>
+
+            <div class="col-sm-11">
+                <input type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" id="declineHeader"
+                       name="declineHeader" data-ng-model="offerCtrl.offerData.declineHeader"
+                       placeholder="Add your header text here">
+                <span class="pull-right">{{(offerCtrl.offerData.declineHeader ?  offerCtrl.offerData.declineHeader.length : 0)}} / 200</span>
+
+                <div data-ng-if="offerForm.declineHeader.$touched"
+                     data-ng-messages="offerForm.declineHeader.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+                <span class="has-error help-block" data-ng-if="offerCtrl.offerData.declineHeader.length >= 200">Maximum characters allowed is 200</span>
+            </div>
+        </div>
+        <div data-ng-class="{ 'has-error': offerForm.declineInstructions.$invalid && offerForm.declineInstructions.$touched}">
+            <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="declineInstructions"
+                          ng-model="offerCtrl.offerData.declineInstructions" ta-disabled='disabled'>
+            </text-angular>
+            <div data-ng-if="offerForm.declineInstructions.$touched"
+                 data-ng-messages="offerForm.declineInstructions.$error">
+                <span class="help-block" data-ng-message="required">required field</span>
+            </div>
+        </div>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="offerForm.$pristine"
+                                    ng-click="offerCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="offerForm.$invalid"
+                                    ng-click="offerCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <nav>
+                            <ul class="pager">
+                                <li class="active"></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-continue"
+                                data-ng-click="offerCtrl.continueSave()" data-ng-disabled="offerForm.$invalid">
+                            continue <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</section>

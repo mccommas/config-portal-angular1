@@ -1,0 +1,70 @@
+{
+  "name": "com.liaison-intl.cas",
+  "version": "0.9.0",
+  "appPath": "app",
+  "authors": [
+    "Jeffrey McCommas <jmccommas@liaison-intl.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.3",
+    "angular-animate": "1.5.0",
+    "angular-route": "1.4.9",
+    "angular-touch": "1.4.9",
+    "angular-bootstrap": "^1.3.1",
+    "angular-spinner": "0.6.1",
+    "angular-toggle-switch": "1.2.1",
+    "angular-ui-select": "0.11.2",
+    "angular-cache-buster": "0.4.3",
+    "angular-messages": "1.4.9",
+    "angular-file-upload": "1.1.5",
+    "angular-xeditable": "0.1.9",
+    "angular-perfect-scrollbar": "https://github.com/maksad/angular-perfect-scrollbar.git#fbff161155621288d81b6d78890f13c1ff9d88a3",
+    "angular-toastr": "1.4.1",
+    "json3": "3.3.2",
+    "es5-shim": "4.0.5",
+    "bootstrap": "3.3.6",
+    "flow.js": "2.9.0",
+    "font-awesome": "4.3.0",
+    "jquery": "2.1.1",
+    "ng-scrollbar": "0.0.7",
+    "spin.js": "2.0.2",
+    "textAngular": "1.4.1",
+    "toastr": "2.1.1",
+    "restangular": "1.5.1",
+    "lodash": "3.7.0",
+    "mb-scrollbar": "2.0.0",
+    "StickyTableHeaders": "0.1.15",
+    "kendo-ui": "2015.2.624",
+    "css-toggle-switch": "3.1.1",
+    "jquery.easing": "1.3.1",
+    "jquery-ui": "1.11.4",
+    "bootstrap-select": "1.6.4",
+    "animate.css": "3.2.6",
+    "ngBootbox": "0.0.4",
+    "bootbox": "4.4.0",
+    "x-editable": "1.5.1",
+    "ng-idle": "1.1.0",
+    "angular-better-placeholders": "0.3.0",
+    "angular-ladda": "0.3.4",
+    "angular-auto-validate": "1.19.3",
+    "angular-ui-router": "1.0.0-beta.1"
+  },
+  "resolutions": {
+    "angular": "1.5.3",
+    "angular-bootstrap": "1.3.1",
+    "jquery": "2.1.1",
+    "bootbox": "4.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.3",
+    "angular-scenario": "1.2.0"
+  }
+}

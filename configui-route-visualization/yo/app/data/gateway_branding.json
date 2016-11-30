@@ -1,0 +1,42 @@
+[{
+        "id": 8,
+        "configName": "PRIMARY_COLOR",
+        "configValue": "#265172",
+        "createdDate": 1423517368040,
+        "updatedDate": 1423525293780
+},
+    {
+        "id": 9,
+        "configName": "SECONDARY_COLOR",
+        "configValue": "#919191",
+        "createdDate": 1423517368040,
+        "updatedDate": 1423525293870
+},
+    {
+        "id": 10,
+        "configName": "TEXT_COLOR",
+        "configValue": "#ffffff",
+        "createdDate": 1423517368040,
+        "updatedDate": 1423525294017
+},
+    {
+        "id": 11,
+        "configName": "LOGO_NAME",
+        "configValue": "Watertown School",
+        "createdDate": 1423517368040,
+        "updatedDate": 1423525293613
+},
+    {
+        "id": 12,
+        "configName": "GATEWAY_LOGO",
+        "configValue": "/common/img/branding-logo.jpg",
+        "createdDate": 1423526808857,
+        "updatedDate": 1423526808857
+},
+    {
+        "id": 13,
+        "configName": "GATEWAY_BACKGROUND",
+        "configValue": "images/0026.jpg",
+        "createdDate": 1423526808857,
+        "updatedDate": 1423526808857
+    }]

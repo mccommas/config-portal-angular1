@@ -1,0 +1,151 @@
+<section id="mainView" class="in-review">
+    <div class="row">
+        <div class="col-xs-12 program-title-bar">
+            <h1>program <span popover-placement="bottom" popover-trigger="mouseenter"
+                              uib-popover="{{appMvCtrl.headerdata.program.programName}}">{{ appMvCtrl.headerdata.program.programName | characters: 25}}</span>&nbsp;&nbsp;applicant
+                gateway <span popover-placement="bottom" popover-trigger="mouseenter"
+                              uib-popover="{{appMvCtrl.headerdata.gateway.name}}"> {{ appMvCtrl.headerdata.gateway.name | characters: 25}}</span>
+            </h1>
+        </div>
+    </div>
+    <div menu-pullout class="col-xs-3 mv-sidebar">
+        <section class="program-settings">
+            <h1>Activities</h1>
+            <hr/>
+            <!-- Welcome active label -->
+            <ul class="list-unstyled gateway-nav">
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Welcome == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('welcome') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Welcome">
+                    <input id="welcome" name="welcome" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkWelcome')" ng-model="appMvCtrl.menu_item.chkWelcome">
+                    <label for="welcome"><span ng-class="{ 'active': state.current.name.indexOf('welcome') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkSupplemental">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true" ui-sref=".welcome">Welcome
+                                    Message</a>
+                                <a ng-switch-default class="disabled">Welcome Message</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- SuppApp active label -->
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Supplemental == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('supp') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Supplemental">
+                    <input id="supplemental" name="supplemental" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkSupplemental')" ng-model="appMvCtrl.menu_item.chkSupplemental">
+                    <label for="supplemental"><span ng-class="{ 'active': state.current.name.indexOf('supp') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkSupplemental">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true"
+                                   ui-sref=".supplemental">Supplemental App</a>
+                                <a ng-switch-default class="disabled">Supplemental App</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- SuppApp in review label-->
+                <li class="active-label review-active" data-ng-if="appMvCtrl.menu_item_status.Supplemental == 'review' || appMvCtrl.menu_item_status.Supplemental == 'active'">
+                    <ul class="list-inline">
+                        <li><i class="fa fa-check"></i>
+                        </li>
+                        <li><a data-ng-click="appMvCtrl.goSuppInReview()">Supplemental App</a>
+                        </li>
+                        <li class="pull-right" data-ng-class="appMvCtrl.menu_item_status.Supplemental == 'review' ? 'icon-in-review' : 'icon-in-active'" data-toggle="tooltip" data-tooltip-placement="left" uib-tooltip="Supplemental App is in {{appMvCtrl.menu_item_status.Supplemental}} status">&nbsp;
+                        </li>
+                    </ul>
+                </li>
+                <!-- SuppApp active label -->
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Interview == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('interview') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Interview">
+                    <input id="interview" name="interview" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkInterview')" ng-model="appMvCtrl.menu_item.chkInterview">
+                    <label for="interview"><span ng-class="{ 'active': state.current.name.indexOf('interview') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkInterview">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true" ui-sref=".interview">Schedule
+                                    Interview</a>
+                                <a ng-switch-default class="disabled">Schedule Interview</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- Interview scheduler in review label-->
+                <li class="active-label review-active" data-ng-if="appMvCtrl.menu_item_status.Interview == 'review' || appMvCtrl.menu_item_status.Interview == 'active'">
+                    <ul class="list-inline">
+                        <li><i class="fa fa-check"></i>
+                        </li>
+                        <li><a data-ng-click="appMvCtrl.interviewInReview()">Schedule Interview</a>
+                        </li>
+                        <li class="pull-right" data-ng-class="appMvCtrl.menu_item_status.Interview == 'review' ? 'icon-in-review' : 'icon-in-active'" data-toggle="tooltip" data-tooltip-placement="left" uib-tooltip="Schedule Interview is in {{appMvCtrl.menu_item_status.Interview}} status">&nbsp;
+
+                        </li>
+                    </ul>
+                </li>
+                <!-- Extend Offer active label -->
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Offer == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('offer') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Offer">
+                    <input id="offer" name="offer" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkOffer')" ng-model="appMvCtrl.menu_item.chkOffer">
+                    <label for="offer"><span ng-class="{ 'active': state.current.name.indexOf('offer') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkOffer">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true" ui-sref=".offer">
+                                    Extend Offer</a>
+                                <a ng-switch-default class="disabled">Extend Offer</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- Extend Offer in review label-->
+                <li class="active-label review-active" data-ng-if="appMvCtrl.menu_item_status.Offer == 'review' || appMvCtrl.menu_item_status.Offer == 'active'">
+                    <ul class="list-inline">
+                        <li><i class="fa fa-check"></i>
+                        </li>
+                        <li><a data-ng-click="appMvCtrl.offerInReview()">Extend Offer</a>
+                        </li>
+                        <li class="pull-right" data-ng-class="appMvCtrl.menu_item_status.Offer == 'review' ? 'icon-in-review' : 'icon-in-active'" data-toggle="tooltip" data-tooltip-placement="left" uib-tooltip="Accept Offer is in {{appMvCtrl.menu_item_status.Offer}} status">&nbsp;
+
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- FEE Collection active label -->
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Fee == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('fee') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Fee">
+                    <input id="fee" name="fee" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkFee')" ng-model="appMvCtrl.menu_item.chkFee">
+                    <label for="fee"><span ng-class="{ 'active': state.current.name.indexOf('fee') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkFee">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true" ui-sref=".fee">Fee
+                                    Collection</a>
+                                <a ng-switch-default class="disabled">Fee Collection</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- FEE Collection in review label-->
+                <li class="active-label review-active" data-ng-if="appMvCtrl.menu_item_status.Fee == 'review' || appMvCtrl.menu_item_status.Fee == 'active'">
+                    <ul class="list-inline">
+                        <li><i class="fa fa-check"></i>
+                        </li>
+                        <li><a data-ng-click="appMvCtrl.feeInReview()">Fee Collection</a>
+                        </li>
+                        <li class="pull-right" data-ng-class="appMvCtrl.menu_item_status.Fee == 'review' ? 'icon-in-review' : 'icon-in-active'" data-toggle="tooltip" data-tooltip-placement="left" uib-tooltip="Fee Collection is in {{appMvCtrl.menu_item_status.Fee}} status">
+                            &nbsp;
+                        </li>
+                    </ul>
+                </li>
+                <!-- Documents active label -->
+                <li class="in-draft" data-ng-if="appMvCtrl.menu_item_status.Documents == 'draft'" ng-class="{ 'active-label': state.current.name.indexOf('documents') >= 0 }" ng-click="appMvCtrl.addActiveClass($event, $index)" ng-show="appMvCtrl.menu_item_visible.Documents">
+                    <input id="documents" name="documents" type="checkbox" ng-change="appMvCtrl.program_editor_checkbox_change('chkDocuments')" ng-model="appMvCtrl.menu_item.chkDocuments">
+                    <label for="documents"><span ng-class="{ 'active': state.current.name.indexOf('documents') != -1 }" class="isChecked"></span>
+                        <span ng-switch on="appMvCtrl.menu_item.chkDocuments">
+                                <a data-ng-class="'active' " class="active" ng-switch-when="true" ui-sref=".documents">Collect
+                                    Documents</a>
+                                <a ng-switch-default class="disabled">Collect Documents</a>
+                           </span>
+                    </label>
+                </li>
+                <!-- Documents in review label-->
+                <li class="active-label review-active" data-ng-if="appMvCtrl.menu_item_status.Documents == 'review' || appMvCtrl.menu_item_status.Documents == 'active'">
+                    <ul class="list-inline">
+                        <li><i class="fa fa-check"></i>
+                        </li>
+                        <li><a data-ng-click="appMvCtrl.goDocInReview()">Collect Documents</a>
+                        </li>
+                        <li class="pull-right" data-ng-class="appMvCtrl.menu_item_status.Documents == 'review' ? 'icon-in-review' : 'icon-in-active'" data-toggle="tooltip" data-tooltip-placement="left" uib-tooltip="Collect Documents is in {{appMvCtrl.menu_item_status.Documents}} status">
+                            &nbsp;
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-instructions">
+                    <p>Above are the sections within the applicant gateway that you can configure.</p>
+                </li>
+            </ul>
+            <hr/>
+        </section>
+    </div>
+    <div class="col-xs-9 mv-content view-slide-in" ui-view autoscroll="false">
+    </div>
+</section>

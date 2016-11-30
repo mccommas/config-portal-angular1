@@ -1,0 +1,110 @@
+<section class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Collect Documents</h3>
+        <hr/>
+        <p>This activity appears in the Applicant Gateway for those applicants for whom you have enabled this activity
+            in WebAdMIT.
+        </p>
+
+        <p>The applicant will have <b>60 calendar days</b> to complete the activity.</p>
+
+        <p>Enter a short description for the Introduction and Finishing Statements. The Introduction displays in the
+            Applicant Gateway  when the activity has been enabled for the applicant.
+            The Finishing Statement displays in the Applicant Gateway when the applicant completes this activity.
+        </p>
+        <hr/>
+        <form name="appGatewayDocuments" id="appGatewayDocuments" class="form-horizontal" novalidate="novalidate" role="form">
+                <h4>Activity Introduction</h4>
+
+                <div class="form-group"
+                     data-ng-class="{ 'has-error': appGatewayDocuments.headerIntro.$invalid && appGatewayDocuments.headerIntro.$touched}">
+                    <label for="headerIntro" class="col-sm-1 control-label">Header</label>
+
+                    <div class="col-sm-11">
+                        <input type="text" required="required" class="form-control" name="headerIntro" id="headerIntro"
+                               data-ng-model="appDocCtrl.docsData.startHeader" placeholder="Add your header text here"
+                                maxlength="200" data-ng-trim="false">
+                        <span class="pull-right">{{(appDocCtrl.docsData.startHeader ?  appDocCtrl.docsData.startHeader.length : 0)}} / 200</span>
+                        <div data-ng-if="appGatewayDocuments.headerIntro.$touched"
+                             data-ng-messages="appGatewayDocuments.headerIntro.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="appDocCtrl.docsData.startHeader.length >= 200">Maximum characters allowed is 200</span>
+                    </div>
+                </div>
+
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]"
+                              name="instructions1" ng-model="appDocCtrl.docsData.sectionIntroduction"
+                              ta-disabled='disabled' ta-focussed-class="focussed">
+                </text-angular>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <br>
+                        <hr/>
+                    </div>
+                </div>
+                <h4>Finishing Statement</h4>
+
+                <div class="form-group"
+                     data-ng-class="{ 'has-error': appGatewayDocuments.headerStatement.$invalid && appGatewayDocuments.headerStatement.$touched}">
+                    <label for="headerStatement" class="col-sm-1 control-label">Header</label>
+
+                    <div class="col-sm-11">
+                        <input type="text" required="required" class="form-control" id="headerStatement"
+                               name="headerStatement" data-ng-model="appDocCtrl.docsData.completeHeader"
+                               placeholder="Add your header text here" maxlength="200" data-ng-trim="false">
+                        <span class="pull-right">{{(appDocCtrl.docsData.completeHeader ?  appDocCtrl.docsData.completeHeader.length : 0)}} / 200</span>
+
+                        <div data-ng-if="appGatewayDocuments.headerStatement.$touched"
+                             data-ng-messages="appGatewayDocuments.headerStatement.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="appDocCtrl.docsData.completeHeader.length >= 200">Maximum characters allowed is 200</span>
+                    </div>
+                </div>
+
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]"
+                              name="instructions2" ng-model="appDocCtrl.docsData.sectionComplete" ta-disabled='disabled'
+                              ta-focussed-class="focussed">
+                </text-angular>
+                <div class="row">
+                    <div class="extended-col col-xs-12">
+                        <div class="well">
+                            <div class="btn-group program-edit-btns">
+                                <button type="button" class="btn btn-reset"
+                                        data-ng-disabled="appGatewayDocuments.$pristine"
+                                        ng-click="appDocCtrl.reset(appGatewayDocuments)">
+                                    <i class="fa fa-undo"></i> reset
+                                </button>
+                                <button type="button" class="btn btn-save"
+                                        data-ng-disabled="appGatewayDocuments.$invalid" ng-click="appDocCtrl.save();">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 app-bottom-btns">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                            <nav>
+                                <ul class="pager">
+                                    <li class="active"></li>
+                                    <li></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-reset btn-continue" type="button"
+                                    data-ng-disabled="appGatewayDocuments.$invalid"
+                                    data-ng-click="appDocCtrl.continueSave()">continue <i
+                                    class="fa fa-angle-double-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</section>

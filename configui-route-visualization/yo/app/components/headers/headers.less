@@ -1,0 +1,310 @@
+.header{
+  max-height: 71px;
+  height: 71px;
+  background: #121212;
+}
+.header p a{
+  cursor: pointer;
+}
+#headerMain .col-xs-12 {
+  padding: 0;
+}
+.header p{
+  font-family: 'heroregular', sans-serif;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100px;
+  line-height: 16px;
+}
+.header p.headerRight{
+  font-family: 'heroregular', sans-serif;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+  line-height: 16px;
+}
+#headerMain .col-xs-3 {
+  // width: 22%;
+  padding: 0;
+  //max-width: 235px;
+}
+
+#headerMain .col-xs-9 {
+  // width: 78%;
+  padding: 0;
+}
+.topLinksActive {
+  color: #fff;
+  font-family: museo_sans300, sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition:  all ease-in 2s;
+}
+.topLinkStyle span.topLinks {
+  color: #a3cfd9;
+  font-family: museo_sans300, sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition:  all ease-in 2s;
+
+}
+.topLinksActive.ng-enter, .topLinksActive.ng-move{
+  opacity: 0;
+}
+.topLinksActive.ng-active {
+  opacity: 1;
+}
+.topLinksActive.ng-leave{
+  opacity: 1;
+}
+.topLinksActive.ng-leave-active{
+  opacity: 0;
+}
+//
+.topLinkStyle span.topLinks.ng-enter, .topLinkStyle span.topLinks.ng-move{
+  opacity: 0;
+}
+.topLinkStyle span.topLinks.ng-active {
+  opacity: 1;
+}
+.topLinkStyle span.topLinks.ng-leave{
+  opacity: 1;
+}
+.topLinkStyle span.topLinks.ng-leave-active{
+  opacity: 0;
+}
+.topLinkStyle.col-xs-10 {
+  margin-top: 10px;
+  margin-left: -32px;
+
+}
+.topLinkStyle.col-xs-10 span {
+  padding: 10px 0;
+}
+.breadcrumbTop{
+  max-height: 71px;
+  height: 71px;
+  background: #3e5559;
+
+}
+.breadcrumbTop span i.fa.fa-chevron-left {
+  color: @ClickBlue;
+  margin: 25px 0 0 0;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  left: -10px;
+}
+// Programs Org Header
+section.header-icons {
+  height: 72px;
+  border-bottom: 3px solid #e3dfcc;
+}
+.header-icons h1 {
+  font-family: museo_sans500, sans-serif;
+  font-size: 15px;
+  color: #231f20;
+  text-transform: uppercase;
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+
+.header-icons .col-xs-4 {
+  border-right: 1px solid #e3dfcc;
+  margin: 0;
+}
+
+.col-xs-8.top-icons{
+  position: relative;
+  top: 33%;
+  left: 0;
+}
+// Sprite Icons in header
+.header-icons li.home-icon {
+  background: url("../img/sprite.png") -40px -238px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  left: 10px;
+  margin-right: 20px;
+}
+
+.header-icons li.home-icon.active {
+  position: relative;
+  background: url("../img/sprite.png") -10px -238px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.home-icon span {
+  cursor:pointer;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../img/sprite.png") -10px -238px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.home-icon:hover span {
+  opacity: 1;
+}
+
+// banding icon
+.header-icons li.branding-icon {
+  background: url("../img/sprite.png") -77px -11px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  left: 10px;
+  margin-right: 20px;
+}
+
+.header-icons li.branding-icon.active {
+  position: relative;
+  background: url("../img/sprite.png") -107px -11px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.branding-icon span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../img/sprite.png") -107px -11px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.branding-icon:hover span {
+  opacity: 1;
+}
+// Program Editor Icon
+
+.header-icons li.program-edit-icon {
+  background: url("../img/sprite.png") -77px -72px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  left: 10px;
+}
+
+.header-icons li.program-edit-icon.active {
+  position: relative;
+  background: url("../img/sprite.png") -107px -72px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.program-edit-icon span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../img/sprite.png") -107px -72px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.program-edit-icon:hover span {
+  opacity: 1;
+}
+
+// Polyigon under icons
+.header-icons ul li div.header-icon-tip {
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #e3dfcc;
+  position: absolute;
+  bottom: -30px;
+  left: -4px;
+}
+
+
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active{
+  opacity: 0;
+}
+
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 3s;
+  transition: all linear 3s;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+// Header Back Arrow
+
+.back-to-org {
+  position: relative;
+  width: 45px;
+  top: 20px;
+  left: -10px;
+}
+.back-to-org a {
+  background: url("../img/sprite.png") -39px -191px no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+  text-indent: -9999px;
+}
+.back-to-org a:hover {
+  background: url("../img/sprite.png") -10px -191px no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+}
+.back-to-org.org-arrow a {
+  background: url("") -39px -191px no-repeat !important;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+  text-indent: -9999px;
+}
+.back-to-org.org-arrow a:hover {
+  background: url("") -10px -191px no-repeat !important;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+}
+.header-icons li.org-quest-edit-icon {
+  background: url("../img/sprite.png") -77px -354px no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  text-indent: -9999px;
+  left: 10px;
+}
+.header-icons li.org-quest-edit-icon.active {
+  position: relative;
+  background: url("../img/sprite.png") -104px -354px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.org-quest-edit-icon span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../img/sprite.png") -104px -354px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+.header-icons li.org-quest-edit-icon:hover span {
+  opacity: 1;
+}

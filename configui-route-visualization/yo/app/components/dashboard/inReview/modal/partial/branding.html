@@ -1,0 +1,36 @@
+<div class="row preview-screens">
+    <div class="col-xs-12">
+        <div data-ng-style="{'background-image': 'url(' + previewCtrl.branding.backgroundImage + ')','background-color': '#C8C8CA','height':'242px' }" data-ng-class="{'brand-image-placeholder':!previewCtrl.branding.backgroundImage}">
+            <div class="brand-program-txt" data-ng-if="previewCtrl.branding.primaryheadlinetext == 'ON'">
+                <h1 id="brandingheading" style="color:{{previewCtrl.branding.headLineText}}">{{previewCtrl.nameInfo.organization.organizationName | characters:80}}</h1>
+            </div>
+            <div class="brand-title-bar">
+                <h1 class="pull-left">{{previewCtrl.programData.programName}}</h1>
+                <h1 class="pull-right">Deadline: {{previewCtrl.programData.deadlineDisplay | date:'MM/dd/yyyy'}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="preview-tabs nav-blocks">
+            <div class="nav-tab active"><a>Home</a></div>
+            <div class="nav-tab" data-ng-repeat="tab in previewCtrl.navTabs">
+                <a>{{tab}}</a>
+            </div>
+        </div>
+        <div class="preview-content">
+            <div ng-bind-html="previewCtrl.branding.instructions" set-target></div>
+
+        </div>
+        <h3>Program Details</h3>
+
+        <div class="preview-data-list">
+            <ul class="program-details-list">
+                <li data-ng-repeat="field in previewCtrl.homeConfig | orderBy:'sortIndex' track by  $index">
+                    {{ field.displayName }}:
+                    <strong data-ng-if="field.programModelName != 'deadlineDisplay'">{{ previewCtrl.programData[field.programModelName] }}</strong>
+                    <strong data-ng-if="field.programModelName === 'deadlineDisplay'">{{ previewCtrl.programData[field.programModelName] | date:'MMMM d, yyyy' }}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

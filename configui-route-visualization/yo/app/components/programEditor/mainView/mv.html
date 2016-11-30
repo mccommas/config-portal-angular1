@@ -1,0 +1,95 @@
+<section id="mainView">
+	<div class="row">
+		<div class="col-xs-12 program-title-bar">
+			<h1>program <span>{{ mvCtrl.headerdata.program.programName}}</span></h1>
+		</div>
+	</div>
+	<div menu-pullout class="col-xs-3 mv-sidebar">
+		<section class="program-settings" data-ng-if="mvCtrl.casid != '813'">
+			<h1>Settings</h1>
+			<hr/>
+			<ul class="list-unstyled">
+				<li ui-sref-active="active-label" ng-click="mvCtrl.addActiveClass($event, $index)" ng-model="mvCtrl.menu_item.chkHST" ng-show="mvCtrl.menu_item_visible.HST">
+					<div class="checkbox">
+						<label>
+                            <span class="left large"><i class="fa fa-check"></i>
+                        <a class="homelink" ui-sref=".hstranscripts">High School Transcripts</a>
+                    </span>
+						</label>
+					</div>
+				</li>
+				<!-- disable casID 805-->
+				<li data-ng-if="mvCtrl.headerdata.casId != '805'" ui-sref-active="active-label"
+				    ng-click="mvCtrl.addActiveClass($event, $index)"
+				    ng-model="mvCtrl.menu_item.chkCTCW" ng-show="mvCtrl.menu_item_visible.CTCW">
+					<div class="checkbox">
+						<label>
+                            <span class="left large"><i class="fa fa-check"></i>
+                        <a class="homelink" ui-sref=".collegetranscripts">College Transcripts</a>
+                    </span>
+						</label>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="program-settings">
+			<h1>Pages</h1>
+			<hr/>
+			<ul class="list-unstyled gateway-nav">
+				<li ui-sref-active="active-label" ng-click="mvCtrl.addActiveClass($event, $index)" ng-show="mvCtrl.menu_item_visible.Evaluation">
+					<div class="checkbox">
+						<input type="checkbox" name="evaluation" id="evaluation" ng-change="mvCtrl.program_editor_checkbox_change('chkEvaluation')" ng-model="mvCtrl.menu_item.chkEvaluation">
+						<label for="evaluation"><span ng-class="{ 'active': state.current.name.indexOf('evaluation') != -1 }" class="isChecked"></span>
+                            <span ng-switch on="mvCtrl.menu_item.chkEvaluation">
+                            <a data-ng-class="'active'" class="active" ng-switch-when="true" ui-sref=".evaluation">Evaluations</a>
+                            <a ng-switch-default class="disabled">Evaluations</a>
+                       </span>
+						</label>
+					</div>
+				</li>
+				<!--add case for when college turns off program level questions -->
+
+				<li ui-sref-active="active-label" ng-click="mvCtrl.addActiveClass($event, $index)" ng-show="mvCtrl.menu_item_visible.Question && !mvCtrl.headerdata.orgLevelQuestions">
+					<div class="checkbox">
+						<input id="questions" name="questions" type="checkbox" ng-change="mvCtrl.program_editor_checkbox_change('chkQuestion')" ng-model="mvCtrl.menu_item.chkQuestion">
+						<label for="questions"><span ng-class="{ 'active': state.current.name.indexOf('question') != -1 }" class="isChecked"></span>
+                            <span ng-switch on="mvCtrl.menu_item.chkQuestion">
+                                <a data-ng-class="'active'" class="active" ng-switch-when="true" ui-sref=".question">Questions</a>
+                                <a ng-switch-default class="disabled">Questions</a>
+                           </span>
+						</label>
+					</div>
+				</li>
+				<li ui-sref-active="active-label" ng-click="mvCtrl.addActiveClass($event, $index)" ng-show="mvCtrl.menu_item_visible.Prerequisites">
+					<div class="checkbox">
+						<input id="prerequisites" name="prerequisites" type="checkbox" ng-change="mvCtrl.program_editor_checkbox_change('chkPrerequisites')" ng-model="mvCtrl.menu_item.chkPrerequisites">
+						<label for="prerequisites"><span ng-class="{ 'active': state.current.name.indexOf('prerequisites') != -1 }" class="isChecked"></span>
+                            <span ng-switch on="mvCtrl.menu_item.chkPrerequisites" class="left large">
+                                    <a data-ng-class="'active'" class="active" ng-switch-when="true" ui-sref=".prerequisites">Prerequisites</a>
+                                    <a ng-switch-default class="disabled">Prerequisites</a>
+                                </span>
+						</label>
+					</div>
+				</li>
+				<li ui-sref-active="active-label" ng-click="mvCtrl.addActiveClass($event, $index)" ng-show="mvCtrl.menu_item_visible.Document">
+					<div class="checkbox">
+						<input id="documents" name="documents" type="checkbox" ng-change="mvCtrl.program_editor_checkbox_change('chkDocument')" ng-model="mvCtrl.menu_item.chkDocument">
+						<label for="documents"><span ng-class="{ 'active': state.current.name.indexOf('document') != -1 }" class="isChecked"></span>
+                            <span ng-switch on="mvCtrl.menu_item.chkDocument" class="left large">
+                                <a data-ng-class="'active'" class="active" ng-switch-when="true" ui-sref=".document">Documents</a>
+                                <a ng-switch-default class="disabled">Documents</a>
+                            </span>
+						</label>
+					</div>
+				</li>
+				<li class="sidebar-instructions">
+					<p>Above are the sections within the program that you can configure.</p>
+					<p>To activate and deactivate a page, use the check icons.</p>
+				</li>
+			</ul>
+			<hr/>
+		</section>
+	</div>
+	<div class="col-xs-9 mv-content view-slide-in" ui-view autoscroll="false">
+	</div>
+</section>

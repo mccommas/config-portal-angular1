@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3 class="modal-title">submit activity for review</h3>
+</div>
+<div class="modal-body">
+    <p>Selecting Submit will inform the CAS Administrator the Schedule Interview activity is complete. Is this feature ready for review?</p>
+    <p>If you are not finished making changes, select <b>continue editing</b></p>
+    <img src="common/img/ajax-loader.gif" id="loading-indicator" style="display:none" />
+</div>
+<div class="modal-footer">
+    <div class="btn-group program-edit-btns">
+        <button type="button" class="btn btn-cancel" ng-click="cancel()">
+            <i class="fa fa-pencil"></i> continue editing
+        </button>
+        <button click-once type="button" class="btn btn-save" data-ng-click="submitReview();">
+             submit <i class="fa fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>

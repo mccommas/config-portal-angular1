@@ -1,0 +1,166 @@
+<section class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Collect Documents</h3>
+        <hr/>
+        <p>Each applicant can upload a total of 5 MB per document. The accepted file formats are MSWord (.doc, .docx), JPEG (.jpeg, .jpg), PNG (.png), Rich Text Format (.rtf), Portable Document Format (.pdf), and ASCII Text file (.txt).
+        </p>
+        <hr/>
+        <form name="documentsUpload" class="form-horizontal upload-docs" novalidate role="form">
+            <div class="form-group form-horizontal" data-ng-class="{ 'has-error': documentsUpload.displayName.$invalid && documentsUpload.displayName.$touched}">
+                <div class="col-md-12 activity-heading">
+                    <label for="displayName" class="col-lg-3 control-label">Activity Display Name</label>
+                    <div class="col-lg-9">
+                        <input autofocus="autofocus" required="required" data-ng-trim="false" type="text" class="form-control" maxlength="50" name="displayName" id="displayName" data-ng-model="docUploadCtrl.uploadDocument.displayName" placeholder="Add your Activity Display Name here">
+                        <span class="pull-right">{{(docUploadCtrl.uploadDocument.displayName ?  docUploadCtrl.uploadDocument.displayName.length : 0)}} / 50</span>
+                        <div data-ng-if="documentsUpload.displayName.$touched" data-ng-messages="documentsUpload.displayName.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="docUploadCtrl.uploadDocument.displayName.length >= 50">Maximum characters allowed is 50</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" data-ng-class="{ 'has-error': documentsUpload.instructions.$invalid && documentsUpload.instructions.$touched}">
+                <label class="control-label" for="instructions">Applicant Instructions</label>
+                <!--<textarea required="required" placeholder="Applicant Instructions" name="instructions" id="instructions" class="form-control" rows="3" data-ng-model="docUploadCtrl.uploadDocument.instructions">-->
+                <!--</textarea>-->
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)"  required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" id="instructions" name="instructions" ng-model="docUploadCtrl.uploadDocument.instructions" ta-disabled='disabled'>
+                </text-angular>
+
+                <div class="col-xs-6">
+                    <div data-ng-if="documentsUpload.instructions.$touched" data-ng-messages="documentsUpload.instructions.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+                <!--<div class="col-xs-6">-->
+                    <!--<span class="pull-right">{{(docUploadCtrl.uploadDocument.instructions ?  docUploadCtrl.uploadDocument.instructions.length : 0)}} / 300</span>-->
+                <!--</div>-->
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Documents
+                </div>
+            </div>
+            <div class="table-responsive documentsList">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>document type</th>
+                            <th>request</th>
+                            <th>min required</th>
+                            <th>max allowed</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="document in docUploadCtrl.uploadDocument.documents">
+                            <td>{{document.documentType | characters: 25}}</td>
+                            <td>
+                                <div class="chkRequest Switch Round parent" dtoid="{{document.id}}" dtoindex="{{$index}}" ng-class="document.isRequest === true ? 'On' : 'Off'">
+                                    <div class="Toggle"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <select name="required" id="required"  ng-change="docUploadCtrl.minOptionChanged(document.minRequired,document.maxAllowed)"
+                                     data-ng-model="document.minRequired"
+                                     ng-options="item as item for item in docUploadCtrl.dataMaxAllowedFrom0">
+                                    <!-- <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option> -->
+                                </select>
+                            </td>
+                            <td>
+                                <select name="maxAllowed" id="maxAllowed" data-ng-model="document.maxAllowed"
+                                 ng-options="item as item for item in docUploadCtrl.dataMaxAllowedFrom0 | filterMinValue:document.minRequired">
+                                    <!-- <option ng-if="document.minRequired <= 1" value="1">1</option>
+                                    <option ng-if="document.minRequired <= 2" value="2">2</option>
+                                    <option ng-if="document.minRequired <= 3" value="3">3</option>
+                                    <option ng-if="document.minRequired <= 4" value="4">4</option>
+                                    <option ng-if="document.minRequired <= 5" value="5">5</option> -->
+                                </select>
+                            </td>
+                            <td>
+                                <div class="delete-doc" data-ng-click="docUploadCtrl.remove_documents($index)">
+                                    <i class="fa fa-trash-o"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="animated fadeIn" uib-collapse="isCollapsed">
+                <div class="col-xs-6 form-inline">
+                    <div class="add-new-doc form-group">
+                        <label class="sr-only" for="documentType">Document Type</label>
+                        <input type="text" class="form-control" name="documentType" id="documentType" data-ng-model="docUploadCtrl.newdocumentType" placeholder="Enter document Type">
+                    </div>
+                </div>
+                <div class="col-xs-6 app-upload-docs">
+                    <div class="btn-group program-edit-btns">
+                        <button type="button" class="btn btn-reset" data-ng-click="docUploadCtrl.cancel()">
+                            <i class="fa fa-times"></i> cancel
+                        </button>
+                        <button type="button" class="btn btn-save" ng-click="docUploadCtrl.add_documents();">
+                            <i class="fa fa-check"></i> add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 doc-alert">
+                    <uib-alert ng-repeat="alert in alerts" ng-if="!docUploadCtrl.isAtLeastOneON && docUploadCtrl.uploadDocument.documents.length >= 1" type="{{alert.type}}">
+                        {{alert.msg}}
+                    </uib-alert>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 doc-upload-text">
+                    <span data-ng-if="!docUploadCtrl.uploadDocument.documents.length">You currently have no documents. <b>Click
+                        +DOCUMENT to begin.</b></span>
+                </div>
+            </div>
+
+            <div class="add-document panel panel-default">
+                <div class="panel-body">
+                    <button id="toggleDocument" data-ng-click="isCollapsed = !isCollapsed" type="button" class="btn btn-remove pull-left">
+                        <i class="fa" data-ng-class="{ 'fa-plus': isCollapsed, 'fa-minus': !isCollapsed }"></i> DOCUMENT
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="documentsUpload.$pristine" ng-click="docUploadCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="documentsUpload.$invalid || !docUploadCtrl.uploadDocument.documents.length || !docUploadCtrl.isAtLeastOneON" ng-click="docUploadCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-previous" ui-sref="appGatewayEditor.documents"><i class="fa fa-angle-double-left"></i> previous
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="pager">
+                            <li></li>
+                            <li class="active"></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-continue animated fadeIn" data-ng-if="docUploadCtrl.showSubmit && !documentsUpload.$dirty" data-ng-disabled="!docUploadCtrl.uploadDocument.documents.length || !docUploadCtrl.isAtLeastOneON" ng-click="docUploadCtrl.openReviewModal(); ">submit for review <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

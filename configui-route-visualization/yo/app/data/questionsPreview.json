@@ -1,0 +1,196 @@
+{
+    "programquestions": {
+        "subheading": "This school has a shared set of questions for all of its programs.",
+        "warningmessage": "If you have chosen any other programs from this school, your answers here will apply to all of them. If you have already answered questions for another of this schools programs, you will see your previous answers below. Changing your answers here will apply those changes to all of this school's programs."
+    },
+    "id": 3150,
+    "createdDate": "2014-05-19",
+    "sectionName": "Questions",
+    "updatedDate": "2014-05-19",
+    "isChildPresent": true,
+    "instructions": "<p>As an applicant to this program, you are required to answer the following questions before you submit an application to our program.</p>",
+    "questionGroups": [
+        {
+            "title": "Additional Program Information",
+            "overview": null,
+            "questions": [
+                {
+                    "id": 30259,
+                    "question": "Have you previously applied to a program at this university?",
+                    "input": {
+                        "required": true,
+                        "type": "radio",
+                        "maxLength": 0
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 57889,
+                            "text": "Yes"
+            },
+                        {
+                            "id": 57890,
+                            "text": "No"
+            }
+          ]
+        },
+                {
+                    "id": 30260,
+                    "question": "Have you previously attended this university?",
+                    "input": {
+                        "required": true,
+                        "type": "radio",
+                        "maxLength": 0
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 57891,
+                            "text": "Yes"
+            },
+                        {
+                            "id": 57892,
+                            "text": "No"
+            }
+          ]
+        }
+      ]
+    },
+        {
+            "title": "Additional Questions",
+            "overview": null,
+            "questions": [
+                {
+                    "id": 17730,
+                    "question": "Select industry or job function that most closely matches your post-MBA goal.",
+                    "input": {
+                        "required": true,
+                        "type": "dropdown",
+                        "maxLength": 0
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 34460,
+                            "text": "Business Development"
+            },
+                        {
+                            "id": 34461,
+                            "text": "Consulting"
+            },
+                        {
+                            "id": 34462,
+                            "text": "Finance"
+            },
+                        {
+                            "id": 34463,
+                            "text": "HR"
+            },
+                        {
+                            "id": 34464,
+                            "text": "Management"
+            },
+                        {
+                            "id": 34465,
+                            "text": "Marketing"
+            },
+                        {
+                            "id": 34466,
+                            "text": "Operations"
+            },
+                        {
+                            "id": 34467,
+                            "text": "R&D"
+            },
+                        {
+                            "id": 34468,
+                            "text": "Sales"
+            }
+          ]
+        },
+                {
+                    "id": 106344,
+                    "question": "Have you previously applied to our program?",
+                    "input": {
+                        "required": true,
+                        "type": "checkboxgroup",
+                        "maxLength": 0
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 233185,
+                            "text": "Yes"
+            },
+                        {
+                            "id": 233186,
+                            "text": "No"
+            },
+                        {
+                            "id": 233187,
+                            "text": "Maybe"
+            }
+          ]
+        },
+                {
+                    "id": 106345,
+                    "question": "Are you related to an alumnus?",
+                    "input": {
+                        "required": true,
+                        "type": "radio",
+                        "maxLength": 0
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 233188,
+                            "text": "Yes"
+            },
+                        {
+                            "id": 233189,
+                            "text": "No"
+            }
+          ]
+        },
+                {
+                    "id": 106349,
+                    "question": "If so, who?",
+                    "input": {
+                        "required": false,
+                        "type": "text",
+                        "maxLength": 30
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 233199,
+                            "text": null
+            }
+          ]
+        }
+      ]
+    },
+        {
+            "title": "Essay Questions",
+            "overview": null,
+            "questions": [
+                {
+                    "id": 106352,
+                    "question": "Why are you interested in this field?",
+                    "input": {
+                        "required": true,
+                        "type": "textarea",
+                        "maxLength": 1500
+                    },
+                    "value": [],
+                    "answerOptions": [
+                        {
+                            "id": 233203,
+                            "text": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

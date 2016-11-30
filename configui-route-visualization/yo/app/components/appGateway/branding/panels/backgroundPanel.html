@@ -1,0 +1,29 @@
+<!-- Content Logo Panel -->
+<div class="background-panel program-edit-home" data-ng-controller="appBrandingBackgroundCtrl as backgroundCtrl">
+    <form name="backgroundPanelForm" novalidate="novalidate" role="form">
+        <div class="col-xs-12">
+            <div class="row radio-set background-radio-labels">
+                <div class="radio">
+                    <input type="radio" data-ng-click="backgroundCtrl.switchPanel('uploadImage');backgroundCtrl.addClass1()" name="optionsRadios" id="optionsRadios1" data-ng-class="{uploadImageActive : backgroundCtrl.showPanel == 'uploadImage'}" value="uploadImage" data-ng-model="backgroundCtrl.uploadImage">
+                    <label class="choose-image" for="optionsRadios1">
+                        <span></span>upload images
+                    </label>
+                </div>
+                <div class="radio">
+                    <input type="radio" data-ng-click="backgroundCtrl.switchPanel('chooseExisting');backgroundCtrl.addClass2()" name="optionsRadios" id="optionsRadios2" data-ng-class="{chooseExistingActive : backgroundCtrl.showPanel == 'chooseExisting'}" data-ng-change="backgroundCtrl.switchPanel('chooseExisting');" value="chooseExisting" data-ng-model="backgroundCtrl.chooseExisting">
+                    <label class="choose-existing" for="optionsRadios2">
+                        <span></span>choose existing
+                    </label>
+                </div>
+            </div>
+            <div data-ng-switch="backgroundCtrl.showPanel">
+                <div data-ng-switch-when="uploadImage" class="app-branding-animate">
+                    <div data-ng-include="'components/appGateway/branding/panels/background-upload-image.html'"></div>
+                </div>
+                <div data-ng-switch-when="chooseExisting" class="app-branding-animate">
+                    <div data-ng-include="'components/appGateway/branding/panels/background-choose-existing.html'"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

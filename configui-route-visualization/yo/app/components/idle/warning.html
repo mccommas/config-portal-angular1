@@ -1,0 +1,13 @@
+<div idle-countdown="countdown" ng-init="countdown = 120" class="modal-body exit-message warn-message">
+	<div class="error-message">
+		<p class="warn-dark"><strong>WARNING:</strong> your session will expire in <span
+				class=""><strong>{{idleCtrl.countdownTime.minutes}}:{{idleCtrl.countdownTime.seconds}} minutes</strong>
+			<!--{{idleCtrl.countdownTime.seconds}} --></span> due to inactivity. <strong>Would you like to continue
+			working</strong>?</p>
+		<p class="warn-light">Click Continue to return to your session</p>
+	</div>
+</div>
+
+<div id="exit-message" class="modal-footer confirm-modal-btns">
+	<a class="">Continue</a>
+</div>

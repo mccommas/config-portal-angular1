@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title">Edit Home Page Introduction</h4>
+</div>
+<div class="modal-body">
+    <p>Please provide an introduction for your Program homepage. This will be displayed along with your Program details to applicants who have elected to apply to your program.</p>
+    <p>Suggested topics for the Program homepage include details on how to be a successful applicant, links to other websites they may find helpful to visit, and how to contact your admissions team.</p>
+    <hr/>
+    <form name="addHomeTxtModal" novalidate role="form" data-ng-submit="homeModalCtrl.submit()">
+        <div class="col-xs-12">
+            <div class="ta-home-editor form-group">
+                <div text-angular="text-angular" data-ta-paste="mainCtrl.pruneStyle($html)" data-ng-model="homeModalCtrl.brandData.instructions.configValue" data-ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" data-name="instructions" data-ta-disabled='disabled'></div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer" style="border-top: none">
+    <div class="reset-text"></div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-cancel" data-ng-click="homeModalCtrl.cancel()"><i class="fa fa-times"></i> Cancel</button>
+        <button type="button" class="btn btn-reset"  data-ng-disabled="addHomeTxtModal.$pristine" data-ng-click="homeModalCtrl.resetinstruction()"><i class="fa fa-times"></i> Reset</button>
+        <button data-click-once type="button" class="btn btn-save" data-ng-click="homeModalCtrl.saveHomeTxt();" data-ng-disabled="addHomeTxtModal.$invalid"><i class="fa fa-check"></i> Save</button>
+    </div>
+</div>

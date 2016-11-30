@@ -1,0 +1,58 @@
+[
+    {
+        "id": 3225,
+        "createdDate": "2014-05-21",
+        "sectionName": "Home Page/Branding",
+        "updatedDate": "2014-05-21",
+        "preview": true,
+        "isChildPresent": true
+  },
+    {
+        "id": 3225,
+        "createdDate": "2014-05-21",
+        "sectionName": "Documents",
+        "updatedDate": "2014-05-21",
+        "preview": true,
+        "isChildPresent": true
+  },
+    {
+        "id": 3241,
+        "createdDate": "2014-05-21",
+        "sectionName": "Prerequisites",
+        "updatedDate": "2014-09-18",
+        "preview": true,
+        "isChildPresent": true
+  },
+    {
+        "id": 7704,
+        "createdDate": "2014-08-19",
+        "sectionName": "Evaluations",
+        "updatedDate": "2014-08-21",
+        "preview": true,
+        "isChildPresent": true,
+        "instructions": "Here are the instructions I want the applicant to see."
+  },
+    {
+        "id": 7707,
+        "createdDate": "2014-08-29",
+        "sectionName": "Organization Questions",
+        "updatedDate": "2014-08-29",
+        "instructions": "",
+        "preview": true,
+        "isChildPresent": true
+  },
+    {
+        "createdDate": null,
+        "sectionName": "High School Transcripts",
+        "isChildPresent": false,
+        "preview": false,
+        "updatedDate": "2014-08-21"
+  },
+    {
+        "createdDate": null,
+        "sectionName": "College Transcripts & Coursework",
+        "isChildPresent": true,
+        "preview": true,
+        "updatedDate": "2014-08-21"
+  }
+]

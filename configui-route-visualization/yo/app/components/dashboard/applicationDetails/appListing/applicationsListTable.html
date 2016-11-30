@@ -1,0 +1,70 @@
+<div data-ng-controller="ApplicationsListCtrl as appCtrl">
+    <div id="scrollable-area" class="table-responsive pro-org">
+        <table class="table table-striped" data-fixed-table-headers="scrollable-area">
+            <thead>
+                <tr>
+                    <th><a data-ng-click="appCtrl.predicatemodal = 'name'; reverse=!reverse">app gateway <i class="fa fa-sort"></i></a>
+                    </th>
+                    <th><a data-ng-click="appCtrl.predicatemodal = 'program.programName'; reverse=!reverse">program <i class="fa fa-sort"></i></a>
+                    </th>
+                    <th><a data-ng-click="appCtrl.predicatemodal = 'status'; reverse=!reverse"> status <i class="fa fa-sort"></i></a>
+                    </th>
+                    <th><a data-ng-click="appCtrl.predicatemodal = 'updatedDate'; reverse=!reverse">last update <i class="fa fa-sort"></i></a>
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody id="appTable" data-link="row" class="rowlink">
+                <tr class="animate" data-ng-repeat="application in appCtrl.applicationDetails | orderBy:appCtrl.predicatemodal:reverse | filter: searchPrograms" data-ng-mouseenter="showButtons = true" data-ng-mouseleave="showButtons = false" data-ng-class="selected">
+                    <td>
+                        <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{application.name}} ">
+                            {{::application.name | characters:15}}
+                        </div>
+                    </td>
+                    <td id="popoverAppList">
+                        <div popover-placement="right" popover-trigger="mouseenter" uib-popover-template="'components/dashboard/applicationDetails/appListing/popoverApp.html'">
+                            <!--uib-popover-template="'components/dashboard/applicationDetails/appListing/popoverApp.html'"-->
+                            <!--uib-popover="{{application.programName}}"-->
+                            {{::application.program.programName | characters:15}}
+                        </div>
+                    </td>
+                    <td>
+                        <div data-ng-class="{
+                        'draft-status': application.status == 'draft',
+                        'review-status': application.status == 'review',
+                        'active-status': application.status == 'active'}" title="{{application.program.programName}} is in  {{application.status}} status">
+                            {{::application.status | characters:15}}
+                        </div>
+                    </td>
+                    <td data-ng-class="showButtons ? 'selectedTd' : '' " data-ng-show="!showButtons">
+                        <div  class="fadeIn enter-fadeIn exit-fadeOut speed-700 stagger-100 showDate" >{{::application.updatedDate | date:'MM/dd/yyyy'}}</div>
+                     </td>
+                     <td data-ng-class="showButtons ? 'selectedTd' : '' " data-ng-show="showButtons">
+                        <div class="fadeIn enter-fadeIn exit-fadeOut speed-700 stagger-100 showButtons" >
+                            <a ui-sref="appGatewayBranding({gatewayId:application.id,programId:application.program.id})"><i class="fa fa-pencil"></i> edit details</a>
+                        </div>
+                    </td>
+                    <td id="program-arrows" ui-sref="appGatewayBranding({gatewayId:application.id,programId:application.program.id})" data-ng-class="selected">toggle arrows<span></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="message-error" data-ng-if="!appCtrl.applicationDetails.length">
+            <p>You currently have no Applicant Gateway Instances. <b>Click &#43;App Gateway</b> to begin</p>
+        </div>
+    </div>
+    <div class="extended-col col-xs-12 custom-popover">
+        <div class="program-edit-btns well" ng-if="!appCtrl.lookupPrograms.length" popover-placement="top" uib-popover="A program may not have more than one Applicant Gateway. Every program in this organization already has an Applicant Gateway." popover-trigger="mouseenter">
+            <button id="add-app-gateway" type="button" class="btn btn-remove pull-left" ng-disabled="!appCtrl.lookupPrograms.length">
+                <i class="fa fa-plus"></i> app gateway
+            </button>
+        </div>
+        <div class="program-edit-btns well" ng-if="appCtrl.lookupPrograms.length">
+            <button id="add-app-gateway" data-ng-click="openAddApplicantWindow()" type="button" class="btn btn-remove pull-left">
+                <i class="fa fa-plus"></i> app gateway
+            </button>
+        </div>
+    </div>
+</div>
+<!-- messages-->
+<!--Save bar-->

@@ -1,0 +1,26 @@
+[
+  {
+  "id": 1,
+  "category": "FOOTER_CONTACT_US",
+  "type": "Contact",
+  "link": "http://www.google.com",
+  "createdDate": 1419130810833,
+  "updatedDate": 1419130810833
+},
+  {
+    "id": 2,
+    "category": "FOOTER_ABOUT_US",
+    "type": "About",
+    "link": "http://www.google.com",
+    "createdDate": 1419130810833,
+    "updatedDate": 1419130810833
+  },
+  {
+    "id": 3,
+    "category": "FOOTER_ABOUT_US",
+    "type": "About",
+    "link": "http://www.google.com",
+    "createdDate": 1419130810833,
+    "updatedDate": 1419130810833
+  }
+]

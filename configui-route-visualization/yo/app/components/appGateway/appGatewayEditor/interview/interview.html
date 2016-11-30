@@ -1,0 +1,115 @@
+<section class="program-edit-home app-documents">
+    <h3>Schedule Interview</h3>
+    <hr/>
+    <p>This activity appears in the Applicant Gateway for those applicants for whom you have enabled this activity
+        in WebAdMIT.
+    </p>
+
+    <p>The applicant will have <b>14 calendar days</b> to complete the activity.</p>
+
+    <p>Enter a short description for the Introduction and Finishing Statements. The Introduction displays in the
+        Applicant Gateway when the activity has been enabled for the applicant.
+        The Finishing Statement displays in the Applicant Gateway when the applicant completes this activity.
+    </p>
+    <hr/>
+    <form name="interviewForm" class="form-horizontal" novalidate>
+        <div class="">
+            <h4>Activity Introduction </h4>
+
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': interviewForm.startHeader.$invalid && interviewForm.startHeader.$touched}">
+                <label for="startHeader" class="col-sm-1 control-label">Header</label>
+
+                <div class="col-sm-11">
+                    <input autofocus="autofocus" type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" name="startHeader"
+                           id="startHeader" data-ng-model="interviewCtrl.docsData.startHeader"
+                           placeholder="Add your header text here">
+                    <span class="pull-right">{{(interviewCtrl.docsData.startHeader ?  interviewCtrl.docsData.startHeader.length : 0)}} / 200</span>
+                    <div data-ng-if="interviewForm.startHeader.$touched"
+                         data-ng-messages="interviewForm.startHeader.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="interviewCtrl.docsData.startHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+            <div data-ng-class="{ 'has-error': interviewForm.instructions1.$invalid && interviewForm.instructions1.$touched}">
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions1"
+                              ng-model="interviewCtrl.docsData.sectionIntroduction" ta-disabled='disabled'>
+                </text-angular>
+                <div data-ng-if="interviewForm.instructions1.$touched"
+                     data-ng-messages="interviewForm.instructions1.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <br>
+                    <hr/>
+                </div>
+            </div>
+            <h4>Finishing Statement</h4>
+
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': interviewForm.headerStatement.$invalid && interviewForm.headerStatement.$touched}">
+                <label for="headerStatement" class="col-sm-1 control-label">Header</label>
+
+                <div class="col-sm-11">
+                    <input type="text" required="required" maxlength="200" data-ng-trim="false" class="form-control" id="headerStatement"
+                           name="headerStatement" data-ng-model="interviewCtrl.docsData.completeHeader"
+                           placeholder="Add your header text here">
+                    <span class="pull-right">{{(interviewCtrl.docsData.completeHeader ?  interviewCtrl.docsData.completeHeader.length : 0)}} / 200</span>
+
+                    <div data-ng-if="interviewForm.headerStatement.$touched"
+                         data-ng-messages="interviewForm.headerStatement.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                    <span class="has-error help-block" data-ng-if="interviewCtrl.docsData.completeHeader.length >= 200">Maximum characters allowed is 200</span>
+                </div>
+            </div>
+            <div data-ng-class="{ 'has-error': interviewForm.instructions2.$invalid && interviewForm.instructions2.$touched}">
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions2"
+                              ng-model="interviewCtrl.docsData.sectionComplete" ta-disabled='disabled'>
+                </text-angular>
+                <div data-ng-if="interviewForm.instructions2.$touched"
+                     data-ng-messages="interviewForm.instructions2.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="interviewForm.$pristine"
+                                    ng-click="interviewCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="interviewForm.$invalid"
+                                    ng-click="interviewCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <nav>
+                            <ul class="pager">
+                                <li class="active"></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-continue"
+                                data-ng-click="interviewCtrl.continueSave()" data-ng-disabled="interviewForm.$invalid">
+                            continue <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,69 @@
+{
+  "id": 1,
+  "sectionName": "document_upload",
+  "instructions": "Instructions",
+  "displayName": "Documents",
+  "enabled": true,
+  "status": "active",
+  "sectionContent": {
+    "id": 1,
+    "sectionName": "document_upload",
+    "startHeader": "Please Upload your documents",
+    "completeHeader": "Thanks For uploading your documents",
+    "sectionIntroduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam de isto magna dissensio est. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam cur Peripateticum appellem nescio. Quasi ego id curem, quid ille aiat aut neget. Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Quod si ita se habeat, non possit beatam praestare vitam sapientia. Tu enim ista lenius, hic Stoicorum more nos vexat.",
+    "sectionComplete": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam de isto magna dissensio est. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam cur Peripateticum appellem nescio. Quasi ego id curem, quid ille aiat aut neget. Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Quod si ita se habeat, non possit beatam praestare vitam sapientia. Tu enim ista lenius, hic Stoicorum more nos vexat."
+  },
+  "documents": [{
+    "id": 1,
+    "minRequired": 1,
+    "isRequest": true,
+    "isRequired": true,
+    "documentType": "CV/Resume",
+    "description": null,
+    "maxAllowed": 1
+  },
+    {
+      "id": 2,
+      "minRequired": 1,
+      "isRequest": true,
+      "isRequired": true,
+      "documentType": "Personal Statement",
+      "description": null,
+      "maxAllowed": 2
+    },
+    {
+      "id": 3,
+      "minRequired": 1,
+      "isRequest": true,
+      "isRequired": false,
+      "documentType": "Personal Statement",
+      "description": null,
+      "maxAllowed": 2
+    }],
+  "fees": [{
+    "id": 0,
+    "paymentName": "Fee1sdfsdfsd fsdfsdfsdfsdfsd fsdfsdsdfsdfs dfsdsdfsdfsdf",
+    "feeAmount": 100,
+    "feeDeadline": "2016-01-01"
+  },
+    {
+      "id": 1,
+      "paymentName": "Payment 2",
+      "feeAmount": 150,
+      "feeDeadline": "2016-01-01"
+    },
+    {
+      "id": 2,
+      "paymentName": "Payment 3",
+      "feeAmount": 75,
+      "feeDeadline": "2016-01-01"
+    },
+    {
+      "id": 3,
+      "paymentName": "Payment 4",
+      "feeAmount": 305,
+      "feeDeadline": "2016-01-01"
+    }
+
+  ]
+}

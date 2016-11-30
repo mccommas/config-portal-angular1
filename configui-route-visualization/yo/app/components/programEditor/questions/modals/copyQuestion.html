@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <!--<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>-->
+    <!--</button>-->
+    <h4 class="modal-title">Copy Question</h4>
+</div>
+<div class="modal-body">
+    <table class="table table-condensed">
+        <tr>
+            <th width="30" style="text-align: left"></th>
+            <th><a href="" ng-click="predicate = 'questionText'; reverse=false">Question</a>
+            </th>
+            <th>Question Block</th>
+            <th>App</th>
+            <th>Program</th>
+        </tr>
+    </table>
+    <div ng-repeat="cas in copydata">
+        <div ng-repeat="qs in cas.questionSet">
+            <div ng-repeat="question in qs.questions">
+                <table class="table table-condensed">
+                    <tr>
+                        <td width="30" style="text-align: left">
+                            <input type="checkbox" ng-click="toggleCheckbox(question.id)" />
+
+                        </td>
+
+                        <td class="truncate" popover-placement="right" popover-trigger="mouseenter" uib-popover="{{question.questionText}}">
+                            <p>{{question.questionText}}</p>
+                        </td>
+                        <td data-title="'Block'">
+                            {{qs.title}}
+                        </td>
+                        <td data-title="'App'">
+                            {{ cas.applicationName}}
+                        </td>
+                        <td data-title="'Program'">
+                            {{ cas.programName}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="modal-footer" style="border-top: none">
+            <button type="button" class="btn btn-cancel" ng-click="cancel()"><i class="fa fa-times"></i> Cancel</button>
+            <button type="button" class="btn btn-save" ng-click="copyQuestion();"><i class="fa fa-check"></i> Copy</button>
+        </div>
+    </div>
+</div>

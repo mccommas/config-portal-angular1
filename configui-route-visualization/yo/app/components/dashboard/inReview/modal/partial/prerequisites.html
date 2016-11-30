@@ -1,0 +1,31 @@
+<div class="row preview-screens prerequisites-view ">
+	<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="1"
+	                   on-scroll="onScroll(scrollTop, scrollHeight)">
+
+		<div class="col-xs-12">
+			<h2 data-ng-if="previewCtrl.prerequisitesData.prerequisites.length">There are <span>{{previewCtrl.prerequisitesData.prerequisites.length}}</span> Total Prerequisites</h2>
+			<div style="margin-top:5px" data-ng-if="!previewCtrl.prerequisitesData.prerequisites.length">No Prerequisites have been defined</div>
+			<div>
+				<hr/>
+			</div>
+			<div id="prerequisites-view" data-ng-repeat="prerequisite in previewCtrl.prerequisitesData.prerequisites">
+				<div class="col-xs-12">
+					<h3>Title: <span>{{ prerequisite.name }}</span></h3>
+				</div>
+				<div class="col-xs-3">
+					<h3>Min Grade: <span>{{prerequisite.minGrade}}</span></h3>
+				</div>
+				<div class="col-xs-3">
+					<h3>Min Credits: <span>{{prerequisite.minCredits}}</span></h3>
+				</div>
+				<div class="col-xs-12">
+					<h3>Description: <span class="prerequisites-desc">{{ prerequisite.description }}</span></h3>
+
+				</div>
+				<div class="col-xs-12">
+					<hr/>
+				</div>
+			</div>
+		</div>
+	</perfect-scrollbar>
+</div>

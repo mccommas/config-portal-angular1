@@ -1,0 +1,225 @@
+[{
+		"id": 5759,
+		"createdDate": "2014-05-13",
+		"instructions": "TJUCAS Essay question will be the first question within each Program’s questions page",
+		"sectionId": 2943,
+		"sequenceNumber": 1,
+		"title": "TJUCAS Essay question for all programs",
+		"updatedDate": "2014-05-13",
+		"questions": [{
+			"id": 9193,
+			"createdDate": "2014-05-13",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 6,
+			"updatedDate": "2014-05-13",
+			"answers": [{
+				"id": 16147,
+				"createdDate": "2014-05-13",
+				"maxChars": 250,
+				"updatedDate": "2014-05-13"
+			}]
+		},
+		{
+			"id": 9434,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 10,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16763,
+				"answerOption": "Yes",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16764,
+				"answerOption": "No",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16765,
+				"answerOption": "Not Sure",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		},
+		{
+			"id": 9435,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 9,
+			"responseTypeId": 8,
+			"displayTypeId": 3,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16766,
+				"answerOption": "LSU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16767,
+				"answerOption": "CSU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16768,
+				"answerOption": "ITU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16769,
+				"answerOption": "NYU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		},
+		{
+			"id": 9436,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 9,
+			"responseTypeId": 4,
+			"displayTypeId": 1,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16770,
+				"answerOption": "CS",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16771,
+				"answerOption": "IT",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16772,
+				"answerOption": "ECE",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16773,
+				"answerOption": "EEE",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		}]
+	},{
+		"id": 5759,
+		"createdDate": "2014-05-13",
+		"instructions": "TJUCAS Essay question will be the first question within each Program’s questions page",
+		"sectionId": 2943,
+		"sequenceNumber": 1,
+		"title": "TJUCAS Essay question for all programs",
+		"updatedDate": "2014-05-13",
+		"questions": [{
+			"id": 9193,
+			"createdDate": "2014-05-13",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 6,
+			"updatedDate": "2014-05-13",
+			"answers": [{
+				"id": 16147,
+				"createdDate": "2014-05-13",
+				"maxChars": 250,
+				"updatedDate": "2014-05-13"
+			}]
+		},
+		{
+			"id": 9434,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 10,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16763,
+				"answerOption": "Yes",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16764,
+				"answerOption": "No",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16765,
+				"answerOption": "Not Sure",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		},
+		{
+			"id": 9435,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 9,
+			"responseTypeId": 8,
+			"displayTypeId": 3,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16766,
+				"answerOption": "LSU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16767,
+				"answerOption": "CSU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16768,
+				"answerOption": "ITU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16769,
+				"answerOption": "NYU",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		},
+		{
+			"id": 9436,
+			"createdDate": "2014-05-15",
+			"questionText": "\r\nIf you are in the process of completing SCCO prerequisites (you may view the complete list on our web site www.scco.edu), please list the prerequisites you still need to complete and the quarter/semester/term when you will be taking each course.",
+			"questionTypeId": 9,
+			"responseTypeId": 4,
+			"displayTypeId": 1,
+			"updatedDate": "2014-05-15",
+			"answers": [{
+				"id": 16770,
+				"answerOption": "CS",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16771,
+				"answerOption": "IT",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16772,
+				"answerOption": "ECE",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			},
+			{
+				"id": 16773,
+				"answerOption": "EEE",
+				"createdDate": "2014-05-15",
+				"updatedDate": "2014-05-15"
+			}]
+		}]
+	}]

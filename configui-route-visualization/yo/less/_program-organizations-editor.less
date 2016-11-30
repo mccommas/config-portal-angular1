@@ -1,0 +1,157 @@
+// Styles for the templates/dashboard/organizations/programs/programs-and-organizations-editor.html
+#application-setting h1 span{
+  .appHeading1();
+
+}
+#application-setting h2{
+  .appHeading2();
+}
+#application-setting h3{
+  .appHeading3();
+}
+#application-setting p{
+  .appPara();
+}
+#application-setting span{
+  .appSpan();
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #555;
+  background-color: #fff;
+  border: 0;
+  border-bottom-color: transparent;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+.nav-tabs > li > a {
+  margin: 0 4px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: #d9e2eb;
+  color: grey;
+  
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 39px;
+  cursor: pointer;
+}
+.nav-tabs {
+  border-bottom: 5px solid #fff;
+  padding-bottom: 3px;
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -2px;
+}
+
+.pro-org th, th a {
+  text-transform: uppercase;
+}
+.pro-org tr {
+  cursor: pointer;
+}
+.pro-org .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: none;
+}
+// Branding icon
+.pro-org td.program-arrows {
+  background: url("../images/sprite.png") -160px -353px no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: auto;
+  position: relative;
+  text-indent: -9999px;
+  margin-right: 0;
+  padding-right: 12px;
+
+}
+
+.pro-org td.program-arrows.active {
+  position: relative;
+  background: url("../images/sprite.png") -189px -353px no-repeat;
+  .transition(all, 0.3s, ease-in);
+}
+
+.pro-org td.program-arrows span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url("../images/sprite.png") -189px -353px no-repeat;
+  opacity: 0;
+  .transition(all, 0.3s, ease-in);
+}
+
+.pro-org td.program-arrows:hover span {
+  opacity: 1;
+}
+.pro-org .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+div.copy-table {
+  max-height: 270px;
+  overflow-x: hidden;
+}
+.checkbox-copy{
+  margin: 20px 0 5px 30px;
+}
+.copy-table th, th a {
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: #6b6b6b;
+  font-size: 13px;
+  font-family: museo_sans300, sans-serif;
+}
+.copy-table th, th a i.fa.fa-sort {
+  color: #2b80cf;
+}
+.delete-modal-body-programs {
+  background: url("../images/delete-modal.png") no-repeat 0 0;
+  width: auto;
+  height: 340px;
+}
+.delete-modal-body-programs p{
+  color: #ffffff !important;
+  font-size: 25px  !important;
+  font-family: 'museo_slab500', sans-serif  !important;
+  position: relative;
+  width: 380px;
+  text-align: right;
+  top: 158px;
+  left: 180px;
+  line-height: 25px !important;
+}
+.delete-modal-btns {
+  position: absolute;
+  bottom: 2px;
+  right: 30px;
+  text-align: center;
+}
+
+.delete-modal-btns a{
+  font-family: museo_sans500, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: inline-block;
+}
+.delete-modal-btns a:hover{
+  background: #abdfff;
+}
+#application-setting.program-modal h3{
+  color: #8e8e8e;
+  font-family: 'museo_sans100', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 7px 0;
+}
+.pro-org tr.disable-rows{
+  cursor: default;
+  background: #000000;
+}

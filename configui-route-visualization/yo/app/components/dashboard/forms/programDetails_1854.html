@@ -1,0 +1,93 @@
+<section id="application-setting">
+    <div class="col-xs-12 white-box">
+        <p class="text-success" data-ng-if="ProgDetailCtrl.programDetails.status == 'active' && ProgDetailCtrl.headerdata.userType.toLowerCase() == 'admissions user'">
+            <b>THIS PROGRAM HAS BEEN ACTIVATED. ONLY THE DEADLINE DATE, WEBADMIT NAME, HOME PAGE TEXT AND BRANDING MAY BE EDITED BY THE PROGRAM ADMINISTRATOR</b>
+        </p>
+        <h2 class="level3">{{ProgDetailCtrl.headerdata.casName | characters:30}} &nbsp;&nbsp;&nbsp; {{ProgDetailCtrl.headerdata.applicationName | characters:50}}</h2>
+        <h2 class="level2">{{ProgDetailCtrl.headerdata.organization.organizationName | characters:50}}</h2>
+        <h1 class="level1">{{ProgDetailCtrl.programDetails.programName | characters:50}}</h1>
+        <!--<h1>{{ProgDetailCtrl.headerdata.institutionName | characters:50}}</h1>
+        <h2>{{ProgDetailCtrl.headerdata.organization.organizationName | characters:50}}</h2>
+        <h3 class="program-name-details">{{ProgDetailCtrl.programDetails.programName | characters:50}}</h3>-->
+        <hr/>
+        <div class="program-details-read-only">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>Status <span class="app-status"> {{ProgDetailCtrl.programDetails.status }}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p>Program ID <span>{{ProgDetailCtrl.programDetails.id}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <p>Program Code <span>{{ProgDetailCtrl.programDetails.programId}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>Level <span>{{ProgDetailCtrl.programDetails.programLevel | characters:50}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>Location <span>{{ProgDetailCtrl.programDetails.city}}, {{ProgDetailCtrl.programDetails.state}}.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p>Start Term: <span>{{ProgDetailCtrl.programDetails.startTerm}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <p>Start Year: <span>{{ProgDetailCtrl.programDetails.academicYear}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Open Date: <span>{{ProgDetailCtrl.programDetails.startDate | date: 'MM/dd/yyyy'}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <p>Deadline: <span>{{ProgDetailCtrl.programDetails.deadline | date: 'MM/dd/yyyy'}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <p>Deadline Display Date: <span>{{ProgDetailCtrl.programDetails.deadlineDisplay | date: 'MM/dd/yyyy' }}</span>
+                    </p>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p>Enrollment Type: <span>{{ProgDetailCtrl.programDetails.programType}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Track: <span>{{ProgDetailCtrl.programDetails.track}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Delivery: <span>{{ProgDetailCtrl.programDetails.delivery}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Concentration: <span>{{ProgDetailCtrl.programDetails.concentration}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Department: <span>{{ProgDetailCtrl.programDetails.department}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Application Type: <span>{{ProgDetailCtrl.programDetails.applicationType}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

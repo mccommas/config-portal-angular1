@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-xs-12 program-title-bar">
+        <h1>program <span popover-placement="bottom" popover-trigger="mouseenter" uib-popover="{{appBrandingCtrl.headerdata.program.programName}}">{{ appBrandingCtrl.headerdata.program.programName | characters: 25}}</span >&nbsp;&nbsp;applicant gateway <span popover-placement="bottom" popover-trigger="mouseenter" uib-popover="{{appBrandingCtrl.headerdata.gateway.name}}"> {{ appBrandingCtrl.headerdata.gateway.name | characters: 25}}</span></h1>
+    </div>
+</div>
+<section class="program-edit-home app-branding">
+    <div class="col-xs-3 brand-sidebar">
+        <!-- List Menu Items -->
+        <ul class="list-unstyled side-icons">
+            <li class="eyedropper"><a data-ng-click="appBrandingCtrl.switchPanel('color');" ng-class="{eyedropperactive : appBrandingCtrl.showPanel == 'color'}">Color</a>
+            </li>
+            <li class="logo"><a data-ng-click="appBrandingCtrl.switchPanel('logo');" ng-class="{logoactive : appBrandingCtrl.showPanel == 'logo'}">Logo</a>
+            </li>
+            <li class="background"><a data-ng-click="appBrandingCtrl.switchPanel('background');" ng-class="{backgroundactive : appBrandingCtrl.showPanel == 'background'}">Background</a>
+            </li>
+            <li class="footlinks"><a data-ng-click="appBrandingCtrl.switchPanel('footer');" ng-class="{footlinkactive : appBrandingCtrl.showPanel == 'footer'}">Links</a>
+            </li>
+        </ul>
+        <div ng-switch="appBrandingCtrl.showPanel">
+            <div ng-switch-when="color" class="app-branding-animate">
+                <div ng-include="'components/appGateway/branding/panels/colorPanel.html'"></div>
+            </div>
+            <div ng-switch-when="logo" class="app-branding-animate">
+                <div ng-include="'components/appGateway/branding/panels/logoPanel.html'"></div>
+            </div>
+            <div ng-switch-when="background" class="app-branding-animate">
+                <div ng-include="'components/appGateway/branding/panels/backgroundPanel.html'"></div>
+            </div>
+            <div ng-switch-when="footer" class="app-branding-animate">
+                <div ng-include="'components/appGateway/branding/panels/footerPanel.html'"></div>
+            </div>
+            <div class="panel-instructions" ng-switch-default>
+                <p>Please choose the branding section you would like to edit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-9 brand-view">
+        <h3>Page View </h3>
+        <hr/>
+        <section class="page-viewer">
+            <div class="app-brand-header" ng-style="{ background: appBrandingCtrl.primaryColor }">
+                <h1 ng-style="{ color: appBrandingCtrl.textColor}" data-ng-if="!appBrandingCtrl.appBrandingData.GATEWAY_LOGO.configValue && !appBrandingCtrl.uploader.queue.length">{{appBrandingCtrl.headerdata.organization.organizationName | characters: 50}}</h1>
+                <div id="headerImage" data-ng-repeat="item in appBrandingCtrl.uploader.queue" data-ng-if="appBrandingCtrl.uploader.isHTML5" data-ng-thumb="{ file: item._file ,height:70, width:360 }"></div>
+                <img class="img-responsive" data-ng-if="!appBrandingCtrl.uploader.queue.length && appBrandingCtrl.appBrandingData.GATEWAY_LOGO.configValue" data-ng-src="{{appBrandingCtrl.appBrandingData.GATEWAY_LOGO.configValue}}" title="{{appBrandingCtrl.headerdata.organization.organizationName}}" alt="{{appBrandingCtrl.headerdata.organization.organizationName}}" />
+                <span class="header-bottom-border" ng-style="{ background: appBrandingCtrl.secondaryColor }"></span>
+            </div>
+            <div class="app-brand-welcome">
+                <div class="col-xs-8">
+                    <h1>{{ appBrandingCtrl.headerdata.program.programName | characters: 30}}</h1>
+                </div>
+                <div class="col-xs-4 learn-more">
+                    <h2>Learn More <span></span></h2>
+                </div>
+            </div>
+            <div style="position:absolute" data-ng-repeat="item in appBrandingCtrl.backgroundUploader.queue" data-ng-if="appBrandingCtrl.backgroundUploader.isHTML5" data-ng-thumb="{ file: item._file ,height:250, width:590 }">
+            </div>
+            <div id="imageChoosed" data-ng-if="!appBrandingCtrl.backgroundUploader.queue.length" style="background-image: url({{appBrandingCtrl.backgroundImageURL}}); position:absolute;width:590px;height:250px">
+            </div>
+            <div class="app-brand-body">
+                <div class="col-xs-2" ng-style="{ background: appBrandingCtrl.secondaryColor }"></div>
+                <div class="col-xs-10">
+                    <div class="col-xs-4">
+                        <div class="bg-circle" ng-style="{ background: appBrandingCtrl.secondaryColor}">
+                            <h1 ng-style="{color: appBrandingCtrl.textColor };" class="ssection">section</h1>
+                            <h1 ng-style="{color: appBrandingCtrl.textColor };" class="iicon">icon</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="section-header">
+                            <h1>Section Header</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laudantium vel voluptates? Aliquam beatae blanditiis cupiditate</p>
+                        </div>
+                        <section class="bottom-section">
+                            <div class="col-xs-4">
+                                <div class="pull-left">
+                                    <h2>Activity</h2>
+                                    <h1>Details</h1>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="pull-right">
+                                    <h2>Activity Inquiry</h2>
+                                    <button type="button" class="appbtn btn btn-primary">Enter Activity</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="app-brand-footer" ng-style="{background: appBrandingCtrl.primaryColor}">
+                <span class="footer-top-border" ng-style="{background: appBrandingCtrl.secondaryColor}"></span>
+                <ul class="list-inline brand-footer-links">
+                    <li data-ng-repeat="link in appBrandingCtrl.footerLinksData">
+                        <a ng-style="{color: appBrandingCtrl.textColor}">{{link.type}}</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,43 @@
+[{
+    "id": 5322,
+    "valueId": "Certificate",
+    "valueString": "Certificate",
+    "valueAbbr": null,
+    "sortIdx": 1
+}, {
+    "id": 5323,
+    "valueId": "DPT",
+    "valueString": "DPT",
+    "valueAbbr": null,
+    "sortIdx": 2
+}, {
+    "id": 5324,
+    "valueId": "DSc",
+    "valueString": "DSc",
+    "valueAbbr": null,
+    "sortIdx": 3
+}, {
+    "id": 5325,
+    "valueId": "MFT",
+    "valueString": "MFT",
+    "valueAbbr": null,
+    "sortIdx": 4
+}, {
+    "id": 5326,
+    "valueId": "MS",
+    "valueString": "MS",
+    "valueAbbr": null,
+    "sortIdx": 5
+}, {
+    "id": 5327,
+    "valueId": "OD",
+    "valueString": "OD",
+    "valueAbbr": null,
+    "sortIdx": 6
+}, {
+    "id": 5328,
+    "valueId": "PhD",
+    "valueString": "PhD",
+    "valueAbbr": null,
+    "sortIdx": 7
+}]

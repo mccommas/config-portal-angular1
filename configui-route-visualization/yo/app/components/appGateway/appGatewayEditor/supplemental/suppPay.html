@@ -1,0 +1,103 @@
+<section class="program-edit-home app-documents">
+    <h3>Supplemental Application Payment</h3>
+    <hr/>
+    <p>The Payment section allows you to collect application costs from your applicants</p>
+
+    <form name="paymentForm" class="form-horizontal" novalidate="novalidate" role="form">
+        <div class="col-xs-6">
+            <p>Would you like to add a payment?</p>
+        </div>
+        <div class="col-xs-6">
+            <div class="radio-inline">
+                <input type="radio" name="paymentEnabled" data-ng-model="suppPayCtrl.suppFeeData.paymentEnabled" id="paymentEnabled1" data-ng-value="true" data-ng-checked="false">
+                <label for="paymentEnabled1">
+                    <span></span>Yes
+                </label>
+            </div>
+            <div class="radio-inline">
+                <input type="radio" name="paymentEnabled" data-ng-model="suppPayCtrl.suppFeeData.paymentEnabled" id="paymentEnabled2" data-ng-value="false" data-ng-checked="true">
+                <label for="paymentEnabled2">
+                    <span></span>No
+                </label>
+            </div>
+        </div>
+        <div class="payment-dropdown col-xs-12" data-ng-if="suppPayCtrl.suppFeeData.paymentEnabled === true ">
+            <hr/>
+            <p data-ng-if="!suppPayCtrl.suppFeeData.feeAmount && !suppPayCtrl.suppFeeData.paymentName">You have not yet added a payment.</p>
+
+            <div class="panel panel-fee panel-default">
+                <div class="panel-body">
+                    <div class="form-group" data-ng-class="{ 'has-error': paymentForm.paymentName.$invalid && paymentForm.paymentName.$touched}">
+                        <label for="paymentName" class="col-sm-3 control-label">Payment Name</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" required="required" name="paymentName" id="paymentName" data-ng-model="suppPayCtrl.suppFeeData.paymentName" placeholder="Add your Payment Name here">
+
+                            <div data-ng-if="paymentForm.paymentName.$touched" data-ng-messages="paymentForm.paymentName.$error">
+                                <span class="help-block" data-ng-message="required">required field</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': paymentForm.feeAmount.$invalid && paymentForm.feeAmount.$touched}">
+                        <label for="feeAmount" class="col-sm-3 control-label">Fee</label>
+
+                        <div class="col-sm-4">
+                            <span class="currencySpan">$</span>
+                            <valid-number-supp-pay name="feeAmount" id="feeAmount"
+                                           data-ng-model="suppPayCtrl.suppFeeData.feeAmount" placeholder="Applicant Fee" cssclass="form-control currencyInput" />
+
+
+
+                        </div>
+                        <div data-ng-if="paymentForm.feeAmount.$touched" data-ng-messages="paymentForm.feeAmount.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                            <!--<span class="help-block" data-ng-message="pattern">Not a valid number!</span>-->
+                        </div>
+                    </div>
+	                <div class="fee-waiver checkbox animated pay-slide" ng-if="suppPayCtrl.suppFeeData.feeAmount > 0">
+		                <input type="checkbox" name="feeWaiver" id="feeWaiver" data-ng-model="suppPayCtrl.suppFeeData.feeWaiver">
+		                <label for="feeWaiver"><span class="isChecked"></span>
+			                <span></span> Waive fee if applicant is approved for financial assistance.
+		                </label>
+	                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="extended-col col-xs-12">
+                <div class="well">
+                    <div class="btn-group program-edit-btns">
+                        <button type="button" class="btn btn-reset" data-ng-disabled="paymentForm.$pristine" ng-click="suppPayCtrl.reset(paymentForm)">
+                            <i class="fa fa-undo"></i> reset
+                        </button>
+                        <button type="button" class="btn btn-save" data-ng-disabled="paymentForm.$invalid" ng-click="suppPayCtrl.save();">
+                            <i class="fa fa-check"></i> save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 app-bottom-btns">
+                <div class="col-xs-4">
+                    <button class="btn btn-reset btn-previous" type="button" ui-sref="appGatewayEditor.suppQuest"><i class="fa fa-angle-double-left"></i> previous </button>
+                </div>
+                <div class="col-xs-4">
+                    <nav>
+                        <ul class="pager">
+                            <li></li>
+                            <li></li>
+                            <li class="active"></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-4">
+                    <button type="button" class="btn btn-reset btn-continue" data-ng-if="suppPayCtrl.showSubmit && !paymentForm.$dirty" ng-click="suppPayCtrl.openReviewModal(); ">submit for review <i class="fa fa-angle-double-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>

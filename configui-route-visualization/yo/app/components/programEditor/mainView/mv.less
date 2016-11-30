@@ -1,0 +1,195 @@
+.col-xs-12 .program-title-bar {
+  background: #bfbb98;
+  padding: 0;
+  height: 25px;
+}
+.program-title-bar h1{
+  font-family: museo_sans500, sans-serif;
+  font-size: 14px;
+  color: #231f20;
+  text-transform: uppercase;
+  position: relative;
+  top: -20px;
+  left: 20px;
+  padding: 5px 0;
+}
+.program-title-bar h1 span {
+  color: white;
+  margin-left: 10px;
+}
+.program-settings h1 {
+  font-family: museo_sans500, sans-serif;
+  font-size: 17px;
+  color: #858472;
+}
+.program-settings hr {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border: 0;
+  border-top: 1px solid #bdbba2;
+}
+
+.program-settings li.sidebar-instructions {
+  border-top: 1px solid #ccc;
+}
+.program-settings li.sidebar-instructions p {
+  margin: 10px 0 0 10px;
+  font-size: 12px;
+}
+
+////////////////////////////
+.mv-content .welcome-landing .col-xs-2,
+.mv-content .welcome-landing .col-xs-10 {
+  padding: 0;
+}
+
+.mv-content .welcome-landing .homeTxt {
+  position: relative;
+  left: 16px;
+  margin-right: 30px;
+}
+
+.mv-content .welcome-landing .col-xs-2 span {
+  background: url("../img/sprite.png") -5px -357px no-repeat;
+  width: 127px;
+  height: 150px;
+  padding: 68px 129px;
+  position: relative;
+  top: 100px;
+  left: 10px;
+  opacity: .8;
+  cursor: pointer;
+}
+.mv-content .welcome-landing .col-xs-2 span:hover {
+  opacity: 1;
+}
+.mv-content .welcome-landing h1 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 30px;
+  color: #5a5a5a;
+  margin-top: 38px;
+  line-height: 30px;
+}
+.mv-content .welcome-landing h1.bold-text {
+  font-family: museo_sans300, sans-serif;
+  font-size: 40px;
+  color: #174751;
+}
+.mv-content .welcome-landing h2 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 24px;
+  color: #1f1f1f;
+}
+.mv-content .welcome-landing h3 {
+  font-family: museo_sans100, sans-serif;
+  font-size: 30px;
+  margin-top: 86px;
+  color: #174751;
+}
+.mv-content .welcome-landing h2 span {
+  font-family: museo_sans100, sans-serif;
+  font-size: 40px;
+  color: #174751;
+}
+.mv-content .welcome-landing p {
+  font-family: museo_sans100, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  color: #174751;
+}
+
+.col-xs-9.mv-content {
+  padding: 0;
+
+}
+
+.mv-sidebar .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -21px;
+}
+
+section.program-settings {
+  padding: 0 0 0 10px;
+}
+a.disabled {
+  cursor: none !important;
+  color: #b4b4b4 !important;
+}
+a.disabled:hover {
+  cursor: default !important;
+  color: transparent;
+}
+
+.checkbox i.fa.fa-check {
+  color: white;
+  font-size: 18px;
+}
+a.homelink{
+  position: relative;
+  left: 2px;
+}
+
+.mv-content img.img-responsive.arrow-intro {
+  margin: 50px 0 0 5px;
+}
+
+// media querries
+@media only screen and (max-width: 1200px) {
+  .mv-content .welcome-landing .col-xs-2 span {
+    background: none;
+    width: 127px;
+    height: 150px;
+    padding: 68px 52px;
+    position: relative;
+    top: 100px;
+    left: 10px;
+  }
+  .mv-content .welcome-landing .homeTxt {
+    position: relative;
+    left: 20px;
+  }
+  .mv-content .welcome-landing h1 {
+    font-family: museo_sans100, sans-serif;
+    font-size: 30px;
+    color: #5a5a5a;
+    margin-top: 15px;
+    line-height: 30px;
+  }
+}
+
+// Pull out menu
+
+.mv-sidebar.ng-hide-add {
+  transition: transform ease-in-out 0.3s;
+  transform: translateX(0px);
+}
+
+.mv-sidebar.ng-hide-add-active {
+  transform: translateX(-150px);
+}
+
+.mv-sidebar.ng-hide-remove {
+  transition: transform ease-in-out 0.3s;
+  transform: translateX(-150px);
+}
+
+.mv-sidebar.ng-hide-remove-active {
+  transform: translateX(0px);
+}
+
+.mv-sidebar.ng-hide + .mv-content {
+  transform: translateX(0px);
+}
+
+.mv-sidebar{
+  background: #e1e0ce;
+  position: relative;
+  left: -210px;
+  top: 0;
+  padding: 0 5px 0 0;
+  transform: translateZ(0);
+
+}

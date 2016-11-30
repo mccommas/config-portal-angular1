@@ -1,0 +1,42 @@
+{
+    "id": 1,
+    "sectionName": "document_upload",
+    "instructions": "This is sample document instructions",
+    "displayName": null,
+    "enabled": true,
+    "documents": [{
+            "id": 1,
+            "documentType": "CV/Resume",
+            "minRequired": 1,
+            "maxAllowed": 4,
+            "isRequest": true,
+            "isRequired": true
+  },
+        {
+            "id": 2,
+            "minRequired": 2,
+            "documentType": "Personal Statement",
+            "description": null,
+            "maxAllowed": 4,
+          "isRequest": false,
+          "isRequired": true
+ },
+        {
+            "id": 3,
+            "minRequired": 2,
+            "documentType": "Personal Statement",
+            "description": null,
+            "maxAllowed": 4,
+            "request": false,
+            "required": false
+ },
+        {
+            "id": 4,
+            "minRequired": 2,
+            "documentType": "Personal Statement",
+            "description": null,
+            "maxAllowed": 4,
+          "isRequest": false,
+          "isRequired": true
+ }]
+}

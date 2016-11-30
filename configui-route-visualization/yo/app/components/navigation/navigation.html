@@ -1,0 +1,60 @@
+<section class="header" data-ng-show="navigationCtrl.isLogoVisible">
+    <p><a data-ui-sref="home">Liaison Configuration Manager</a>
+    </p>
+</section>
+<section class="breadcrumbTop" data-ng-show="!navigationCtrl.isLogoVisible">
+    <div class="col-xs-2">
+        <span> <a data-ng-click="navigationCtrl.goBack()"><i class="fa fa-chevron-left"></i></a></span>
+    </div>
+    <div class="topLinkStyle col-xs-10">
+        <span class="topLinks" id="casName" data-ng-class="navigationCtrl.appNameSelected == ''? navigationCtrl.casNameSelected!= ''?'topLinkActive':'':''">{{navigationCtrl.casNameSelected | limitTo:25}}</span>
+        <br>
+        <span class="topLinks" id="appName" data-ng-class="navigationCtrl.appNameSelected!= ''?'topLinkActive':''">{{navigationCtrl.appNameSelected | limitTo:30}}</span>
+        <!--<span class="topLinks" id="orgName" data-ng-class="navigationCtrl.orgNameSelected!= ''?'topLinkActive':''">{{navigationCtrl.orgNameSelected | limitTo:9}}</span>-->
+    </div>
+</section>
+<div class="searchbar">
+    <i class="fa fa-search searchglass" data-ng-click="navigationCtrl.toggleSearch()"></i>
+    <input type="text" class="form-control" data-ng-show="navigationCtrl.showSearch" placeholder="Search" data-ng-model="navigationCtrl.searchText" id="txtsearch" />
+</div>
+<div class="menuAnimate">
+    <section class="navcontrol" id="cas_navigation">
+        <!--<p data-ng-show="navigationCtrl.showCasLabel">Select a CAS to navigate</p>-->
+
+        <a data-ng-repeat="casItem in navigationCtrl.casList | filter:navigationCtrl.searchText | orderBy:'casname' ">
+            <div data-ng-class="{active: navigationCtrl.casNameSelected == casItem.casname}" data-ng-click="navigationCtrl.selectedItem(casItem,'casName',casItem.casname)" data-ui-sref="app({casId:casItem.id})" class="sidebarNav">
+                <p id="item_{{casItem.id}}">
+                    {{casItem.casname | characters:40}}
+                </p>
+            </div>
+        </a>
+    </section>
+
+    <section class="navcontrol" id="app_navigation">
+        <!--<p data-ng-show="navigationCtrl.showApplicationLabel">Select an Application to navigate</p>-->
+        <!--Using ng-mouseOver and ng-mouseOut to declare and initialize  appItem.showArrow to toggle arrow icon-->
+        <a ng-mouseover="appItem.showArrow = true" ng-mouseout="appItem.showArrow = false" class="app-nav-container" data-ng-repeat="appItem in navigationCtrl.appList | filter:navigationCtrl.searchText | orderBy:'instanceName'">
+            <div data-ng-class="{active: navigationCtrl.appNameSelected == appItem.instanceName, 'app-sidebar-nav' : navigationCtrl.showArrow}" class="sidebarNav " data-ui-sref="org({appId:appItem.id})" data-ng-click="navigationCtrl.selectedItem(appItem,'appName',appItem.instanceName)">
+                <p id="item_{{appItem.id}}">{{appItem.instanceName | characters:40}}</p>
+            </div>
+            <!--using ng-if to show arrow if userType is association user-->
+            <div class="app-nav-arrow" ui-sref="apphome({'appId':appItem.id})" data-ng-if="navigationCtrl.userType.toLowerCase() == 'association user'" data-toggle="tooltip" data-tooltip-placement="top" uib-tooltip="EDIT">
+                <i class="fa fa-pencil fa-lg">&nbsp;</i>
+            </div>
+        </a>
+    </section>
+
+	<!-- end-->
+	<div data-ng-if="navigationCtrl.orgList">
+		<perfect-scrollbar class="org_navigation" wheel-propagation="true" wheel-speed="1" refresh-on-change="navigationCtrl.orgList" on-scroll="onScroll(scrollTop, scrollHeight)">
+			<section class="navcontrol" id="org_navigation">
+				<a ng-mouseover="orgItem.showArrow = true" ng-mouseout="orgItem.showArrow = false" class="org-nav-container" data-ng-repeat="orgItem in navigationCtrl.orgList | filter:navigationCtrl.searchText | orderBy:'organizationName'" popover-placement="bottom" popover-trigger="mouseenter" uib-popover="{{orgItem.organizationName}}" data-ng-click="navigationCtrl.selectedItem(orgItem,'orgName',orgItem.organizationName)" popover-popup-delay="600">
+					<div data-ng-class="{active: navigationCtrl.selectedOrgItem.id == orgItem.id}" data-ui-sref="programslist.programs({orgId:orgItem.id})" class="sidebarNav org-nav-hover">
+						<p> {{orgItem.organizationName | characters: 45}}</p>
+					</div>
+				</a>
+			</section>
+		</perfect-scrollbar>
+	</div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title">activate program</h3>
+</div>
+<div class="modal-body">
+    <p>By clicking ACTIVATE, the program <b>{{activateCtrl.programData.programName}}</b> will be made available in the application.
+        Please ensure this program is ready to go live.</p>
+    <p>If you need to make additional changes, select <b>CONTINUE EDITING</b>.
+    </p>
+    <img src="common/img/ajax-loader.gif" id="loading-indicator" style="display:none" />
+</div>
+<div class="modal-footer">
+    <div class="btn-group program-edit-btns">
+    	<button type="button" class="btn btn-cancel" data-ng-if="activateCtrl.apiEnabled" ng-click="activateCtrl.cancel()" >
+            <i class="fa fa-pencil"></i> cancel
+        </button>
+        <button type="button" class="btn btn-cancel" data-ng-if="!activateCtrl.apiEnabled" ng-click="activateCtrl.cancel()" ui-sref="programedit({programId:activateCtrl.programData.id})">
+            <i class="fa fa-pencil"></i> continue editing
+        </button>
+        <button click-once type="button" class="btn btn-save" data-ng-click="activateCtrl.submitActive();">
+            activate <i class="fa fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>

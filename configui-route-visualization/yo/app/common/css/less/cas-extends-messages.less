@@ -1,0 +1,57 @@
+// -------------------------------------------------------------------
+// CAS Messages Extends
+// -------------------------------------------------------------------
+
+.base-message(@color) {
+    border: 2px solid @color;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: lighten(@color, 40%);
+    position: relative;
+    .font-size(18);
+    .line-height(18);
+    font-weight: 700;
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+    > .cas-message-icon,
+    > .cas-message-content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    > .cas-message-icon {
+        &:before {
+            vertical-align: middle;
+            .font-size(30);
+            .line-height(30);
+            color: @color;
+            margin-right: 10px;
+        }
+    }
+
+    > .cas-message-content {
+        width: 100%;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cas-warning-message {
+    .base-message(@tertiary-yellow);
+
+    > .cas-message-icon {
+        &:before {
+            .cas-icon-warning;
+        }
+    }
+}
+
+.cas-instruction-message {
+  .base-message(@grey-15);
+  background-color: none !important;
+}

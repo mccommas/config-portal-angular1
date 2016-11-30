@@ -1,0 +1,965 @@
+// CSS styles for inReview UI
+#in-review-setting .white-box {
+  background: #fff;
+  padding: 22px;
+  margin: -15px 0 20px 0;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+#in-review-setting .panel-default > .panel-heading {
+  color: @WelcomeH1;
+  font-family: Museo300Regular, sans-serif;
+  font-size: 16px;
+}
+
+// accordion arrow classes
+.in-review-open {
+  background: url("../img/arrow-program-settings.png") 0 10px no-repeat;
+  width: 5px;
+  height: 9px;
+  padding: 4px 9px;
+}
+
+.in-review-close {
+  background: url("../img/arrow-program-settings-up.png") 2px 8px no-repeat;
+  width: 9px;
+  height: 5px;
+  padding: 4px 9px;
+}
+
+#in-review-setting .panel-title > a {
+  outline: none;
+  text-decoration: none;
+}
+
+// table classes
+#in-review-setting thead {
+  background: #d9d9d9;
+}
+
+#in-review-setting .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: none;
+  text-transform: uppercase;
+  color: #595959;
+}
+
+#in-review-setting .btn-save:hover .fa-pencil{
+  color:white!important;
+}
+
+#in-review-setting .table td:last-child:hover {
+  //z-index: 9999;
+}
+
+#in-review-setting .table td:last-child {
+  padding: 5px
+}
+
+// inReview Icons
+.in-review-preview-icon {
+  background: url("../img/sprite.png") -154px -38px no-repeat;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+  left: 20px;
+}
+
+.in-review-preview-icon:hover {
+  background: url("../img/sprite.png") -184px -38px no-repeat;
+  background-color: #91c8f2;
+  position: relative;
+}
+
+.preview-screens .brand-title-bar {
+  background-color: rgba(1,5,0,.6);
+  padding: 3px 20px 4px 20px;
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+  width: 900px;
+  //z-index: 10;
+}
+.preview-screens .brand-title-bar h1 {
+  font-family: 'ScalaSans', sans-serif;
+  font-size: 17px;
+  padding: 0 0 6px 0;
+  font-weight: 100;
+  font-style: normal;
+  color: #fff;
+}
+
+.preview-screens .preview-content {
+  position: relative;
+  top: 0px;
+}
+
+// home branding nav in preview modals
+
+.preview-tabs.nav-blocks {
+  display: table;
+  width: 100.2%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  position: relative;
+  top: 0px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.preview-tabs.nav-blocks .nav-tab {
+  display: table-cell;
+  width: 20.5%;
+  border-left: 2px solid #dcdadc;
+  border-bottom: 2px solid #dcdadc;
+  background: #f0eef0;
+  padding: 11px;
+  color: #2B80CF;
+  font-family: museo_sans700, sans-serif;
+
+  &:last-child{
+    border-right:2px solid #dcdadc;
+  }
+}
+.preview-tabs.nav-blocks .nav-tab a{
+  color: #2B80CF !important;
+  font-family: museo_sans700, sans-serif;
+}
+.preview-tabs.nav-blocks .nav-tab.active {
+  border: 2px solid white;
+  background: white;
+  padding: 10px;
+}
+
+
+.preview-screens .preview-data-list span {
+  font-weight: bolder;
+  color: black;
+}
+
+.preview-screens .preview-data-list .col-xs-4 {
+  margin-top: -14px;
+  padding-top: 0px;
+  position: relative;
+  top: 9px;
+}
+
+.preview-screens .preview-data-list hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 2px solid #eee;
+}
+
+.preview-screens .preview-data-list .row {
+  margin: 0 7px;
+}
+
+.preview-data-list {
+  margin-bottom: 30px;
+}
+
+.brand-program-txt {
+  position: relative;
+  bottom:-120px;
+}
+// prerequisites view
+
+#prerequisites-view .prerequisites-desc {
+  margin-bottom: 0;
+  font-family: Museo300Regular, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+}
+.scroller {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prerequisites-view .ps-container .ps-scrollbar-y {
+  position: absolute; /* please don't change 'position' */
+  right: 5px; /* there must be 'right' for ps-scrollbar-y */
+  width: 12px !important;
+  background-color: #aaa !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -o-transition: background-color .2s linear;
+  -webkit-transition: background-color.2s linear;
+  -moz-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+}
+
+.prerequisites-view h2 {
+  font-family: Museo300Regular, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  color: #2b2b2b;
+  margin: 0;
+}
+.prerequisites-view h3 {
+  font-family: Museo300Regular, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  color: #808080;
+  margin: 5px 0;
+}
+.prerequisites-view h3 span{
+  font-family: Museo300Regular, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  color: #2b2b2b;
+}
+
+// Documents Preview Modal
+
+.preview-screens .panel-documents {
+  border-color: #ddd !important;
+}
+
+.preview-screens .panel {
+  padding: 0px 30px 10px 30px;
+  margin-bottom: 2px;
+  background: #efefef;
+  border-bottom: 2px solid #d6d6d6;
+  position: relative;
+}
+
+.preview-screens .panel-documents .panel-body {
+  padding-left: 0;
+  panel-right: 0;
+}
+
+.documents-modal p {
+  margin: 0 20px 20px 0px;
+  line-height: 21px;
+  font-size: 17px;
+  font-family: ScalaSans,sans-serif;
+  font-weight: 300;
+  color: rgba(51, 51, 51, 0.87);
+}
+
+.document-panels h3 {
+  font-family: ScalaSans,sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #333;
+  position: relative;
+  top: 5px;
+}
+
+.documents-modal li {
+  line-height: 21px;
+  font-size: 17px;
+  font-family: ScalaSans,sans-serif;
+  font-weight: 300;
+  color: rgba(51, 51, 51, 0.87);
+}
+
+.documents-modal .progress-bar-check {
+  text-shadow: 0 2px 0 rgba(0,0,0,.05);
+  box-shadow: 0 2px 0 rgba(0,0,0,.05) inset;
+  position: absolute;
+  z-index: 1;
+  right: 37px;
+  top: 80px;
+  margin-top: -20px;
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  border: 4px solid #efefef;
+  background: #ddd;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  line-height: 32px;
+}
+.documents-modal .progress-bar-check:before {
+  font-family: cas-icons;
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\e00b";
+  /*--adjust as necessary--*/
+  color: #fff;
+  font-size: 26px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: -1px;
+  left: 8px;
+}
+
+.documents-modal .progress {
+  position: relative;
+  border-radius: 8px 0 0 8px;
+  height: 16px;
+  background: #ddd;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05) inset;
+  margin-bottom: 20px;
+  overflow: hidden;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+.documents-modal button.btn.doc-button,
+button.btn.save-button{
+  background-color: #2b80cf;
+  color: #fff;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid #2266a5;
+  border-left: 2px solid transparent;
+}
+
+button.btn.save-button {
+  width: 70%;
+  font-size: 25px;
+  line-height: 32px;
+  padding: 14px 64px;
+}
+
+button.btn.doc-button:before {
+  font-family: cas-icons;
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\e001";
+  position: relative;
+  left: -12px;
+  border-radius: 100%;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  border: 2px solid #7cb2e4;
+}
+
+button.btn.save-button:before {
+  font-family: cas-icons;
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\e00b";
+  position: relative;
+  left: -12px;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: 2px solid #7cb2e4;
+}
+
+.cas-optional-field-tag {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 4px;
+  background: #efefef;
+  font-family: ScalaSans,sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-size: xx-small;
+  line-height: normal;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #333;
+}
+
+button.btn.doc-button span {
+  padding-left: 0;
+}
+
+.documents-modal .btn {
+  display: inline-block;
+  padding: 8px 34px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.documents-modal .scroller {
+  height: 950px;
+  overflow: hidden;
+  position: relative;
+}
+
+.documents-modal .ps-container .ps-scrollbar-y {
+  position: absolute; /* please don't change 'position' */
+  right: 5px; /* there must be 'right' for ps-scrollbar-y */
+  width: 12px !important;
+  background-color: #aaa !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -o-transition: background-color .2s linear;
+  -webkit-transition: background-color.2s linear;
+  -moz-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+}
+
+// Evaluations Preview Modal
+
+.cas-add-additional-evaluation {
+  display: block;
+  position: relative;
+  padding: 20px 30px;
+  margin-bottom: 2px;
+  background: #fff;
+  margin-top: 2px;
+  border: 2px dashed #e8e8e8;
+
+  .cas-additional-evaluation-title-container {
+    font-family: 'ScalaSans', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #333;
+    position: relative;
+    top: 5px;
+  }
+
+  .cas-optional-field-tag {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 4px;
+    background: #efefef;
+    font-family: 'ScalaSans', sans-serif;
+    text-transform: none;
+    font-style: italic;
+    font-size: xx-small;
+    line-height: normal;
+    margin-left: 10px;
+    font-weight: 400;
+    color: #333;
+  }
+}
+
+//Questions preview modal
+
+.cas-program-question-group-title {
+  padding: 0;
+  margin: 0 0 15px;
+  font-weight: bold;
+  font-family: Scala,serif;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.cas-program-question-group {
+  padding: 25px 0 0;
+  border-bottom: 2px solid #efefef;
+
+  font-family: ScalaSans,sans-serif;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cas-questions-radio-field{
+  > .cas-fieldset-wrapper {
+
+    > .cas-label-container {
+      display: table-caption;
+      padding-bottom: 15px;
+      width: 100%;
+      height: 0;
+
+      > .cas-label {
+      }
+
+    }
+
+  }
+}
+
+.cas-questions-text-field{
+  .cas-text-container{
+    width: 350px !important;
+  }
+}
+
+.cas-program-question-group-title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 26px;
+  font-size: 1.8rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  font-family: Scala,serif;
+}
+
+.cas-program-question-group-overview {
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.cas-program-question-field {
+  margin-bottom: 30px;
+}
+
+.cas-program-question-group .cas-program-question-field {
+  margin-bottom: 30px;
+}
+
+.cas-radio-field>.cas-label-container, .cas-radio-field>.cas-radio-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+p.cas-questions-radio-field {
+  margin: 0;
+}
+
+.cas-fieldset-wrapper {
+  display: table;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cas-fields-container {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.cas-radiogroup-fieldset .cas-fields-container .cas-fields-container-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+}
+
+.cas-radiogroup-fieldset .cas-fields-container .cas-fields-container-wrapper .cas-radio-field {
+  display: inline-table;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cas-radiogroup-fieldset>.cas-fieldset-wrapper .cas-fields-container-wrapper .cas-radio-field {
+  padding-left: 32px;
+}
+
+.cas-radiogroup-fieldset>.cas-fieldset-wrapper .cas-fields-container-wrapper .cas-radio-field:first-child {
+  padding-left: 0;
+}
+
+.cas-radio-placeholder {
+  max-width: 350px;
+  width: 100%;
+  height: 36px;
+  padding-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 2px solid #dfdfdf;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05) inset;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: ScalaSans,sans-serif;
+  transition: border-color .2s ease-out,background-color .2s ease-out;
+  width: 36px;
+  border-radius: 36px;
+  position: relative;
+  padding: 0;
+  margin: 0 10px 0 0;
+  transition: border-color .2s ease-in;
+}
+
+.cas-fields-container-wrapper .cas-radio-field:first-child .cas-radio-container .cas-radio-placeholder:after {
+  content: "";
+  border-radius: 16px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+}
+
+.cas-checkbox-group-fieldset>.cas-fieldset-wrapper>.cas-label-container {
+  padding-top: 12px;
+  vertical-align: top;
+  width: 190px;
+  padding-right: 20px;
+  display: table-cell;
+}
+
+.cas-checkbox-field {
+  position: relative;
+  padding: 0 0 0 46px;
+  min-height: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+
+.cas-checkbox-field .cas-checkbox-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cas-checkbox-field .cas-checkbox-container .cas-checkbox-placeholder,
+.cas-textarea-input {
+  height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 2px solid #dfdfdf;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05) inset;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: ScalaSans,sans-serif;
+  transition: border-color .2s ease-out,background-color .2s ease-out;
+  width: 36px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.cas-textarea-input {
+  max-width: none;
+  min-height: 100px;
+  height: auto;
+  display: block;
+  padding-top: 15px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.cas-textarea-container {
+  width: 100%;
+}
+
+.cas-char-count-container {
+  text-align: right;
+}
+
+.cas-char-count-container .cas-char-count-note {
+  color: #999;
+  font-size: 12px;
+  line-height: 12px;
+  background: #efefef;
+  padding: 3px 10px;
+}
+
+.cas-checkbox-field .cas-checkbox-container .cas-checkbox-input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.cas-checkbox-field .cas-label-container {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  padding: 10px 10px 10px 5px;
+}
+
+.cas-select-field,
+.cas-textarea-field {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+}
+
+.cas-select-field > .cas-label-container,
+.cas-textarea-field > .cas-label-container,
+.cas-text-field > .cas-label-container {
+  padding: 0 0 10px;
+  width: auto;
+  display: block;
+}
+
+.cas-select-placeholder,
+.cas-text-input {
+  max-width: 350px;
+  width: 100%;
+  height: 36px;
+  padding-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 2px solid #dfdfdf;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: ScalaSans,sans-serif;
+  transition: border-color .2s ease-out,background-color .2s ease-out;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.05) inset;
+  padding-right: 40px;
+  position: relative;
+}
+
+.cas-select-placeholder .cas-select-placeholder-text {
+  vertical-align: top;
+  line-height: 34px;
+  color: #2b80cf;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  font-size: 15px;
+  line-height: 34px;
+  display: inline-block;
+}
+
+.cas-select-placeholder:after {
+  font-family: cas-icons;
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\e00c";
+  color: #2b80cf;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -7px;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.cas-select-input {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -ms-filter: "alpha(Opacity=0)";
+}
+
+.modal-footer-row .col-xs-12 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.brand-image-placeholder {
+  height: 160px;
+  width: 100%;
+  background: rgba(0,0,0,.7);
+}
+
+.program-details-list {
+  font-family: ScalaSans,sans-serif !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 2px solid #efefef;
+  display: flex;
+  flex-wrap: wrap;
+
+  .no-flexbox &,
+  .no-flexboxlegacy & {
+    font-size: 0;
+    > li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+  }
+
+  > li {
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 8px 0 8px 32px;
+    border-bottom: 2px solid #efefef;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 15px;
+    line-height: 1.5rem;
+  }
+}
+
+.optional-tag{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 4px;
+  background: #efefef;
+  font-family: ScalaSans,sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-size: 9px;
+  font-size: .9rem;
+  line-height: 9px;
+  line-height: .9rem;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #333;
+}
+
+.cas-text-field,
+.cas-select-field,
+.cas-textarea-field,
+.cas-fieldset-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+
+  .cas-label-container >
+  .cas-label,
+  .cas-radio-label,
+  .cas-textarea-label,
+  .cas-checkbox-label,
+  .cas-text-label
+  {
+    font-weight: 100 !important;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px!important;
+    line-height: 15px!important;
+    font-family: ScalaSans,sans-serif;
+  }
+}
+
+.cas-program-materials-subsection-heading{
+  font-size: 48px!important;
+  line-height: 48px!important;
+  padding: 0;
+  margin: 0 0 15px;
+  font-family: ScalaSans,sans-serif;
+  font-weight: 700;
+}
+
+.cas-program-materials-instructions{
+  font-size: 15px!important;
+  line-height: 21px!important;
+  margin: 0px;
+}
+
+/////////CAS WARNIMG MESSGGE//////////
+.cas-error-message, .cas-system-error-message, .cas-warning-message {
+  padding: 8px 16px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box
+}
+
+.row .cas-warning-message {
+  border: 2px solid #e6c00d;
+  border-radius: 4px;
+  background-color: #fcf2c3;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 18px;
+  line-height: 1.8rem;
+  font-weight: 700;
+  display: table;
+  margin-bottom: 10px
+}
+
+.row .cas-warning-message > .cas-message-content, .cas-warning-message > .cas-message-icon {
+  display: table-cell;
+  vertical-align: middle;
+  font-family:Scala, sans-serif;
+}
+
+.row .cas-warning-message > h2.cas-message-icon:before {
+  vertical-align: middle;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 30px;
+  line-height: 3rem;
+  color: #e6c00d;
+  margin-right: 10px;
+  font-family: cas-icons;
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\e034"
+}
+
+.row .cas-warning-message > .cas-message-content {
+  width: 100%
+}
+
+.cas-warning-message :last-child {
+  margin-bottom: 0
+}
+h2 .cas-warning-message > .cas-message-content, .cas-warning-message > .cas-message-icon{
+  display: table-cell;
+  vertical-align: middle;
+  font-size:24px;
+}
+p.cas-message-content{
+  margin: 0 20px 20px 0px;
+  line-height: 21px;
+  font-size: 17px;
+  font-family: ScalaSans, sans-serif;
+  font-weight: 300;
+  color: rgba(51, 51, 51, 0.87);
+}
+
+// enabled
+.in-review-enabled-icon:after {
+   //background: url("../img/sprite.png") -160px -210px no-repeat;
+   //width: 12px;
+   //height: 12px;
+   content: 'Yes';
+   color: #75c039;
+    position: relative;
+    left: 20px;
+}
+
+// enabled
+.in-review-disabled-icon:after {
+    //background: url("../img/sprite.png") -175px -209px no-repeat;
+   //width: 12px;
+   //height: 12px;
+   color: #000000;
+   content: 'No';
+   position: relative;
+   left: 20px;
+}

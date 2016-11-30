@@ -1,0 +1,48 @@
+[
+    {
+        "id":1,
+        "sortIndex":1,
+        "programModelName" : "applicationType",
+        "displayName" : "App Type"
+    },{
+        "id":2,
+        "sortIndex":2,
+        "programModelName" : "concentration",
+        "displayName" : "Concentration"
+    },{
+        "id":3,
+        "sortIndex":3,
+        "programModelName" : "deadlineDisplay",
+        "displayName" : "Deadline"
+    },{
+        "id":4,
+        "sortIndex":4,
+        "programModelName" : "delivery",
+        "displayName" : "Delivery"
+    },{
+        "id":5,
+        "sortIndex":5,
+        "programModelName" : "department",
+        "displayName" : "Department"
+    },{
+        "id":6,
+        "sortIndex":6,
+        "programModelName" : "programLevel",
+        "displayName" : "Level"
+    },{
+        "id":7,
+        "sortIndex":7,
+        "programModelName" : "startTerm",
+        "displayName" : "Start Term"
+    },{
+        "id":8,
+        "sortIndex":8,
+        "programModelName" : "academicYear",
+        "displayName" : "Start Year"
+    },{
+        "id":9,
+        "sortIndex":9,
+        "programModelName" : "track",
+        "displayName" : "Track"
+    }
+]

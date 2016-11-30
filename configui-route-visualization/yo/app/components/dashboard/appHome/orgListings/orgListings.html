@@ -1,0 +1,80 @@
+<div id="scrollable-area" class="table-responsive pro-org" data-ng-if="casInfoData.xmlCasId != mainCtrl.Configuration.xmlCASID">
+    <table class="table table-striped" data-fixed-table-headers="scrollable-area">
+        <thead>
+            <tr>
+                <th><a data-ng-click="predicatemodal = 'organizationName'; reverse=!reverse">organization
+				<i class="fa fa-sort"></i></a>
+                </th>
+                <!--<th>
+                    <a data-ng-click="predicatemodal = 'organizationCode'; reverse=!reverse">organization code <i
+						class="fa fa-sort"></i></a>
+                </th>-->
+                <th>
+                    <a data-ng-click="predicatemodal = 'createdDate'; reverse=!reverse"> date created
+					<i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'updatedDate'; reverse=!reverse">last update
+					<i class="fa fa-sort"></i></a>
+                </th>
+                <th>
+                    <a data-ng-click="predicatemodal = 'programCount'; reverse=!reverse"># of programs
+					<i class="fa fa-sort"></i></a>
+                </th>
+
+                <th>
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody id="proTable" data-link="row" class="rowlink">
+            <tr class="animated" data-ng-repeat="organization in appHome.orgListing | orderBy:predicatemodal:reverse | filter: searchPrograms" data-ng-class="selected">
+                <td>
+                    <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{organization.organizationName}}">
+                        {{::organization.organizationName | characters:15}}
+                    </div>
+                </td>
+                <!--<td>
+                    <div popover-placement="right" popover-trigger="mouseenter" uib-popover="{{organization.organizationCode}}">
+                        {{::organization.organizationCode | characters:15}}
+                    </div>
+                </td>-->
+                <td>
+                    <div>
+                        {{::organization.createdDate | characters:15}}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{::organization.updatedDate | characters:15}}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{::organization.programsCount}}
+                    </div>
+                </td>
+                <td id="program-arrows" data-ng-class="selected" ui-sref="programslist({'orgId':organization.id})" data-ng-click="appHome.goToOrg(organization.id)">toggle arrows<span></span>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- messages-->
+<!--Save bar-->
+<div class="extended-col col-xs-12">
+    <!--<div class="program-edit-btns well">-->
+    <!--<div class="btn-group pull-left" data-ng-show="showPrograms">-->
+    <!--<button type="button" class="btn btn-remove" data-ng-click="openAddProgramWindow()"><i class="fa fa-plus"></i> add-->
+    <!--</button>-->
+    <!--<button type="button" class="btn btn-remove" data-ng-click="openCopyProgramWindow()"><i class="fa fa-files-o"></i> copy-->
+    <!--</button>-->
+    <!--</div>-->
+
+    <!--<button data-ng-click="togglePrograms($event)" type="button" class="btn btn-remove pull-left">-->
+    <!--<i class="fa fa-plus"></i> program-->
+    <!--</button>-->
+
+    <!--</div>-->
+</div>

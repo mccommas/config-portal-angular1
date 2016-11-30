@@ -1,0 +1,32 @@
+.submenuitem {
+  cursor:  pointer;
+  color: white;
+}
+.slide {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.slide.ng-enter {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out;
+  -o-transition: -o-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  -webkit-transform: translateY(1000%);
+  transform: translateY(1000%);
+}
+.slide.ng-leave {
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+  -moz-transition: -moz-transform .7s ease-in-out;
+  -o-transition: -o-transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+}
+.slide.ng-enter.ng-enter-active,
+.slide.ng-leave {
+  position: absolute;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.slide.ng-leave.ng-leave-active {
+  -webkit-transform: translateY(1000%);
+  transform: translateY(1000%);
+}

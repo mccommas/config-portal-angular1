@@ -1,0 +1,37 @@
+[{
+    "id": 470,
+    "valueId": "Winter",
+    "valueString": "Winter",
+    "valueAbbr": null,
+    "sortIdx": 1
+}, {
+    "id": 471,
+    "valueId": "Spring",
+    "valueString": "Spring",
+    "valueAbbr": null,
+    "sortIdx": 2
+}, {
+    "id": 472,
+    "valueId": "Summer 1",
+    "valueString": "Summer 1",
+    "valueAbbr": null,
+    "sortIdx": 3
+}, {
+    "id": 4129,
+    "valueId": "Summer 2",
+    "valueString": "Summer 2",
+    "valueAbbr": null,
+    "sortIdx": 4
+}, {
+    "id": 473,
+    "valueId": "Fall",
+    "valueString": "Fall",
+    "valueAbbr": null,
+    "sortIdx": 5
+}, {
+    "id": 474,
+    "valueId": "Interim",
+    "valueString": "Interim",
+    "valueAbbr": null,
+    "sortIdx": 6
+}]

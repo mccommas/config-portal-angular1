@@ -1,0 +1,27 @@
+<section class="header-icons">
+	<div class="col-xs-4">
+		<div class="back-to-org"><a data-ng-click="headerCtrl.gotoPreviousView()" >back to org</a> <!--programslist({orgId:headerCtrl.headerData.organization.id}) data-ng-click="headerCtrl.backToOrg()"-->
+		</div>
+		<h1 class="animate-show" data-ng-if="headerCtrl.showProgramTitle"><a href="" ng-click="headerCtrl.backToPrograms()">view programs</a></h1>
+		<h1 class="animate-show" data-ng-if="headerCtrl.showBrandingTitle">branding</h1>
+		<h1 class="animate-show" data-ng-if="headerCtrl.showEditorTitle">program editor</h1>
+	</div>
+	<div class="col-xs-8 top-icons">
+		<!-- Condition on ul is to fix the flashing of icons before hide, the condition will make sure if the data exists then only it will show the icons-->
+		<ul class="list-inline" data-ng-if="headerCtrl.headerData">
+			<li data-ng-show="headerCtrl.headerData.userType" data-ng-class="{ 'active':headerCtrl.showProgramTitle}" class="home-icon" data-toggle="tooltip" data-placement="bottom" tooltip="Program Editor Home" tooltip-placement="bottom">
+				<a data-ng-click="headerCtrl.goToHome()" href="">Programs Home<span></span></a>
+				<div data-ng-if="headerCtrl.showProgramTitle" class="header-icon-tip"></div>
+			</li>
+			<li data-ng-show="headerCtrl.headerData.userType.toLowerCase() === 'admissions user' ? headerCtrl.headerData.program.status.toLowerCase() !== 'review' : true" data-ng-class="{ 'active':headerCtrl.showBrandingTitle}" class="branding-icon" data-toggle="tooltip" data-placement="bottom" tooltip="Use this tool to Customize the Brand of your program" tooltip-placement="bottom">
+				<!--<a>Branding<span></span></a>-->
+				<a  data-ng-click="headerCtrl.goToBranding()" href="">Program Branding<span></span></a>
+				<div data-ng-if="headerCtrl.showBrandingTitle" class="header-icon-tip"></div>
+			</li>
+			<li data-ng-show="headerCtrl.headerData.userType.toLowerCase() === 'admissions user' ? headerCtrl.headerData.program.status.toLowerCase() === 'draft' : true " data-ng-class="{ 'active':headerCtrl.showEditorTitle}" class="program-edit-icon" data-toggle="tooltip" data-placement="bottom" tooltip="Use this tool to Customize the Program" tooltip-placement="bottom">
+				<a data-ui-sref="programHome.home({programId:headerCtrl.programId,previousState: headerCtrl.currentState.current.name})">Program Editor<span></span></a>
+				<div data-ng-if="headerCtrl.showEditorTitle" class="header-icon-tip"></div>
+			</li>
+		</ul>
+	</div>
+</section>

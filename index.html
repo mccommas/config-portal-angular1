@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+   <!--<![endif]-->
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css?v=blah">
+   </head>
+   <body>
+      <body data-gr-c-s-loaded="true">
+         <div class="container">
+            <div class="single-wrap">
+               <div class="inner-guts guts no-top-margin ">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <header>
+                           <h1 itemprop="headline">ConfigUI: Angular2 Dev usig ng-cli</h1>
+                        </header>
+                        <aside class="bottom">
+                           <div class="author">
+                              <a class="profile-spot no-border">
+                              <span class="img" style="background-image: url('https://media.licdn.com/media/p/2/000/22a/05a/31706bb.jpg');"></span>
+                              </a>
+                           </div>
+                           <div class="meta-info">
+                              <a>
+                              <span itemprop="name"> &nbsp; &nbsp; &nbsp;Jeff McCommas</span>
+                              </a>
+                              <span>Oct 31, 2016</span>
+                           </div>
+                        </aside>
+                        <div class="content">
+                           <p>The Angular CLI <a href="http://cli.angular.io">cli.angular.io</a></p>
+                           <p><img style="    width: 100%;" src="https://cdn.scotch.io/1/A1JOLTSrRiGbTxtoffdY_EYV5HdPQYKy7DZnVXK99_Butl1BO.png" alt="Angular CLI Homepage"></p>
+                           <p>The Angular CLI effectively takes all those configuration and setup steps shown above and condenses it down into
+                              one quick line:
+                           </p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">ng new configui-v2</code></pre>
+                           <p>There are many things that the CLI can do so let's get it installed and walk through some features.</p>
+                           <h2 id="installing-the-angular-cli"><a href="#installing-the-angular-cli"><span class="icon">#</span> Installing the Angular CLI</a></h2>
+                           <p>To install the CLI, we'll use <a href="https://nodejs.org">Node and npm</a>.</p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">npm <span class="token function">install</span> -g angular-cli</code></pre>
+                           <p>That's it! Now we can start using the CLI to build out our applications.</p>
+                           <h2 id="starting-a-new-application"><a href="#starting-a-new-application"><span class="icon">#</span> Starting a New Application</a></h2>
+                           <p>To start a new application, just run the command we saw earlier:</p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">ng new configui-v2</code></pre>
+                           <p></p>
+                           <p>So what exactly does this do for us? Let's take a look at the newly generated folders and files:</p>
+                           
+                           <img src="dir.png" style="width:35%"/>
+                           <pre data-title="javascript" class=" language-javascript"><code class=" language-javascript"> CONFIG UI Directory structure
+<span class="token comment" spellcheck="true">// end-to-end-tests</span>
+<span class="token operator">|</span><span class="token operator">-</span> e2e<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> app<span class="token punctuation">.</span>e2e-specs<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> app<span class="token punctuation">.</span>po<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> tsconfig<span class="token punctuation">.</span>json
+
+<span class="token comment" spellcheck="true">// npm dependencies</span>
+<span class="token operator">|</span><span class="token operator">-</span> node_modules<span class="token operator">/</span>
+
+<span class="token comment" spellcheck="true">// Distrubtion Folder, built things go here</span>
+<span class="token operator">|</span><span class="token operator">-</span> <span class="token keyword">dist</span><span class="token operator">/</span>
+
+<span class="token comment" spellcheck="true">// where most of the work will be done</span>
+<span class="token operator">|</span><span class="token operator">-</span> src<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> app<span class="token operator">/</span>
+            <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> shared<span class="token operator">/</span>
+                        <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> index<span class="token punctuation">.</span>ts
+            <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> environment<span class="token punctuation">.</span>ts
+            <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> index<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> assets<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> environment<span class="token operator">/</span>
+
+            <span class="token comment" spellcheck="true">// our first generated component</span>
+            <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> program<span class="token operator">-</span>details<span class="token punctuation">.</span>component<span class="token punctuation">.</span>css<span class="token operator">|</span>html<span class="token operator">|</span>spec<span class="token punctuation">.</span>ts<span class="token operator">|</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> favicon<span class="token punctuation">.</span>ico
+<!--<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> icon<span class="token punctuation">.</span>png-->
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> index<span class="token punctuation">.</span>html
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> main<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> polyfill<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> styles<span class="token punctuation">.</span>css
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> system<span class="token operator">-</span>config<span class="token punctuation">.</span>ts
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> tsconfig<span class="token punctuation">.</span>json
+<span class="token operator">|</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> typings<span class="token punctuation">.</span>d<span class="token punctuation">.</span>ts
+
+<span class="token comment" spellcheck="true">// overall configuration</span>
+<span class="token operator">|</span><span class="token operator">-</span> typings<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> <span class="token punctuation">.</span>editorconfig
+<span class="token operator">|</span><span class="token operator">-</span> <span class="token punctuation">.</span>gitignore 
+<span class="token operator">|</span><span class="token operator">-</span> angular<span class="token operator">-</span>cli<span class="token punctuation">.</span>json
+<span class="token operator">|</span><span class="token operator">-</span> <span class="token keyword">package</span><span class="token punctuation">.</span>json
+<span class="token operator">|</span><span class="token operator">-</span> tslint<span class="token punctuation">.</span>json
+<span class="token operator">|</span><span class="token operator">-</span> typings<span class="token punctuation">.</span>json</code></pre>
+                           <p>Application that
+                              the Angular CLI generates follows the recommended app structure and <a href="https://angular.io/styleguide">style guide</a>.
+                           </p>
+                           <p>The majority of our application is under <code>src/app</code>. This is where we will be working and everything that
+                              gets compiled and is available to our final application will be built to the <code>dist</code> folder.
+                           </p>
+                           <p> The Angular CLI will not only create the
+                              files and folders, it will also install any <code>npm</code> dependencies required.
+                           </p>
+                           <p>Here is the default <code>package.json</code> that gets created:</p>
+                           <pre>{
+  "name": "configuiv2",
+  "version": "0.0.0",
+  "license": "MIT",
+  "angular-cli": {},
+  "scripts": {
+    "start": "ng serve",
+    "lint": "tslint \"src/**/*.ts\"",
+    "test": "ng test",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.2.30",
+    "angular-cli": "1.0.0-beta.15",
+    "codelyzer": "~0.0.26",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1",
+    "protractor": "4.0.5",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "2.0.2"
+  }
+} </pre>
+                           <p>All those dependencies are added and included in our <code>src/main.js</code> file. All of the setup that was
+                              in the Angular quickstart are now taken care of for us.
+                           </p>
+                           <p>Check out the <code>main.ts</code> file</p>
+                           <pre data-title="markup" class=" language-markup"><code>import './polyfills.ts';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
+import { AppModule } from './app/';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+</code></pre>
+                           <h3><code>ng new</code> options</h3>
+                           <ul>
+                              <li><code>--dry-run</code> (alias <code>d</code>): Only output the files created and operations performed. It doesn't
+                                 actually create the project.
+                              </li>
+                              <li><code>--verbose</code> (alias <code>v</code>): Show more information</li>
+                              <li><code>--skip-npm</code>: Don't run any npm commands like installing dependencies</li>
+                              <li><code>--skip-git</code>: Don't create a new git repo for this project</li>
+                              <li><code>--directory</code>: Specify the directory you want to create this project in</li>
+                           </ul>
+                           <h2 id="serve-our-application"><a href="#serve-our-application"><span class="icon">#</span> Serve Our Application</a></h2>
+                           <p>The Angular CLI let's us do this with one simple command:</p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">ng serve</code></pre>
+                           <p>Just like that, the Angular CLI will build a server for us with Node and open up our browser.</p>
+                           <h3>Angular CLI Serve Features</h3>
+                           <p>What features are given to us with our new server?</p>
+                           <ul>
+                              <li>Built with BrowserSync: Reload on saves</li>
+                              <li>Found in the browser at <a href="http://localhost:4200">http://localhost:4200</a></li>
+                           </ul>
+                           <h2 id="generate-parts-of-your-application"><a href="#generate-parts-of-your-application"><span class="icon">#</span> Generate Parts of Your Application</a></h2>
+                           <p>This is where things get interesting. So far we've just created and instantiated a new project. The <code>ng generate</code>									command can do so much for us:</p>
+                           <ul>
+                              <li>Create a new component</li>
+                              <li>Create a new directive</li>
+                              <li>Create a new route</li>
+                              <li>Create a new pipe</li>
+                              <li>Create a new service</li>
+                           </ul>
+                           <p>That's a ton of functionality and helps speed up development. First let's talk about the options that we can use
+                              for all of the above.
+                           </p>
+                           <h2 id="generating-a-new-component"><a href="#generating-a-new-component"><span class="icon">#</span> Generating a New Component</a></h2>
+                           <p><a href="/tutorials/creating-your-first-angular-2-components">Components</a> are the foundation of Angular development.
+                              Let's generate a new component:
+                           </p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">ng generate component program-detail</code></pre>
+                           <p></p>
+                           <hr>
+                           <p><em>Note</em>: It's important to name your component simply. If a component is created with the name <code>program-detail</code>,
+                              these are the corresponding naming schemes:
+                           </p>
+                           <ul>
+                              <li><strong>Folder</strong>: <code>program-detail</code></li>
+                              <li><strong>Files</strong>: `program-detail.component.[css,html,spec.ts,ts]</li>
+                              <li><strong>Class</strong>: <code>ProgramDetailComponent</code></li>
+                           </ul>
+                           <hr>
+                           <p>Here are the files that get created:</p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash"><span class="token operator">|</span>- src/
+        <span class="token operator">|</span>----- app/
+                    <span class="token operator">|</span>----- program-detail/
+                                <span class="token operator">|</span>----- shared/
+                                            <span class="token operator">|</span>----- index.ts
+                                <span class="token operator">|</span>----- program-detail.component.css<span class="token operator">|</span>html<span class="token operator">|</span>spec.ts<span class="token operator">|</span>ts
+                                <span class="token operator">|</span>----- index.ts</code></pre>
+                           <p>Our new component is relegated to its own folder within the <code>src/app</code> folder.</p>
+                           <h2 id="generating-a-new-route"><a href="#generating-a-new-route"><span class="icon">#</span> Generating a New Route</a></h2>
+                           <p>Routes give us a top level view of our application. We can generate them with:</p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash">ng generate route about</code></pre>
+                           <p></p>
+                           <p>Now we have our new files in a weird new folder under <code>src/app</code>. Our new folder is <code>+about</code>.
+                              What's up with that?
+                           </p>
+                           <p>Routing is where the lazy loading takes place, and the route is generated for us via the CLI. Generating a route
+                              with the CLI generates a new component and its routing. Let's take a look at the <code>src/app/+about</code> folder:
+                           </p>
+                           <pre data-title="bash" class=" language-bash"><code class=" language-bash"><span class="token operator">|</span>----- +about/
+            <span class="token operator">|</span>----- shared/
+                        <span class="token operator">|</span>----- index.ts
+            <span class="token operator">|</span>----- about.component.css<span class="token operator">|</span>html<span class="token operator">|</span>spec.ts<span class="token operator">|</span>ts</code></pre>
+                           <p>That looks awfully similar to when we ran <code>ng generate component hello</code>. That's because it's a component,
+                              just like our <code>HelloComponent</code>.
+                           </p>
+                           <p>You can see that the <code>ROUTER_DIRECTIVES</code> AND THE <code>ROUTER_PROVIDERS</code> were imported into our
+                              application, injected into our top-level component, and routed using the <code>@Routes()</code> decorator.
+                           </p>
+                           <pre data-title="typescript" class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> from <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AboutComponent <span class="token punctuation">}</span> from <span class="token string">'./+about'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Routes <span class="token punctuation">,</span> ROUTER_DIRECTIVES<span class="token punctuation">,</span> ROUTER_PROVIDERS<span class="token punctuation">}</span> from <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  moduleId<span class="token punctuation">:</span> <span class="token keyword">module</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'program-details'</span><span class="token punctuation">,</span>
+  templateUrl<span class="token punctuation">:</span> <span class="token string">'program-detail.component.html'</span><span class="token punctuation">,</span>
+  styleUrls<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'program-detail.component.css'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  directives<span class="token punctuation">:</span> <span class="token punctuation">[</span>ROUTER_DIRECTIVES<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  providers<span class="token punctuation">:</span> <span class="token punctuation">[</span>ROUTER_PROVIDERS<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+@<span class="token function">Routes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>path<span class="token punctuation">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> AboutComponent<span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ProgramDetailsAppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'program-details works!'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                           <p>We don't have to worry about routing anything, or loading component files when a user visits that route. It's all
+                              loaded for us!
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </body>
+   </body>
+</html>

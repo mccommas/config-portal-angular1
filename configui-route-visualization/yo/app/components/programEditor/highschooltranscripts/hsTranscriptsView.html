@@ -1,0 +1,48 @@
+<section class="program-edit-home">
+    <div class="col-xs-12">
+        <h3>High School Transcripts</h3>
+        <hr/>
+        <form name="highSchoolTranscripts" novalidate role="form">
+            <div class="">
+                <h4>Application High School Transcripts</h4>
+                <section class="dn-field-form section-padding">
+                    <div class="col-xs-10">
+                        <p>Transcripts Accepted <span>Defined by Program</span>
+                        </p>
+                    </div>
+                </section>
+                <h4>Program High School Transcripts</h4>
+                <p>Choose whether you would like to collect High School transcripts for your program.</p>
+                <div class="col-xs-6">
+                    <div class="form-group" data-ng-class="{ 'has-error': highSchoolTranscripts.allowTranscripts.$invalid && highSchoolTranscripts.allowTranscripts.$dirty}">
+                        <label for="allowTranscripts" class="control-label">Collect High School Transcripts?</label>
+                        <select data-ng-options="hstCtrl.boolToStr(item) for item in [true, false]" class="form-control input-sm" name="allowTranscripts" id="allowTranscripts" data-ng-model="hstCtrl.transcriptdata.allowTranscripts" required>
+                            <option value="" data-ng-selected="true">Please Select</option>
+                        </select>
+
+                        <div ng-if="highSchoolTranscripts.allowTranscripts.$dirty" data-ng-messages="highSchoolTranscripts.allowTranscripts.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="successMessage"></div>
+                    <div class="extended-col col-xs-12">
+                        <div class="well">
+                            <div class="btn-group program-edit-btns">
+                                <!--<button type="button" class="btn btn-cancel" data-ng-click="hstCtrl.cancel();">-->
+                                    <!--<i class="fa fa-times"></i> cancel-->
+                                <!--</button>-->
+                                <button click-once="" type="button" class="btn btn-save" data-ng-click="hstCtrl.save();"
+                                         data-ng-disabled="highSchoolTranscripts.$invalid">
+                                    <i class="fa fa-check"></i> save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

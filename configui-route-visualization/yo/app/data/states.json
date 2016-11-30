@@ -1,0 +1,319 @@
+[{
+    "id": 3903,
+    "valueId": "Other",
+    "valueString": "Other/Unknown",
+    "valueAbbr": "US",
+    "sortIdx": 0
+}, {
+    "id": 3904,
+    "valueId": "International",
+    "valueString": "No State/International",
+    "valueAbbr": "US",
+    "sortIdx": 0
+}, {
+    "id": 335,
+    "valueId": "AK",
+    "valueString": "Alaska",
+    "valueAbbr": "US",
+    "sortIdx": 1
+}, {
+    "id": 336,
+    "valueId": "AL",
+    "valueString": "Alabama",
+    "valueAbbr": "US",
+    "sortIdx": 2
+}, {
+    "id": 337,
+    "valueId": "AR",
+    "valueString": "Arkansas",
+    "valueAbbr": "US",
+    "sortIdx": 3
+}, {
+    "id": 338,
+    "valueId": "AZ",
+    "valueString": "Arizona",
+    "valueAbbr": "US",
+    "sortIdx": 4
+}, {
+    "id": 339,
+    "valueId": "CA",
+    "valueString": "California",
+    "valueAbbr": "US",
+    "sortIdx": 5
+}, {
+    "id": 340,
+    "valueId": "CO",
+    "valueString": "Colorado",
+    "valueAbbr": "US",
+    "sortIdx": 6
+}, {
+    "id": 341,
+    "valueId": "CT",
+    "valueString": "Connecticut",
+    "valueAbbr": "US",
+    "sortIdx": 7
+}, {
+    "id": 342,
+    "valueId": "DC",
+    "valueString": "District of Columbia",
+    "valueAbbr": "US",
+    "sortIdx": 8
+}, {
+    "id": 343,
+    "valueId": "DE",
+    "valueString": "Delaware",
+    "valueAbbr": "US",
+    "sortIdx": 9
+}, {
+    "id": 344,
+    "valueId": "FL",
+    "valueString": "Florida",
+    "valueAbbr": "US",
+    "sortIdx": 10
+}, {
+    "id": 345,
+    "valueId": "GA",
+    "valueString": "Georgia",
+    "valueAbbr": "US",
+    "sortIdx": 11
+}, {
+    "id": 346,
+    "valueId": "HI",
+    "valueString": "Hawaii",
+    "valueAbbr": "US",
+    "sortIdx": 12
+}, {
+    "id": 347,
+    "valueId": "IA",
+    "valueString": "Iowa",
+    "valueAbbr": "US",
+    "sortIdx": 13
+}, {
+    "id": 348,
+    "valueId": "ID",
+    "valueString": "Idaho",
+    "valueAbbr": "US",
+    "sortIdx": 14
+}, {
+    "id": 349,
+    "valueId": "IL",
+    "valueString": "Illinois",
+    "valueAbbr": "US",
+    "sortIdx": 15
+}, {
+    "id": 350,
+    "valueId": "IN",
+    "valueString": "Indiana",
+    "valueAbbr": "US",
+    "sortIdx": 16
+}, {
+    "id": 351,
+    "valueId": "KS",
+    "valueString": "Kansas",
+    "valueAbbr": "US",
+    "sortIdx": 17
+}, {
+    "id": 352,
+    "valueId": "KY",
+    "valueString": "Kentucky",
+    "valueAbbr": "US",
+    "sortIdx": 18
+}, {
+    "id": 353,
+    "valueId": "LA",
+    "valueString": "Louisiana",
+    "valueAbbr": "US",
+    "sortIdx": 19
+}, {
+    "id": 354,
+    "valueId": "MA",
+    "valueString": "Massachusetts",
+    "valueAbbr": "US",
+    "sortIdx": 20
+}, {
+    "id": 355,
+    "valueId": "MD",
+    "valueString": "Maryland",
+    "valueAbbr": "US",
+    "sortIdx": 21
+}, {
+    "id": 356,
+    "valueId": "ME",
+    "valueString": "Maine",
+    "valueAbbr": "US",
+    "sortIdx": 22
+}, {
+    "id": 357,
+    "valueId": "MI",
+    "valueString": "Michigan",
+    "valueAbbr": "US",
+    "sortIdx": 23
+}, {
+    "id": 358,
+    "valueId": "MN",
+    "valueString": "Minnesota",
+    "valueAbbr": "US",
+    "sortIdx": 24
+}, {
+    "id": 359,
+    "valueId": "MO",
+    "valueString": "Missouri",
+    "valueAbbr": "US",
+    "sortIdx": 25
+}, {
+    "id": 360,
+    "valueId": "MS",
+    "valueString": "Mississippi",
+    "valueAbbr": "US",
+    "sortIdx": 26
+}, {
+    "id": 361,
+    "valueId": "MT",
+    "valueString": "Montana",
+    "valueAbbr": "US",
+    "sortIdx": 27
+}, {
+    "id": 362,
+    "valueId": "NC",
+    "valueString": "North Carolina",
+    "valueAbbr": "US",
+    "sortIdx": 28
+}, {
+    "id": 363,
+    "valueId": "ND",
+    "valueString": "North Dakota",
+    "valueAbbr": "US",
+    "sortIdx": 29
+}, {
+    "id": 364,
+    "valueId": "NE",
+    "valueString": "Nebraska",
+    "valueAbbr": "US",
+    "sortIdx": 30
+}, {
+    "id": 365,
+    "valueId": "NH",
+    "valueString": "New Hampshire",
+    "valueAbbr": "US",
+    "sortIdx": 31
+}, {
+    "id": 366,
+    "valueId": "NJ",
+    "valueString": "New Jersey",
+    "valueAbbr": "US",
+    "sortIdx": 32
+}, {
+    "id": 367,
+    "valueId": "NM",
+    "valueString": "New Mexico",
+    "valueAbbr": "US",
+    "sortIdx": 33
+}, {
+    "id": 368,
+    "valueId": "NV",
+    "valueString": "Nevada",
+    "valueAbbr": "US",
+    "sortIdx": 34
+}, {
+    "id": 369,
+    "valueId": "NY",
+    "valueString": "New York",
+    "valueAbbr": "US",
+    "sortIdx": 35
+}, {
+    "id": 370,
+    "valueId": "OH",
+    "valueString": "Ohio",
+    "valueAbbr": "US",
+    "sortIdx": 36
+}, {
+    "id": 371,
+    "valueId": "OK",
+    "valueString": "Oklahoma",
+    "valueAbbr": "US",
+    "sortIdx": 37
+}, {
+    "id": 372,
+    "valueId": "OR",
+    "valueString": "Oregon",
+    "valueAbbr": "US",
+    "sortIdx": 38
+}, {
+    "id": 373,
+    "valueId": "PA",
+    "valueString": "Pennsylvania",
+    "valueAbbr": "US",
+    "sortIdx": 39
+}, {
+    "id": 374,
+    "valueId": "RI",
+    "valueString": "Rhode Island",
+    "valueAbbr": "US",
+    "sortIdx": 40
+}, {
+    "id": 375,
+    "valueId": "SC",
+    "valueString": "South Carolina",
+    "valueAbbr": "US",
+    "sortIdx": 41
+}, {
+    "id": 376,
+    "valueId": "SD",
+    "valueString": "South Dakota",
+    "valueAbbr": "US",
+    "sortIdx": 42
+}, {
+    "id": 377,
+    "valueId": "TN",
+    "valueString": "Tennessee",
+    "valueAbbr": "US",
+    "sortIdx": 43
+}, {
+    "id": 378,
+    "valueId": "TX",
+    "valueString": "Texas",
+    "valueAbbr": "US",
+    "sortIdx": 44
+}, {
+    "id": 379,
+    "valueId": "UT",
+    "valueString": "Utah",
+    "valueAbbr": "US",
+    "sortIdx": 45
+}, {
+    "id": 380,
+    "valueId": "VA",
+    "valueString": "Virginia",
+    "valueAbbr": "US",
+    "sortIdx": 46
+}, {
+    "id": 381,
+    "valueId": "VT",
+    "valueString": "Vermont",
+    "valueAbbr": "US",
+    "sortIdx": 47
+}, {
+    "id": 382,
+    "valueId": "WA",
+    "valueString": "Washington",
+    "valueAbbr": "US",
+    "sortIdx": 48
+}, {
+    "id": 383,
+    "valueId": "WI",
+    "valueString": "Wisconsin",
+    "valueAbbr": "US",
+    "sortIdx": 49
+}, {
+    "id": 384,
+    "valueId": "WV",
+    "valueString": "West Virginia",
+    "valueAbbr": "US",
+    "sortIdx": 50
+}, {
+    "id": 385,
+    "valueId": "WY",
+    "valueString": "Wyoming",
+    "valueAbbr": "US",
+    "sortIdx": 51
+}]

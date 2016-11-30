@@ -1,0 +1,301 @@
+// side nav styles
+
+.slide-menu .panel {
+  margin-bottom: 0;
+  background-color: #374244;
+  border-bottom: 1px solid #000;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.slide-menu.applications{
+  margin: 20px 0px;
+}
+.slide-menu .panel-default>.panel-heading {
+  color: #fff;
+  background-color: #374244;
+  border-color: #000;
+  border-radius: 0;
+  cursor: pointer;
+}
+.slide-menu .panel-default>.panel-heading:hover {
+  color: #fff;
+  background-color: #3ab1ca;
+  border-color: #000;
+  .transition(all, 0.3s, ease-in);
+}
+
+.slide-menu .panel-default.active>.panel-heading{
+  background-color: #3ab1ca;
+}
+.slide-menu a.org-heading.ng-binding.ng-scope {
+  color: white;
+  font-family: 'museo_sans300', sans-serif;
+  font-size: 16px;
+}
+.slide-menu  .panel a:hover, a:focus {
+  color: #ededed;
+  text-decoration: none;
+}
+.slide-menu .panel-group .panel+.panel {
+  margin-top: 0px;
+}
+li.program-list-sidebar a {
+  line-height: 20px;
+  color: #fff;
+  display: block;
+  padding: 0 0 0 10px;
+}
+li.program-list-sidebar{
+  background: #2d3233;
+  .transition(all, 0.3s, ease-in);
+  height: 60px;
+  padding: 13px 0 0;
+  margin: 0;
+  width: 208px
+}
+li.program-list-sidebar:last-child{
+  border-bottom: 2px solid #374244;
+}
+
+li.program-list-sidebar:hover{
+  background: #374244;
+}
+li.program-list-sidebar:first-child {
+  margin-top: 10px;
+}
+.slide-menu ul.list-unstyled.two-columns {
+  position: relative;
+  left: -15px;
+  top: -16px;
+  width: 208px;
+}
+#menu-listings .panel-collapse{
+  max-height: 100%;
+  background: #2d3233;
+  max-width: 100%;
+ // overflow-x: visible;
+}
+#menu-listings i.fa.fa-times.close {
+  color: @ClickBlue;
+  margin-left: 45%;
+  float: none;
+  opacity: .8;
+  text-shadow: none;
+}
+#menu-listings i.fa.fa-times.close:hover {
+  color: @ClickBlue;
+  margin-left: 45%;
+  float: none;
+  opacity: 1;
+  text-shadow: none;
+}
+//.searchglass{
+//  color: @ClickBlue;
+//}
+//.searchbar{
+//  display: inline;
+//  margin-left: 50%;
+//  padding:10px 0px;
+//}
+.searchbar i.fa.fa-search.searchglass {
+  margin-top: 20px;
+  margin-left: 45%;
+  padding:10px 0px;
+  color: @ClickBlue;
+}
+
+input#txtsearch {
+  height: 20px;
+  width: 120px;
+  margin-left: 20%;
+  margin-top: 4px;
+  border: 1px solid rgb(78, 78, 78);
+  background: #374244;
+  border-radius: 0;
+  color: #e2e2e2;
+}
+
+.main-content .sidebar{
+  background: #1e2020;
+  min-height: 650px;
+  height: auto;
+  position: relative;
+//  overflow-y: visible;
+//  overflow-x: hidden;
+}
+.sidebar ul.side-nav {
+  margin-top: 200px;
+}
+.sidebar ul.side-nav li {
+  margin: 1em 0;
+
+}
+.sidebar ul.side-nav li a{
+  font-family: 'museo_sans100', sans-serif;
+  display: block;
+  color: #b4c5c8;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2px 0 2px 1px;
+  font-size: 26px;
+  .transition(all, 0.3s, ease-in);
+}
+
+.sidebar ul.side-nav li a:hover{
+  background-color: #153a42;
+}
+
+.sidebar ul.side-nav li.active {
+  background: #17474f;
+  color: #b4c5c8;
+}
+
+// Side bar pullout
+nav#sidebar-pullout {
+  background: #2d3233;
+  width: 210px;
+  position: absolute;
+  right: -182px;
+  display: none;
+  height: 100%;
+  border-left: 1px solid #000;
+  -webkit-box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow:  -3px -3px 5px 0px rgba(0, 0, 0, 0.75);
+  z-index:1 ;
+}
+nav#program-editor-pullout {
+  background: #E8E7D8;
+  width: 210px;
+  border-left: 1px solid #d1d0c1;
+  position: absolute;
+  right: -182px;
+  display: none;
+  height: 100%;
+//  -webkit-box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+//  -moz-box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+//  box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+  z-index: 2;
+}
+nav#branding-pullout {
+  background: #f2f2f2;
+  width: 210px;
+  position: absolute;
+  right: -182px;
+  display: none;
+  height: 100%;
+  border-left: 1px solid #000;
+//  -webkit-box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+//  -moz-box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+//  box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, .75);
+  z-index: 2;
+}
+
+// Second Sidebar styles for program edit views
+ul.sidebar2-nav {
+  margin-left: 0;
+  margin-top: 20px;
+}
+ul.sidebar2-nav li{
+  margin: 6px 0;
+  display: block;
+  padding-left: 5px;
+}
+ul.sidebar2-nav li a {
+  color: @sideBarNav;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: museo_sans700, sans-serif;
+//  display: block;
+  padding: 2px 2px 2px 0;
+
+}
+ul.sidebar2-nav li a:hover {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+ul.sidebar2-nav li a.active {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+ul.sidebar2-nav li.active-label {
+  background: whitesmoke;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+ul.program-editor-pullout li {
+  color: @sideBarNav
+}
+ul.program-editor-pullout li:before {
+  font-family: FontAwesome;
+  content: '\f046';
+  margin: 0 5px 0 -15px;
+  color: @sideBarNav
+}
+
+div#menu-listings .organmenu {
+  max-height: 520px;
+ // overflow-y: auto;
+//  overflow-x: hidden;
+}
+
+// Nav Back Arrow
+.nav-back-arrow {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+.nav-back-arrow a {
+  background: url("../images/sprite.png") -39px -8px no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+}
+.nav-back-arrow a:hover {
+  background: url("../images/sprite.png") -10px -8px no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 24px;
+  position: relative;
+}
+
+.popover {
+  color: #000
+
+}
+
+#program-editor-pullout .checkbox label {
+  padding-left: 2px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+a.homelink{
+  position: relative;
+  left: 2px;
+}
+
+.sidebar2-nav i.fa.fa-check {
+  color: white;
+  font-size: 18px;
+}
+a.disabled {
+   cursor: none !important;
+   color: rgb(180, 180, 180) !important;
+ }
+a.disabled:hover {
+  cursor: default !important;
+  color: none;
+}

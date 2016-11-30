@@ -1,0 +1,309 @@
+.program-edit-home h3 {
+  font-family: 'Museo300Regular', sans-serif;
+  color: #121212;
+}
+.program-edit-home h4 {
+  font-family: 'Museo300Regular', sans-serif;
+  margin: 30px 0;
+  color: #7a7a7a;
+}
+.program-edit-home p {
+  color: #7a7a7a;
+}
+.program-edit-home hr {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #d8d7d7;
+}
+input#primaryDisplayName, input#secondaryDisplayName {
+  width: 400px;
+}
+.program-edit-home label.control-label {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.dn-field p {
+  color: #7a7a7a;
+}
+.dn-field p span {
+  color: #121212;
+  font-weight: bold;
+}
+.dn-field {
+  border: 1px solid #d2d2d2;
+  padding: 10px 10px 4px 10px;
+  min-height: 75px;
+}
+.dn-field-form p {
+  color: #7a7a7a;
+}
+.dn-field-form p span {
+  color: #121212;
+  font-weight: bold;
+}
+.dn-field-form {
+  border: 1px solid #b6b6b6;
+  padding: 10px 10px 4px 10px;
+  min-height: 85px;
+}
+.program-edit-home .well {
+  min-height: 20px;
+  padding: 2px;
+  margin: 20px 0;
+  background-color: #e4e4e4;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  text-align: right;
+}
+.program-edit-home .panel-body {
+  padding: 3px 0 0 0;
+}
+.program-edit-home .panel-body p.help-block {
+  margin: 8px 10px 0 0;
+}
+
+.program-edit-home .prereq-bkg.col-xs-12{
+  background-color: #f2f2f2;
+//  padding: 0px 10px 0px 10px;
+}
+.program-edit-home .panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.extended-col.col-xs-12 {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+.well.prereq-header {
+  padding: 2px 5px 0 5px;
+  min-height: 25px;
+}
+.prereq-header div {
+  text-align: left;
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+.prereq-header div.col-xs-2 {
+  padding: 0;
+  margin: 0;
+}
+
+i.fa.fa-trash-o {
+  color: red;
+}
+.descript-count{
+  color: #9d9d9d;
+  font-size: 11px;
+  margin-top: 5px;
+}
+.program-edit-home h3 span{
+  background: url("../images/sprite.png") -154px -12px no-repeat;
+  width: 24px;
+  height: 16px;
+  float: right;
+}
+.program-edit-home .panel-body p{
+  margin: 0;
+  padding: 0;
+}
+.program-edit-home .panel-body p span{
+  background: url("../images/sprite.png") -157px -44px no-repeat;
+  width: 18px;
+  height: 12px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+#tickMark{
+  position:absolute;
+  bottom:0;
+  left: 288px;
+  right: 0;
+  top: -196px;
+  margin: auto;
+  z-index:999;
+  opacity:0.9;
+  color:#8ac65b;
+}
+#successMessage {
+  position: relative;
+}
+.checkmark{
+    font-size:200px
+}
+.section-padding{
+  margin-top: 30px;
+}
+.prereq-body div.col-xs-2{
+  padding: 2px;
+}
+.prereq-body.col-xs-12{
+  padding: 0;
+  border-bottom: 2px solid white;
+  margin: 0 0 20px 0;
+}
+.form-control::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #ccc;
+}
+.form-control::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.app-doc-row {
+  min-height: 36px;
+  border-bottom: 1px solid #d7d7d7;
+}
+.app-doc-row div {
+  text-transform: uppercase;
+  color: #a5a5a5;
+  font-size: 14px;
+  font-family: museo_sans100, sans-serif;
+  padding: 5px;
+}
+.app-doc-row div i {
+  color:#8ac65b;
+  font-size: 16px;
+}
+.app-doc-row2.panel {
+  margin: 20px 0 0 0;
+}
+
+.program-edit-home #messages.alert {
+  color: #3c763d;
+  background-color: #aed490;
+  border-color: #d6e9c6;
+  width: 100%;
+  padding: 6px 0 0 10px;
+}
+.program-edit-home #messages.alert-success {
+  color: #fff;
+  height: 35px;
+  font-size: 22px;
+  background-color: #aed490;
+  border-color: #d6e9c6;
+}
+
+// animations for add new prerequisites
+.prereq-body.ng-enter {
+  transition: height 1s;
+  height: 0px;
+  overflow: hidden;
+}
+.prereq-body.ng-enter-active {
+  height: 100px;
+}
+.program-editor-pullout .text-muted {
+  pointer-events: none;
+  cursor: none;
+
+}
+
+//.sprite-spinner {
+//  overflow: hidden;
+//  top: 30%;
+//  width: 150px !important;
+//  height: 150px !important;
+//  left: 40%;
+//  position: absolute;
+//  display:inline-block;
+//  text-align:left;
+//  z-index: 10;
+//}
+//
+//.spinner-wrap {
+//  text-align:center;
+//  margin:0 auto;
+//}
+//
+//div.spinner-wrap{
+//  width:80px;
+//  height:78px;
+//  position: absolute;
+//  top: 20px;
+//  left: 50%;
+//  background: url(../images/spinner.png);
+//  -webkit-animation:ani 1s steps(19) infinite reverse;
+//  -moz-animation:ani 1s steps(19) infinite reverse;
+//  -ms-animation:ani 1s steps(19) infinite reverse;
+//  -o-animation:ani 1s steps(19) infinite reverse;
+//  animation:ani 1s steps(19) infinite reverse;
+//}
+//
+//@-webkit-keyframes ani {
+//  0%{background-position:0 0;}
+//  100%{background-position:0 1482px;}
+//}
+//@-moz-keyframes ani {
+//  0%{background-position:0 0;}
+//  100%{background-position:0 1482px;}
+//}
+//@-ms-keyframes ani {
+//  0%{background-position:0 0;}
+//  100%{background-position:0 1482px;}
+//}
+//@-o-keyframes ani {
+//  0%{background-position:0 0;}
+//  100%{background-position:0 1482px;}
+//}
+//@keyframes ani {
+//  0%{background-position:0 0;}
+//  100%{background-position:0 1482px;}
+//}
+
+li.sidebar-instructions {
+  border-top: 1px solid #ccc;
+}
+li.sidebar-instructions p {
+  margin: 10px 55px 0 10px;
+  font-size: 12px;
+}
+.panel-default {
+  border-color: transparent ;
+}
+.panel-default > .panel-heading {
+  color: #848A8F;
+  background-color: transparent;
+  border-color: transparent;
+}
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .999);
+  box-shadow: 0 0 0 rgba(0, 0, 0, .999);
+}
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+   border-top: none
+}
+.col-xs-4 .text-right {
+  margin-top: 20px;
+}
+
+.app-modal-window .modal-dialog {
+  width: 800px;
+}
+
+.help-block.program-edit-errors {
+  color: #dc4408 !important;
+}
+

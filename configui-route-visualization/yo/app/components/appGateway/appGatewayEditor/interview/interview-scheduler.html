@@ -1,0 +1,80 @@
+<section class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Schedule Interview</h3>
+        <hr/>
+        <p>Provide instructions to the applicant in the <b>Schedule Interview Instructions</b> field below. The applicant will see these instructions when they are selecting a date and time for there interview.
+        </p>
+        <hr/>
+        <form name="interviewSchedForm" class="form-horizontal upload-docs" novalidate role="form">
+            <div class="form-group form-horizontal" data-ng-class="{ 'has-error': interviewSchedForm.displayName.$invalid && interviewSchedForm.displayName.$touched}">
+                <div class="col-md-12 activity-heading">
+                    <label for="displayName" class="col-lg-3 control-label">Activity Display Name</label>
+                    <div class="col-lg-9">
+                        <input autofocus="autofocus" required="required" data-ng-trim="false" type="text" class="form-control" maxlength="50" name="displayName"
+                               id="displayName" data-ng-model="interviewSchedCtrl.docsData.displayName"
+                               placeholder="Add your Activity Display Name here">
+                        <span class="pull-right">{{(interviewSchedCtrl.docsData.displayName ?  interviewSchedCtrl.docsData.displayName.length : 0)}} / 50</span>
+                        <div data-ng-if="interviewSchedForm.displayName.$touched" data-ng-messages="interviewSchedForm.displayName.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="interviewSchedCtrl.docsData.displayName.length >= 50">Maximum characters allowed is 50</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{ 'has-error': interviewSchedForm.instructions.$invalid && interviewSchedForm.instructions.$touched}">
+                <label class="control-label" for="instructions">Schedule Interview Instructions</label>
+                <text-angular ta-paste="mainCtrl.pruneStyle($html)" required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" id="instructions" name="instructions"
+                              ng-model="interviewSchedCtrl.docsData.instructions" ta-disabled='disabled'>
+                </text-angular>
+
+                <div class="col-xs-6">
+                    <div data-ng-if="interviewSchedForm.instructions.$touched"
+                         data-ng-messages="interviewSchedForm.instructions.$error">
+                        <span class="help-block" data-ng-message="required">required field</span>
+                    </div>
+                </div>
+                <!--<div class="col-xs-6">-->
+                    <!--<span class="pull-right">{{(interviewSchedCtrl.docsData.instructions ?  interviewSchedCtrl.docsData.instructions.length : 0)}} / 300</span>-->
+                <!--</div>-->
+            </div>
+            <div class="row">
+                <div class="extended-col col-xs-12">
+                    <div class="well">
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-reset" data-ng-disabled="interviewSchedForm.$pristine"
+                                    ng-click="interviewSchedCtrl.reset()">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button type="button" class="btn btn-save" data-ng-disabled="interviewSchedForm.$invalid"
+                                    ng-click="interviewSchedCtrl.save();">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 app-bottom-btns">
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-previous" ui-sref="appGatewayEditor.interview"><i
+                                class="fa fa-angle-double-left"></i> previous
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="pager">
+                            <li></li>
+                            <li class="active"></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-reset btn-continue" data-ng-if="interviewSchedCtrl.showSubmit && !interviewSchedForm.$dirty" ng-click="interviewSchedCtrl.openReviewModal(); ">submit for review <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

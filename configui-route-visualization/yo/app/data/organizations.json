@@ -1,0 +1,25 @@
+[{
+     "id": 3,
+     "organizationName": "Watertown School of Health Professions",
+     "organizationCode": "19029_987",
+     "etsCode": "",
+     "createdDate": "2013-04-24",
+     "updatedDate": "2013-04-24",
+     "programCount": 68
+}, {
+     "id": 4,
+     "organizationName": "Watertown School of Population Health",
+     "organizationCode": "10239365",
+     "etsCode": "",
+     "createdDate": "2013-04-24",
+     "updatedDate": "2013-04-24",
+     "programCount": 178
+}, {
+     "id": 11,
+     "organizationName": "Watertown School of  Biomedical Sciences",
+     "organizationCode": "8438493739",
+     "etsCode": "",
+     "createdDate": "2013-08-20",
+     "updatedDate": "2013-08-20",
+     "programCount": 42
+}]

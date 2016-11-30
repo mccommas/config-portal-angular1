@@ -1,0 +1,145 @@
+<section id="program-questions" class="program-edit-home app-documents">
+    <div class="col-xs-12">
+        <h3>Supplemental Application Questions</h3>
+        <hr/>
+        <p>The Questions section allows you to collect answers to custom questions from your applicants. Each question block can optionally include directions for that set of questions.</p>
+
+        <form name="suppQuestions" novalidate role="form">
+            <div class="form-group form-horizontal">
+                <div class="col-md-12 activity-heading" data-ng-class="{ 'has-error': suppQuestions.displayName.$invalid && suppQuestions.displayName.$touched}">
+                    <label for="displayName" class="col-lg-3 control-label">Activity Display Name</label>
+                    <div class="col-lg-9">
+                        <input autofocus="autofocus" required="required" data-ng-trim="false" type="text" class="form-control" maxlength="50" name="displayName" id="displayName" data-ng-model="suppQuestCtrl.questionData.displayName" placeholder="Add your Activity Display Name here">
+                        <span class="pull-right">{{(suppQuestCtrl.questionData.displayName ?  suppQuestCtrl.questionData.displayName.length : 0)}} / 50</span>
+                        <div data-ng-if="suppQuestions.displayName.$touched" data-ng-messages="suppQuestions.displayName.$error">
+                            <span class="help-block" data-ng-message="required">required field</span>
+                        </div>
+                        <span class="has-error help-block" data-ng-if="suppQuestCtrl.questionData.displayName.length >= 50">Maximum characters allowed is 50</span>
+                    </div>
+
+                </div>
+            </div>
+            <h4>Applicant Instructions</h4>
+
+            <div data-ng-class="{ 'has-error': suppQuestions.instructions.$invalid && suppQuestions.instructions.$touched}">
+                <text-angular required="required" ta-toolbar="[['bold','italics','underline','insertLink','ul','ol','undo','redo','clear','indent','outdent']]" name="instructions" ng-model="suppQuestCtrl.questionData.instructions" ta-disabled='disabled'></text-angular>
+                <div data-ng-if="suppQuestions.instructions.$touched" data-ng-messages="suppQuestions.instructions.$error">
+                    <span class="help-block" data-ng-message="required">required field</span>
+                </div>
+            </div>
+
+            <!--Start the accordion question sets-->
+            <div class="questions-accordion" ng-model="questionset">
+                <span ng-show="!suppQuestCtrl.questionData.questionSet.length">You currently have no question sets. <br/><b>Click
+                        +QUESTION SET to begin.</b></span>
+
+                <uib-accordion close-others="false">
+                    <uib-accordion-group ng-repeat="questionSet in suppQuestCtrl.questionData.questionSet track by $index" is-open="questionSet.isOpen">
+                        <uib-accordion-heading>
+                            {{questionSet.title}}
+                            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': questionSet.isOpen, 'glyphicon-chevron-right': !questionSet.isOpen}"></i>
+                            <span class="qdelete"><a ng-click="suppQuestCtrl.confirmDeleteQuestionSet($index)">
+                                    <span class="remove pull-right"></span>
+                            </a>
+                            </span><a ng-click="suppQuestCtrl.editQuestionSet($index) "><span
+                                    class="edit pull-right"></span></a>
+                            <span class="required pull-right"><!--{{questionSet.isEnabled?"Required":"Optional"}}--></span>
+                        </uib-accordion-heading>
+
+                        <span class="" ng-show="!questionSet.questions.length">You currently have no questions. <br/><b>Click
+                                +QUESTION to begin.</b></span>
+                        <ol class="ordered-list">
+                            <li id="questions-text" ng-repeat="question in questionSet.questions track by $index">
+                                <i class="fa fa-check"></i>
+
+                                <div class="row qtext-row">
+                                    <div class="col-xs-10">
+                                        <span class="asterisk">{{question.isRequired == true ? "&#42;" : ""}}</span> {{question.questionText}}
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <span class="qdelete">
+                                        <a ng-click="suppQuestCtrl.confirmDeleteQuestion($parent.$index, $index)">
+                                            <span class="remove pull-right">REMOVE</span>
+                                        </a>
+                                        </span>
+                                        <span class="qedit"><a
+                                            ng-click="suppQuestCtrl.editQuestion($parent.$index, $index)">
+                                        <span class="edit pull-right">EDIT</span>
+                                        </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <!-- Add New Question button bar-->
+
+                        <div id="messages" class="alert alert-success fa fa-check" data-ng-show="messages" data-ng-bind="messages"></div>
+
+                        <div class="program-edit-btns well">
+                            <div class="btn-group pull-left">
+                                <button type="button" class="btn btn-remove" ng-click="suppQuestCtrl.addQuestion($index);"><i class="fa fa-plus"></i> add question
+                                </button>
+                            </div>
+                            <!--<button id="toggleQuestion" ng-click="questionSet.showQuestion = true" ng-disabled="questionSet.showQuestion" type="button" class="btn btn-remove pull-left">-->
+                                <!--<i class="fa fa-plus"></i> question-->
+                            <!--</button>-->
+                        </div>
+                    </uib-accordion-group>
+                </uib-accordion>
+
+            </div>
+
+            <!-- Footer Links-->
+            <div class="row">
+
+                <div class="extended-col col-xs-12">
+                    <div class="program-edit-btns well">
+                        <div class="btn-group pull-left">
+                            <button type="button" class="btn btn-remove" ng-click="suppQuestCtrl.addQuestionSet();">
+                                <i class="fa fa-plus"></i> add question set
+                            </button>
+                        </div>
+                        <!--<button ng-click="suppQuestCtrl.showQuestionSet = true" ng-disabled="suppQuestCtrl.showQuestionSet" type="button" class="btn btn-remove pull-left">-->
+                            <!--<i class="fa fa-plus"></i> question set-->
+                        <!--</button>-->
+                        <div class="btn-group program-edit-btns">
+                            <button type="button" class="btn btn-cancel" data-ng-disabled="questionsHome.$pristine" data-ng-click="suppQuestCtrl.reset(questionsHome)">
+                                <i class="fa fa-undo"></i> reset
+                            </button>
+                            <button id="save-button" type="button" class="btn btn-save" ng-click="suppQuestCtrl.save();" data-ng-disabled="suppQuestions.$invalid || !suppQuestCtrl.questionData.questionSet.length">
+                                <i class="fa fa-check"></i> save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {{parent.questionSet.questions.length}}
+                    <div class="col-xs-12 app-bottom-btns">
+                        <div class="col-xs-4">
+                            <button class="btn btn-reset btn-previous" type="button" ui-sref="appGatewayEditor.supplemental"><i class="fa fa-angle-double-left"></i> previous
+                            </button>
+                        </div>
+                        <div class="col-xs-4">
+                            <nav>
+                                <ul class="pager">
+                                    <li></li>
+                                    <li class="active"></li>
+                                    <li></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xs-4">
+                            <!--<button id="continue-btn1" type="button" class="btn btn-reset btn-continue" ui-sref="appGatewayEditor.suppPay" data-ng-disabled="suppQuestions.$invalid">-->
+                            <!--continue <i class="fa fa-angle-double-right"></i>-->
+                            <!--</button>-->
+                            <button id="continue-btn1" type="button" class="btn btn-reset btn-continue" data-ng-click="suppQuestCtrl.continueSave()" data-ng-disabled="suppQuestions.$invalid || !suppQuestCtrl.questionData.questionSet.length">
+                                continue <i class="fa fa-angle-double-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
